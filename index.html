@@ -10,16 +10,19 @@
   <style>
   /* Base styling */
   body {
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  background: linear-gradient(120deg, #ffffff, #e9ecef);
-  background-image: url('futuristic.png'); 
-  background-repeat: no-repeat;
-  background-position: right center;
-  background-size: contain;
-  color: #333333;
-  line-height: 1.7;
-}
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background: linear-gradient(120deg, #f8f9fa, #e9ecef, #ffffff);
+    background-size: 300% 300%;
+    animation: bgMove 15s ease infinite;
+    color: #333333;
+    line-height: 1.7;
+  }
+  @keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
   header {
     text-align: center;
     padding: 3rem 1rem 2rem;
