@@ -23,13 +23,14 @@
   
   <title>Adhel Tantao | Digital Marketing Operations Specialist</title>
   <link rel="icon" type="image/png" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
     :root {
       --bg-black: #0a0a0a;         
       --card-black: #141414;       
       --accent-yellow: #ffee00;    
+      --accent-green: #00ff66;
       --text-white: #ffffff;
       --text-gray: #a0a0a0;        
       --border-gray: #262626;
@@ -41,33 +42,186 @@
       background-color: var(--bg-black);
       color: var(--text-white);
       line-height: 1.7;
+      padding-top: 80px; /* Space for fixed navigation bar */
     }
 
+    /* NAVIGATION TOP BAR UTILITY */
+    .top-navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 70px;
+      background-color: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-gray);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+    }
+
+    /* Text Logo (Now a clean unlinked div element) */
+    .nav-logo {
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: var(--text-white);
+      text-transform: uppercase;
+      user-select: none;
+      cursor: default;
+      transition: color 0.2s ease;
+    }
+
+    .nav-logo span {
+      color: var(--accent-yellow);
+    }
+
+    .nav-logo:hover {
+      color: var(--accent-yellow);
+    }
+
+    /* Top-Right Resume Action Button */
+    .nav-resume-btn {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid var(--accent-yellow);
+      color: var(--accent-yellow);
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.2s ease;
+    }
+
+    .nav-resume-btn:hover {
+      background-color: var(--accent-yellow);
+      color: var(--bg-black);
+      box-shadow: 0 0 15px rgba(255, 238, 0, 0.3);
+    }
+
+    /* CENTERED HERO HEADER SECTION */
     header {
       text-align: center;
-      padding: 4rem 1rem 2.5rem;
+      padding: 3rem 1rem 2rem;
     }
 
-    header img {
-      width: 140px;
-      height: 140px;
+    /* Interactive Profile Container */
+    .profile-avatar-wrapper {
+      display: inline-block;
+      cursor: pointer;
+      margin-bottom: 0.5rem;
+      border-radius: 50%;
+    }
+
+    /* Verified 180px Image Dimensions */
+    .profile-avatar-wrapper img {
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 1.5rem;
       border: 3px solid var(--accent-yellow);
-      box-shadow: 0 0 20px rgba(255, 238, 0, 0.15);
+      box-shadow: 0 0 20px rgba(255, 238, 0, 0.1);
+      display: block;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                  border-color 0.3s ease, 
+                  box-shadow 0.3s ease;
+    }
+
+    /* Interactive Desktop Hover & Mobile Active Animations */
+    .profile-avatar-wrapper:hover img {
+      transform: scale(1.15) rotate(4deg);
+      border-color: var(--text-white);
+      box-shadow: 0 0 35px rgba(255, 238, 0, 0.4);
+    }
+
+    /* Bling Blinging Glowing Green Status Badge */
+    .live-status-container {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 255, 102, 0.05);
+      border: 1px solid rgba(0, 255, 102, 0.2);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-green);
+      margin: 0.8rem auto 1.2rem auto;
+      box-shadow: 0 0 10px rgba(0, 255, 102, 0.05);
+    }
+
+    .status-dot-green {
+      width: 7px;
+      height: 7px;
+      background-color: var(--accent-green);
+      border-radius: 50%;
+      position: relative;
+      animation: blinkBling 1.6s infinite ease-in-out;
+    }
+
+    @keyframes blinkBling {
+      0% {
+        transform: scale(0.9);
+        box-shadow: 0 0 0 0 rgba(0, 255, 102, 0.7);
+      }
+      70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 8px rgba(0, 255, 102, 0);
+      }
+      100% {
+        transform: scale(0.9);
+        box-shadow: 0 0 0 0 rgba(0, 255, 102, 0);
+      }
     }
 
     h1 {
-      font-size: 2.6rem;
-      font-weight: 700;
-      margin: 0;
+      font-size: 3rem;
+      font-weight: 800;
+      margin: 0 0 0.5rem 0;
       color: var(--text-white);
       letter-spacing: -0.5px;
     }
 
+    /* Sub-Navigation Focus Bar Elements */
+    .specialty-focus-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 1rem auto 1.5rem auto;
+      padding: 0;
+      list-style: none;
+      max-width: 600px;
+    }
+
+    .specialty-focus-bar li {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-gray);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .specialty-focus-bar li::after {
+      content: "•";
+      color: var(--accent-yellow);
+      margin-left: 15px;
+    }
+
+    .specialty-focus-bar li:last-child::after {
+      content: "";
+    }
+
     h2 {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       font-weight: 600;
       color: var(--accent-yellow);
       margin-top: 0.5rem;
@@ -84,7 +238,7 @@
     }
 
     main {
-      max-width: 1000px; /* Expanded slightly to give 3 side-by-side cards breathing room */
+      max-width: 950px;
       margin: auto;
       padding: 0 1.5rem 4rem;
     }
@@ -275,7 +429,6 @@
       transition: opacity 0.3s ease;
     }
 
-    /* JavaScript Toggle State Class */
     .testimonial-card.hidden {
       display: none !important;
     }
@@ -301,7 +454,7 @@
       margin-top: 2px;
     }
 
-    /* Pagination Arrows Styling */
+    /* Pagination controls */
     .pagination-controls {
       display: flex;
       justify-content: center;
@@ -342,7 +495,7 @@
       letter-spacing: 1px;
     }
 
-    /* Styled Lists & Utilities */
+    /* Lists & Utilities */
     .styled-list {
       list-style-type: none;
       padding: 0;
@@ -432,9 +585,30 @@
 </head>
 <body>
 
+  <nav class="top-navbar">
+    <div class="nav-logo">Adhel <span>Tantao</span></div>
+    <a href="https://drive.google.com/file/d/1btZ0gckMhFrR_YlOooExJgsLgcoFpXHq/view" class="nav-resume-btn" target="_blank">Resume ↗</a>
+  </nav>
+
   <header>
-    <img src="profile.jpg" alt="Adhel Tantao Profile Photo">
+    <div class="profile-avatar-wrapper">
+      <img src="profile.jpg" alt="Adhel Tantao Profile Photo">
+    </div>
+    
+    <div>
+      <div class="live-status-container">
+        <span class="status-dot-green"></span> Available for Contracts
+      </div>
+    </div>
+    
     <h1>Adhel Tantao</h1>
+    
+    <ul class="specialty-focus-bar">
+      <li>Paid Media Ops</li>
+      <li>WordPress Funnels</li>
+      <li>SEO Execution</li>
+    </ul>
+
     <div class="yellow-line"></div>
     <h2>Digital Marketing Operations Specialist</h2>
   </header>
@@ -468,7 +642,7 @@
           I am a <strong>Digital Marketing Operations Specialist / Executive Assistant</strong> with over a decade of experience in the digital space.
         </p>
         <p style="margin-bottom: 0; color: var(--text-gray);">
-          My career evolved organically from data-driven SEO copywriting, blogging, and comprehensive affiliate content strategy into direct technical execution. Today, I bridge the gap between high-level strategy and technical follow-through - handling everything from building hundreds of responsive WordPress funnels to configuring secure proxy infrastructure profiles, tracking parameter workflows, and running paid media accounts. I scale technical systems so founders can focus strictly on growth.
+          My career evolved organically from data-driven SEO copywriting, blogging, and comprehensive affiliate content strategy into direct technical execution. Today, I bridge the gap between high-level strategy and technical follow-through—handling everything from building hundreds of responsive WordPress funnels to configuring secure proxy infrastructure profiles, tracking parameter workflows, and running paid media accounts. I scale technical systems so founders can focus strictly on growth.
         </p>
       </div>
     </section>
@@ -483,7 +657,7 @@
             <p class="testimonial-text">"Adhel is an absolute powerhouse, he worked with us for almost 4 years and is great in a variety of different roles. He picks up things quickly and has high attention to detail. I'd highly recommend Adhel, it has been an absolute pleasure working with him."</p>
             <div>
               <div class="testimonial-author">Adam Morris</div>
-              <div class="testimonial-title">Founder @ LandSale</div>
+              <div class="testimonial-title">Founder @ LandSale (UK)</div>
             </div>
           </div>
 
@@ -491,7 +665,7 @@
             <p class="testimonial-text">"Adhel worked for us for 3+ years. He's an incredibly fast learner and is willing to go the extra mile without asking. He's a fantastic asset to any company."</p>
             <div>
               <div class="testimonial-author">Tom De Spiegelaere</div>
-              <div class="testimonial-title">Co-Founder @ Search District</div>
+              <div class="testimonial-title">Co-Founder @ Search District (Australia)</div>
             </div>
           </div>
 
@@ -499,7 +673,7 @@
             <p class="testimonial-text">"Out of the 6 virtual assistants we hired, Adhel was the top performer. He was very professional, has great attention to detail, and completed his assignments on time and with high quality. I highly recommend Adhel for additional virtual assistance jobs. And I will hire him again for future projects."</p>
             <div>
               <div class="testimonial-author">Anthony M. Ragland</div>
-              <div class="testimonial-title">Founder &amp; Strategist @ BeGreat! Agency</div>
+              <div class="testimonial-title">Founder &amp; Strategist @ BeGreat! Agency (USA)</div>
             </div>
           </div>
 
@@ -655,11 +829,11 @@
       <h3>Sites I've Worked On</h3>
       <ul class="styled-list">
         <li>CryptoHead.io</li>
+        <li>Microveggy.com</li>
         <li>ConvoyCarShipping.com</li>
         <li>ItalianDualCitizenship.net</li>
         <li>HowToCook.Recipes</li>
         <li>FreeColoringPages.net</li>
-        <li>Microveggy.com</li>
       </ul>
       <span class="list-caption-note">
         There's more but not worth mentioning since some are already gone (mainly expired domains), some are sold, or transitioned to other CMS.
@@ -689,7 +863,6 @@
     const cards = document.querySelectorAll('.testimonial-card');
 
     function updatePagination() {
-      // Show/Hide relevant target cards based on data page index attributes
       cards.forEach(card => {
         if (parseInt(card.getAttribute('data-page')) === currentPage) {
           card.classList.remove('hidden');
@@ -697,11 +870,7 @@
           card.classList.add('hidden');
         }
       });
-
-      // Format clean indicator strings
       indicator.textContent = `0${currentPage} / 0${totalPages}`;
-
-      // Handle interactive disabled tag states natively
       prevBtn.disabled = (currentPage === 1);
       nextBtn.disabled = (currentPage === totalPages);
     }
