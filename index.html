@@ -3,307 +3,722 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
-  <!-- Google Analytics (GA4) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F1P2KL9M9C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-F1P2KL9M9C', { 'anonymize_ip': true });
-</script>
-  <!-- Microsoft Clarity -->
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "ttewy9fic6");
-</script>
-  <title>Adhel Tantao | Digital Marketer & WordPress Specialist</title>
+  <meta name="robots" content="index, follow">
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F1P2KL9M9C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F1P2KL9M9C', { 'anonymize_ip': true });
+  </script>
+  
+  <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "ttewy9fic6");
+  </script>
+  
+  <title>Adhel Tantao | Digital Marketing Operations Specialist</title>
   <link rel="icon" type="image/png" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
-  /* Base styling */
-  body {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    background: linear-gradient(120deg, #f8f9fa, #e9ecef, #ffffff);
-    background-size: 300% 300%;
-    animation: bgMove 15s ease infinite;
-    color: #333333;
-    line-height: 1.7;
-  }
-  @keyframes bgMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-  header {
-    text-align: center;
-    padding: 3rem 1rem 2rem;
-  }
-  header img {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1rem;
-    border: 3px solid #000000;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  }
-  h1 {
-    font-size: 2.4rem;
-    font-weight: 700;
-    margin: 0;
-  }
-  h2 {
-    font-weight: 700;
-    color: #000000;
-    margin-top: 0.3rem;
-    text-shadow: 0 0 8px rgba(79, 140, 255, 0.15);
-  }
+    :root {
+      --bg-black: #0a0a0a;         
+      --card-black: #141414;       
+      --accent-yellow: #ffee00;    
+      --text-white: #ffffff;
+      --text-gray: #a0a0a0;        
+      --border-gray: #262626;
+    }
 
-  /* Animated accent line */
-  .glow-line {
-    width: 80px;
-    height: 4px;
-    margin: 10px auto 20px;
-    border-radius: 2px;
-    background: linear-gradient(90deg, #4f8cff, #00d4ff, #4f8cff);
-    background-size: 200% 100%;
-    animation: gradientMove 3s linear infinite;
-  }
-  @keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
-  }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background-color: var(--bg-black);
+      color: var(--text-white);
+      line-height: 1.7;
+    }
 
-  main {
-    max-width: 950px;
-    margin: auto;
-    padding: 0 1rem 3rem;
-  }
-  section {
-    margin-bottom: 2.2rem;
-  }
-  h3 {
-    border-left: 4px solid #4f8cff;
-    padding-left: 0.6rem;
-    margin-bottom: 0.7rem;
-  }
-  ul {
-    padding-left: 1.6rem;
-  }
-  details {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 0.6rem 0.8rem;
-    margin-bottom: 0.8rem;
-    background: #ffffff;
-  }
-  summary {
-    cursor: pointer;
-    font-weight: 600;
-  }
-  footer {
-    text-align: center;
-    border-top: 1px solid #ccc;
-    padding: 2rem 1rem;
-    font-size: 0.95rem;
-  }
-  a {
-    color: #4f8cff;
-    text-decoration: none;
-  }
+    header {
+      text-align: center;
+      padding: 4rem 1rem 2.5rem;
+    }
 
-  /* Fancy buttons */
-  .btn {
-    display: inline-block;
-    padding: 12px 20px;
-    background: linear-gradient(90deg, #4f8cff, #00d4ff);
-    color: white;
-    border-radius: 6px;
-    margin-right: 8px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: box-shadow 0.3s ease, transform 0.2s ease;
-  }
-  .btn:hover {
-    box-shadow: 0 0 15px rgba(79, 140, 255, 0.6);
-    transform: translateY(-2px);
-  }
-</style>
+    header img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+      border: 3px solid var(--accent-yellow);
+      box-shadow: 0 0 20px rgba(255, 238, 0, 0.15);
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      margin: 0;
+      color: var(--text-white);
+      letter-spacing: -0.5px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--accent-yellow);
+      margin-top: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .yellow-line {
+      width: 60px;
+      height: 3px;
+      margin: 15px auto;
+      background-color: var(--accent-yellow);
+      box-shadow: 0 0 10px rgba(255, 238, 0, 0.5);
+    }
+
+    main {
+      max-width: 1000px; /* Expanded slightly to give 3 side-by-side cards breathing room */
+      margin: auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    section {
+      margin-bottom: 3.5rem;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-left: 3px solid var(--accent-yellow);
+      padding-left: 12px;
+    }
+
+    .block-container {
+      background: var(--card-black);
+      border: 1px solid var(--border-gray);
+      border-radius: 8px;
+      padding: 2rem;
+    }
+
+    .skills-tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 1.5rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .skills-tag-container li {
+      border: 1px solid var(--accent-yellow);
+      color: var(--accent-yellow);
+      padding: 5px 14px;
+      border-radius: 4px; 
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      transition: all 0.2s ease;
+    }
+
+    .skills-tag-container li:hover {
+      background: var(--accent-yellow);
+      color: var(--bg-black);
+      cursor: default;
+    }
+
+    /* Accordions */
+    details {
+      border: 1px solid var(--border-gray);
+      border-radius: 6px;
+      padding: 1.25rem;
+      margin-bottom: 0.8rem;
+      background: var(--card-black);
+      transition: all 0.2s ease;
+    }
+
+    details[open] {
+      border-color: var(--accent-yellow);
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      color: var(--text-white);
+      outline: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: '＋';
+      font-size: 1rem;
+      color: var(--accent-yellow);
+    }
+
+    details[open] summary { color: var(--accent-yellow); }
+    details[open] summary::after { content: '－'; }
+
+    details .details-content {
+      margin-top: 1.2rem;
+      color: var(--text-gray);
+      font-size: 0.95rem;
+    }
+
+    details .details-content p {
+      margin: 0 0 1rem 0;
+    }
+    
+    details .details-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    details strong {
+      color: var(--text-white);
+    }
+
+    /* Symmetrical Tools Matrix Grid */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .tools-column {
+      background: var(--card-black);
+      border: 1px solid var(--border-gray);
+      border-radius: 6px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tools-column h4 {
+      margin: 0 0 1.2rem 0;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-yellow);
+      font-weight: 700;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--border-gray);
+      padding-bottom: 8px;
+    }
+
+    .tools-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .tools-column li {
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+      color: var(--text-gray);
+    }
+    
+    .tools-column li strong {
+      color: var(--text-white);
+    }
+
+    /* 3-Column Paginated Testimonial Grid Layout */
+    .testimonial-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .testimonial-card {
+      background: var(--card-black);
+      border: 1px solid var(--border-gray);
+      border-radius: 8px;
+      padding: 1.8rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: opacity 0.3s ease;
+    }
+
+    /* JavaScript Toggle State Class */
+    .testimonial-card.hidden {
+      display: none !important;
+    }
+
+    .testimonial-text {
+      color: var(--text-white);
+      font-size: 0.95rem;
+      font-style: italic;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .testimonial-author {
+      color: var(--accent-yellow);
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .testimonial-title {
+      color: var(--text-gray);
+      font-size: 0.8rem;
+      margin-top: 2px;
+    }
+
+    /* Pagination Arrows Styling */
+    .pagination-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+      margin-top: 10px;
+    }
+
+    .pag-btn {
+      background: transparent;
+      border: 1px solid var(--border-gray);
+      color: var(--accent-yellow);
+      padding: 8px 16px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .pag-btn:hover:not(:disabled) {
+      border-color: var(--accent-yellow);
+      background: rgba(255, 238, 0, 0.05);
+    }
+
+    .pag-btn:disabled {
+      color: var(--border-gray);
+      border-color: var(--border-gray);
+      cursor: not-allowed;
+    }
+
+    .page-indicator {
+      font-size: 0.85rem;
+      color: var(--text-gray);
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    /* Styled Lists & Utilities */
+    .styled-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .styled-list li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 0.75rem;
+      color: var(--text-gray);
+    }
+
+    .styled-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: var(--accent-yellow);
+      font-size: 0.9rem;
+      top: -1px;
+    }
+
+    .list-caption-note {
+      display: block;
+      margin-top: 1.2rem;
+      font-style: italic;
+      color: var(--text-gray);
+      font-size: 0.85rem;
+      border-top: 1px dashed var(--border-gray);
+      padding-top: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: var(--accent-yellow);
+      color: var(--bg-black);
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #ffffff;
+      box-shadow: 0 0 15px rgba(255, 238, 0, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .contact-wrapper {
+      border: 1px solid var(--accent-yellow);
+      border-radius: 8px;
+      padding: 2.5rem;
+      text-align: center;
+      background: var(--card-black);
+    }
+
+    .contact-wrapper h3 {
+      border: none;
+      padding: 0;
+      color: var(--accent-yellow);
+    }
+
+    .contact-wrapper a {
+      color: var(--text-white);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact-wrapper a:hover {
+      color: var(--accent-yellow);
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      font-size: 0.85rem;
+      color: var(--text-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  </style>
 </head>
 <body>
+
   <header>
-    <img src="profile.jpg" alt="profile photo">
+    <img src="profile.jpg" alt="Adhel Tantao Profile Photo">
     <h1>Adhel Tantao</h1>
-    <div class="glow-line"></div>
-    <h2>Digital Marketing Operations Virtual Assistant</h2>
+    <div class="yellow-line"></div>
+    <h2>Digital Marketing Operations Specialist</h2>
   </header>
+
   <main>
     <section>
-      <div style="text-align:left;">
+      <div class="block-container">
         <p><strong>Hey there!</strong></p>
         <p>Adhel here. I like to make things simple (and I know you're a busy person). So, let's get straight to the point!</p>
-        <p><strong>My Skills:</strong></p>
-        <ul>
-          <li>Facebook Ads (setting up MLA profiles, pages, conversion campaigns, retargeting, tracking, landers, etc.)</li>
-          <li>Photo and Video Editing (Canva, Photoshop, and Kapwing)</li>
-          <li>WordPress (building landing pages using Elementor)</li>
-          <li>TikTok and Snapchat ads</li>
-          <li>Copywriting &amp; Content Writing</li>
+        <p style="margin-bottom: 0.5rem; color: var(--accent-yellow); font-weight: 600;">Core Strategic Capabilities:</p>
+        <ul class="skills-tag-container">
+          <li>Facebook Ads (MLA, Landers, Operations)</li>
+          <li>WordPress &amp; Elementor Dev</li>
+          <li>SEO Execution &amp; Strategy</li>
+          <li>Photo &amp; Video Editing</li>
+          <li>TikTok &amp; Snapchat Ads Support</li>
+          <li>Copywriting &amp; Content Strategy</li>
           <li>Social Media Management</li>
-          <li>Shopify/eCommerce</li>
-          <li>Jarvee Automation</li>
-          <li>Product Reviews</li>
-          <li>Crypto / Stocks</li>
-          <li>SEO</li>
-          <li>AI</li>
+          <li>Shopify / eCommerce Ops</li>
+          <li>Product Reviews &amp; Content Arbitrage</li>
+          <li>Crypto / Stocks Analytics</li>
+          <li>AI-Driven Implementations</li>
         </ul>
-        <p>More below! ⤵️</p>
       </div>
     </section>
 
-<!-- ABOUT -->
-<section class="section">
-<h2>About</h2>
-<div class="card">
-<p>
-Digital Marketing Operations Virtual Assistant with over 10 years of combined freelance and professional experience supporting WordPress, SEO, content, and advertising workflows.
-</p>
-<p>
-Focused on execution - building landing pages, implementing tracking, supporting marketing operations, and ensuring campaigns run smoothly from setup to implementation.
-</p>
-</div>
-</section>
+    <section>
+      <h3>About Me</h3>
+      <div class="block-container">
+        <p style="margin-top: 0;">
+          I am a <strong>Digital Marketing Operations Specialist / Executive Assistant</strong> with over a decade of experience in the digital space.
+        </p>
+        <p style="margin-bottom: 0; color: var(--text-gray);">
+          My career evolved organically from data-driven SEO copywriting, blogging, and comprehensive affiliate content strategy into direct technical execution. Today, I bridge the gap between high-level strategy and technical follow-through - handling everything from building hundreds of responsive WordPress funnels to configuring secure proxy infrastructure profiles, tracking parameter workflows, and running paid media accounts. I scale technical systems so founders can focus strictly on growth.
+        </p>
+      </div>
+    </section>
 
-<!-- SPECIALTIES (Dropdowns) -->
-<section class="section">
-<h2>Experience & Specialties</h2>
+    <section>
+      <h3>What Founders &amp; Clients Say</h3>
+      <div class="testimonial-container">
+        
+        <div class="testimonial-grid" id="testimonialGrid">
+          
+          <div class="testimonial-card" data-page="1">
+            <p class="testimonial-text">"Adhel is an absolute powerhouse, he worked with us for almost 4 years and is great in a variety of different roles. He picks up things quickly and has high attention to detail. I'd highly recommend Adhel, it has been an absolute pleasure working with him."</p>
+            <div>
+              <div class="testimonial-author">Adam Morris</div>
+              <div class="testimonial-title">Founder @ LandSale</div>
+            </div>
+          </div>
 
-<details>
-<summary>WORDPRESS / ELEMENTOR</summary>
-<p>Built and optimized landing pages using WordPress and Elementor, focusing on responsive design, performance, and conversion-friendly structure.</p>
-</details>
+          <div class="testimonial-card" data-page="1">
+            <p class="testimonial-text">"Adhel worked for us for 3+ years. He's an incredibly fast learner and is willing to go the extra mile without asking. He's a fantastic asset to any company."</p>
+            <div>
+              <div class="testimonial-author">Tom De Spiegelaere</div>
+              <div class="testimonial-title">Co-Founder @ Search District</div>
+            </div>
+          </div>
 
-<details>
-<summary>SEARCH ENGINE OPTIMIZATION (SEO)</summary>
-<p>Supported on-page SEO, content optimization, keyword alignment, and research-driven improvements across multiple web projects.</p>
-</details>
+          <div class="testimonial-card" data-page="1">
+            <p class="testimonial-text">"Out of the 6 virtual assistants we hired, Adhel was the top performer. He was very professional, has great attention to detail, and completed his assignments on time and with high quality. I highly recommend Adhel for additional virtual assistance jobs. And I will hire him again for future projects."</p>
+            <div>
+              <div class="testimonial-author">Anthony M. Ragland</div>
+              <div class="testimonial-title">Founder &amp; Strategist @ BeGreat! Agency</div>
+            </div>
+          </div>
 
-<details>
-<summary>CONTENT & COPYWRITING</summary>
-<p>Created and edited web content, product reviews, and marketing copy with focus on clarity, structure, and SEO alignment.</p>
-</details>
+          <div class="testimonial-card hidden" data-page="2">
+            <p class="testimonial-text">"Adhel is a critical thinker, and is very intelligent, detail-oriented, and quick. He is a very fast learner and we're sure he would excel at any task, given decent directions. We had him complete several tasks we needed help with, and he went above and beyond to make sure we were satisfied."</p>
+            <div>
+              <div class="testimonial-author">Top Tier Trade LLC</div>
+              <div class="testimonial-title">Digital Commerce &amp; Assets Group</div>
+            </div>
+          </div>
 
-<details>
-<summary>ADS & MARKETING OPERATIONS SUPPORT</summary>
-<p>Assisted with Facebook, TikTok, and digital advertising operations including campaign setup, creatives, monitoring, and execution support.</p>
-</details>
+          <div class="testimonial-card hidden" data-page="2">
+            <p class="testimonial-text">"Adhel was a content optimizer for us and exceeded all of our expectations. He is a hard worker, dedicated and a pleasure to work with."</p>
+            <div>
+              <div class="testimonial-author">Josh Eberly</div>
+              <div class="testimonial-title">Content Strategy &amp; SEO Client</div>
+            </div>
+          </div>
 
-<details>
-<summary>TRACKING IMPLEMENTATION</summary>
-<p>Implemented UTMs, pixels, and tags to support campaign tracking, data collection, and marketing workflow execution.</p>
-</details>
+        </div>
 
-<details>
-<summary>RESEARCH & DATA GATHERING</summary>
-<p>Performed structured research to support SEO, content, and marketing decisions, ensuring accuracy and useful implementation.</p>
-</details>
+        <div class="pagination-controls">
+          <button class="pag-btn" id="prevBtn" disabled>‹ Prev</button>
+          <span class="page-indicator" id="pageIndicator">01 / 02</span>
+          <button class="pag-btn" id="nextBtn">Next ›</button>
+        </div>
 
-</section>
+      </div>
+    </section>
 
-<section>
-  <h3>Selected Writings</h3>
-  <p>I used to write in peace and harmony, until the AI and LLMs trend attacked! Here are a few of my past writings (mostly for blogs and product reviews though! 😜):</p>
+    <section>
+      <h3>Experience &amp; Specialties</h3>
 
-  <ul style="list-style-type: disc; padding-left: 20px; line-height: 1.8;">
-    <li><a href="https://drive.google.com/drive/folders/1LVsawRJYlNLDsuFhEU_XSSfljKg9mxBc?usp=sharing" target="_blank">View My Writings on Google Drive</a></li>
-  </ul>
-</section>
+      <details>
+        <summary>WEB DEVELOPMENT &amp; DESIGN (WORDPRESS / ELEMENTOR)</summary>
+        <div class="details-content">
+          <p>Built, managed, and customized <strong>hundreds of marketing landers and sales funnels</strong> leveraging WordPress, Elementor, and LanderLab. Deeply comfortable tweaking HTML/CSS layout nuances to guarantee high-converting, responsive landing pages across mobile and desktop viewports.</p>
+          <p>Experienced working with diverse alternative content management systems and premium builder stacks (Thrive Architect, Divi, WPBakery, Beaver Builder, Gutenberg, and ACF) across insurance, health, local service, and digital asset industries.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>SEARCH ENGINE OPTIMIZATION (SEO) &amp; CONTENT STRATEGY</summary>
+        <div class="details-content">
+          <p>Backed by over a decade of hands-on experience in the digital marketing and affiliate space. Approach SEO with a distinct advantage: balancing technical on-page optimization, site visibility, and structural keyword mapping with sharp content alignment designed for real human search intent.</p>
+          <p>Skilled in auditing technical web assets, clean metadata execution, link maintenance, and deploying software-driven data improvements to consistently earn and hold real organic visibility.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>PAID MEDIA OPERATIONS (FACEBOOK, TIKTOK &amp; SNAPCHAT ADS)</summary>
+        <div class="details-content">
+          <p>Began serving as a specialized Facebook Media Buyer in 2019. Highly experienced handling the intricate, heavy legwork required to deploy robust campaign structures inside competitive niches (including insurance, crypto, and affiliate content arbitrage networks).</p>
+          <p>Owns the full operational deployment checklist: building out compliant multi-account infrastructure profiles, configuring proxy configurations, page warming, building ad sets, managing creative upload layers, comment moderation, and routine optimization loops.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>DIGITAL TRACKING &amp; ANTI-FRAUD INTEGRATION</summary>
+        <div class="details-content">
+          <p>Specialized in implementing airtight end-to-end operational parameter tracking. Proficient in integrating complex tracking configurations utilizing UTM variables, ad network pixels, Custom Scripts, Voluum, Redtrack, and Traffic Armor cloaking/filtering nodes.</p>
+          <p>Deep operational knowledge managing privacy environments via <strong>Multilogin</strong> and <strong>AdsPower</strong> to secure high-value advertising profiles, manage payment pathways securely, and safeguard campaign data pipelines.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>COMPETITOR RESEARCH &amp; REVENUE OPTIMIZATION</summary>
+        <div class="details-content">
+          <p>Execute structured data-gathering protocols to systematically reverse-engineer winning hooks and campaign ideas. Proficient in digging out target market insights via native search, ad libraries, and advanced tool combinations like Adplexity and Adspy.</p>
+          <p>Experienced analyzing high-volume monetization mechanics, running extensive content reviews for scaling affiliate properties (e.g., major Amazon Associates setups), and optimizing assets to maximize conversions.</p>
+        </div>
+      </details>
+    </section>
+
+    <section>
+      <h3>Selected Writings</h3>
+      <p style="color: var(--text-gray);">I used to write in peace and harmony, until the AI and LLMs trend attacked! Here are a few of my past writings (mostly for blogs and product reviews though! 😜):</p>
+      <div style="margin-top: 1.5rem;">
+        <a href="https://drive.google.com/drive/folders/1LVsawRJYlNLDsuFhEU_XSSfljKg9mxBc?usp=sharing" class="btn" target="_blank">
+          View My Writings on Google Drive
+        </a>
+      </div>
+    </section>
     
     <section>
-  <h3>Tools I've Used</h3>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-    
-    <!-- Column 1: Marketing & Analytics -->
-    <ul>
-      <li>Facebook Ads Manager</li>
-      <li>Adplexity</li>
-      <li>Adspy</li>
-      <li>Jarvee</li>
-      <li>Voluum</li>
-      <li>Redtrack</li>
-      <li>Traffic Armor</li>
-      <li>Ahrefs</li>
-      <li>LanderLab</li>
-    </ul>
-    
-    <!-- Column 2: SEO, Writing & AI -->
-    <ul>
-      <li>ChatGPT</li>
-      <li>Claude AI</li>
-      <li>Perplexity</li>
-      <li>WordAI</li>
-      <li>ClearScope</li>
-      <li>Hubstaff</li>
-      <li>ScreamingFrog</li>
-      <li>Grammarly</li>
-      <li>WordPress</li>
-    </ul>
-    
-    <!-- Column 3: Productivity & Collaboration -->
-    <ul>
-      <li>Notion</li>
-      <li>Airtable</li>
-      <li>Trello</li>
-      <li>Zoho</li>
-      <li>Kapwing</li>
-      <li>Loom</li>
-      <li>Slack</li>
-      <li>Asana</li>
-      <li>Canva</li>
-    </ul>
-    
-    <!-- Column 4: Technical & Utility Tools -->
-    <ul>
-      <li>Filezilla</li>
-      <li>Multilogin</li>
-      <li>AdsPower</li>
-      <li>Mobirise</li>
-      <li>Paperspace</li>
-      <li>Parsec</li>
-      <li>PayWithExtend</li>
-      <li>Teamviewer</li>
-      <li>Anydesk</li>
-    </ul>
-    
-  </div>
-</section>
-<section>
-  <h3>Sites I've Worked On</h3>
-    <ul>
-      <li>CryptoHead.io</li>
-      <li>Microveggy.com</li>
-      <li>ConvoyCarShipping.com</li>
-      <li>ItalianDualCitizenship.net</li>
-      <li>HowToCook.Recipes</li>
-      <li>FreeColoringPages.net</li>
-      <li>There's more but not worth mentioning since some are already gone (mainly expired domains), some are sold, some transitioned to other CMS.</li>
-    </ul>
-</section>
+      <h3>Tools I've Used</h3>
+      <div class="tools-grid">
+        
+        <div class="tools-column">
+          <h4>Marketing &amp; Analytics</h4>
+          <ul>
+            <li><strong>Facebook Ads Manager</strong></li>
+            <li>Adplexity</li>
+            <li>Adspy</li>
+            <li>Voluum</li>
+            <li>Redtrack</li>
+            <li>Traffic Armor</li>
+            <li>Ahrefs</li>
+            <li>LanderLab</li>
+            <li>Adflow / SpyTools</li>
+          </ul>
+        </div>
+        
+        <div class="tools-column">
+          <h4>SEO, Writing &amp; AI</h4>
+          <ul>
+            <li><strong>ChatGPT</strong></li>
+            <li><strong>Claude AI</strong></li>
+            <li>Perplexity</li>
+            <li>WordAI</li>
+            <li>ClearScope</li>
+            <li>Quetext</li>
+            <li>Hubstaff</li>
+            <li>ScreamingFrog</li>
+            <li>Grammarly</li>
+          </ul>
+        </div>
+        
+        <div class="tools-column">
+          <h4>Ops &amp; Productivity</h4>
+          <ul>
+            <li>Notion</li>
+            <li>Airtable</li>
+            <li>Trello</li>
+            <li>Zoho</li>
+            <li>Kapwing</li>
+            <li>Loom</li>
+            <li>Slack</li>
+            <li>Asana</li>
+            <li>Canva</li>
+          </ul>
+        </div>
+        
+        <div class="tools-column">
+          <h4>Technical Utilities</h4>
+          <ul>
+            <li>Filezilla</li>
+            <li><strong>Multilogin</strong></li>
+            <li><strong>AdsPower</strong></li>
+            <li>Mobirise</li>
+            <li>Paperspace</li>
+            <li>Parsec</li>
+            <li>PayWithExtend</li>
+            <li>Teamviewer</li>
+            <li>Anydesk</li>
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
     <section>
-<section class="contact">
-<h2>Contact</h2>
-<p>Email: <a href="mailto:businessheaded02@yahoo.com">businessheaded02@yahoo.com</a></p>
-<p>LinkedIn: <a href="https://www.linkedin.com/in/adhel-tantao/">https://www.linkedin.com/in/adhel-tantao/</a></p>
-</section>
+      <h3>Sites I've Worked On</h3>
+      <ul class="styled-list">
+        <li>CryptoHead.io</li>
+        <li>ConvoyCarShipping.com</li>
+        <li>ItalianDualCitizenship.net</li>
+        <li>HowToCook.Recipes</li>
+        <li>FreeColoringPages.net</li>
+        <li>Microveggy.com</li>
+      </ul>
+      <span class="list-caption-note">
+        There's more but not worth mentioning since some are already gone (mainly expired domains), some are sold, or transitioned to other CMS.
+      </span>
+    </section>
+
+    <section>
+      <div class="contact-wrapper">
+        <h3>Let's Connect</h3>
+        <p style="margin-bottom: 0.5rem; color: var(--text-gray);">Email: <a href="mailto:businessheaded02@yahoo.com">businessheaded02@yahoo.com</a></p>
+        <p style="margin-bottom: 0; color: var(--text-gray);">LinkedIn: <a href="https://www.linkedin.com/in/adhel-tantao/" target="_blank">adhel-tantao</a></p>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <p>© 2026 Adhel Tantao</p>
+    <p>© 2026 Adhel Tantao. All rights reserved.</p>
   </footer>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 2;
+    
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const indicator = document.getElementById('pageIndicator');
+    const cards = document.querySelectorAll('.testimonial-card');
+
+    function updatePagination() {
+      // Show/Hide relevant target cards based on data page index attributes
+      cards.forEach(card => {
+        if (parseInt(card.getAttribute('data-page')) === currentPage) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Format clean indicator strings
+      indicator.textContent = `0${currentPage} / 0${totalPages}`;
+
+      // Handle interactive disabled tag states natively
+      prevBtn.disabled = (currentPage === 1);
+      nextBtn.disabled = (currentPage === totalPages);
+    }
+
+    prevBtn.addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage--;
+        updatePagination();
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (currentPage < totalPages) {
+        currentPage++;
+        updatePagination();
+      }
+    });
+  </script>
 </body>
 </html>
