@@ -89,12 +89,22 @@
     /* DOWNLOAD CTA */
     .dl-cta { background: var(--surface); border: 1px solid var(--yborder); border-radius: 4px; padding: 2rem; text-align: center; margin-top: 3rem; }
     .dl-cta p { font-size: .85rem; color: var(--mid); margin-bottom: 1.25rem; }
-    .btn-y { display: inline-block; padding: 12px 28px; background: var(--yellow); color: #060606; border-radius: 2px; text-decoration: none; font-weight: 800; font-size: .78rem; text-transform: uppercase; letter-spacing: 1.5px; transition: all .2s; }
+    .btn-y { display: inline-block; padding: 12px 28px; background: var(--yellow); color: #060606; border-radius: 2px; text-decoration: none; font-weight: 800; font-size: .78rem; text-transform: uppercase; letter-spacing: 1.5px; transition: all .2s; min-width: 160px; text-align: center; }
     .btn-y:hover { background: var(--white); transform: translateY(-1px); }
-    .btn-o { display: inline-block; padding: 12px 28px; border: 1px solid var(--border2); color: var(--dim); border-radius: 2px; text-decoration: none; font-weight: 700; font-size: .78rem; text-transform: uppercase; letter-spacing: 1.5px; transition: all .2s; margin-left: 10px; }
+    .btn-o { display: inline-block; padding: 12px 28px; border: 1px solid var(--border2); color: var(--dim); border-radius: 2px; text-decoration: none; font-weight: 700; font-size: .78rem; text-transform: uppercase; letter-spacing: 1.5px; transition: all .2s; margin-left: 10px; min-width: 160px; text-align: center; }
     .btn-o:hover { border-color: var(--yellow); color: var(--yellow); }
 
     footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); font-size: .65rem; color: var(--dim); text-transform: uppercase; letter-spacing: 2px; }
+    @media(max-width:640px){
+      .nav{padding:0 1.25rem}
+      .nav-back{display:none}
+      .nav-dl{padding:7px 12px;font-size:.65rem;letter-spacing:.5px;white-space:nowrap}
+      .resume-header{grid-template-columns:1fr}
+      .rh-contact{text-align:left}
+      .two-col{grid-template-columns:1fr}
+      .dl-cta .btn-y,.dl-cta .btn-o{display:block;width:100%;max-width:100%;text-align:center;margin:0 0 10px 0}
+      .dl-cta .btn-o{margin-left:0}
+    }
   </style>
 </head>
 <body>
