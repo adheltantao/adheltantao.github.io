@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adhel Tantao - Resume | WordPress & Elementor Specialist</title>
+  <meta name="description" content="Resume of Adhel Tantao - WordPress & Elementor Specialist with 6+ years building high-converting landing pages, funnels, and SEO-structured sites for US and AU agencies.">
+  <link rel="canonical" href="https://adheltantao.dev/resume">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #060606; --surface: #0e0e0e; --surface2: #141414;
+      --yellow: #f5e642; --ydim: rgba(245,230,66,0.06); --yborder: rgba(245,230,66,0.18);
+      --green: #3ddc84; --white: #f0f0f0; --mid: #cccccc; --dim: #999999;
+      --border: #181818; --border2: #252525;
+    }
+    body { font-family: 'Montserrat', sans-serif; background: var(--bg); color: var(--white); line-height: 1.7; }
+
+    /* NAV */
+    .nav { height: 64px; background: rgba(6,6,6,.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; position: sticky; top: 0; z-index: 100; }
+    .nav-logo { font-size: .95rem; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; color: var(--white); text-decoration: none; }
+    .nav-logo span { color: var(--yellow); }
+    .nav-back { font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--dim); text-decoration: none; transition: color .2s; }
+    .nav-back:hover { color: var(--yellow); }
+    .nav-dl { padding: 8px 18px; border: 1px solid var(--yellow); color: var(--yellow); border-radius: 2px; text-decoration: none; font-weight: 700; font-size: .7rem; text-transform: uppercase; letter-spacing: 1.5px; transition: all .2s; }
+    .nav-dl:hover { background: var(--yellow); color: #060606; }
+
+    /* LAYOUT */
+    .wrap { max-width: 860px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+
+    /* HEADER */
+    .resume-header { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; margin-bottom: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border2); }
+    @media (max-width: 600px) { .resume-header { grid-template-columns: 1fr; } }
+    .rh-name { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; letter-spacing: -1.5px; line-height: 1.05; margin-bottom: .5rem; }
+    .rh-title { font-size: .9rem; font-weight: 600; color: var(--yellow); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.25rem; }
+    .rh-desc { font-size: .88rem; color: var(--mid); line-height: 1.8; max-width: 520px; }
+    .rh-contact { display: flex; flex-direction: column; gap: .75rem; text-align: right; }
+    @media (max-width: 600px) { .rh-contact { text-align: left; } }
+    .rh-contact a, .rh-contact span { font-size: .8rem; color: var(--mid); text-decoration: none; transition: color .2s; font-weight: 500; }
+    .rh-contact a:hover { color: var(--yellow); }
+    .rh-contact-label { font-size: .6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--dim); display: block; margin-bottom: 2px; }
+
+    /* SECTIONS */
+    .section { margin-bottom: 3rem; }
+    .section-head { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .section-head::before { content: ''; display: inline-block; width: 20px; height: 2px; background: var(--yellow); flex-shrink: 0; }
+    .section-title { font-size: .65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; color: var(--yellow); }
+    .section-head::after { content: ''; flex: 1; height: 1px; background: var(--border2); }
+
+    /* EXPERIENCE */
+    .exp-item { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+    .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .exp-header { display: grid; grid-template-columns: 1fr auto; gap: 1rem; margin-bottom: .5rem; align-items: baseline; }
+    @media (max-width: 560px) { .exp-header { grid-template-columns: 1fr; } }
+    .exp-role { font-size: .95rem; font-weight: 700; color: var(--white); }
+    .exp-period { font-size: .72rem; font-weight: 600; color: var(--yellow); text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+    .exp-company { font-size: .82rem; font-weight: 500; color: var(--dim); margin-bottom: .75rem; }
+    .exp-company span { color: var(--mid); }
+    .exp-desc { font-size: .85rem; color: var(--mid); line-height: 1.8; margin-bottom: .75rem; }
+    .exp-bullets { list-style: none; padding: 0; }
+    .exp-bullets li { font-size: .83rem; color: var(--mid); padding: .3rem 0 .3rem 1.25rem; position: relative; line-height: 1.6; }
+    .exp-bullets li::before { content: '-'; position: absolute; left: 0; color: var(--yellow); font-weight: 700; }
+
+    /* SKILLS GRID */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+    .skill-group { background: var(--surface); padding: 1.25rem; }
+    .skill-group-label { font-size: .6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: var(--yellow); margin-bottom: .75rem; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .stag { font-size: .72rem; font-weight: 600; padding: 3px 9px; border-radius: 2px; border: 1px solid var(--border2); color: var(--mid); }
+    .stag.key { border-color: var(--yborder); color: var(--yellow); background: var(--ydim); }
+
+    /* TOOLS */
+    .tools-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tool { font-size: .75rem; font-weight: 600; padding: 4px 11px; border: 1px solid var(--border2); color: var(--dim); border-radius: 2px; }
+
+    /* EDUCATION / REFS */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    @media (max-width: 560px) { .two-col { grid-template-columns: 1fr; } }
+    .edu-item { margin-bottom: 1rem; }
+    .edu-degree { font-size: .88rem; font-weight: 700; color: var(--white); margin-bottom: 2px; }
+    .edu-school { font-size: .78rem; color: var(--dim); margin-bottom: 2px; }
+    .edu-period { font-size: .72rem; color: var(--yellow); font-weight: 600; }
+    .ref-item { background: var(--surface); border: 1px solid var(--border2); border-radius: 4px; padding: 1.25rem; }
+    .ref-name { font-size: .88rem; font-weight: 700; color: var(--white); margin-bottom: 2px; }
+    .ref-role { font-size: .75rem; color: var(--yellow); margin-bottom: .4rem; }
+    .ref-contact { font-size: .75rem; color: var(--dim); }
+
+    /* DOWNLOAD CTA */
+    .dl-cta { background: var(--surface); border: 1px solid var(--yborder); border-radius: 4px; padding: 2rem; text-align: center; margin-top: 3rem; }
+    .dl-cta p { font-size: .85rem; color: var(--mid); margin-bottom: 1.25rem; }
+    .btn-y { display: inline-block; padding: 12px 28px; background: var(--yellow); color: #060606; border-radius: 2px; text-decoration: none; font-weight: 800; font-size: .78rem; text-transform: uppercase; letter-spacing: 1.5px; transition: all .2s; }
+    .btn-y:hover { background: var(--white); transform: translateY(-1px); }
+    .btn-o { display: inline-block; padding: 12px 28px; border: 1px solid var(--border2); color: var(--dim); border-radius: 2px; text-decoration: none; font-weight: 700; font-size: .78rem; text-transform: uppercase; letter-spacing: 1.5px; transition: all .2s; margin-left: 10px; }
+    .btn-o:hover { border-color: var(--yellow); color: var(--yellow); }
+
+    footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); font-size: .65rem; color: var(--dim); text-transform: uppercase; letter-spacing: 2px; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Adhel <span>Tantao</span></a>
+    <div style="display:flex;align-items:center;gap:1.5rem">
+      <a href="index.html" class="nav-back">&larr; Back to Portfolio</a>
+      <a href="https://drive.google.com/file/d/1btZ0gckMhFrR_YlOooExJgsLgcoFpXHq/view" class="nav-dl" target="_blank">Download PDF &nearr;</a>
+    </div>
+  </nav>
+
+  <div class="wrap">
+
+    <!-- HEADER -->
+    <div class="resume-header">
+      <div>
+        <h1 class="rh-name">Adhel Tantao</h1>
+        <div class="rh-title">WordPress &amp; Elementor Specialist</div>
+        <p class="rh-desc">WordPress and Elementor specialist with 6+ years building high-converting landing pages, sales funnels, and SEO-structured content sites for US and AU digital marketing agencies. I bridge design, code, and SEO execution — delivering pages that perform, not just look good.</p>
+      </div>
+      <div class="rh-contact">
+        <div>
+          <span class="rh-contact-label">Email</span>
+          <a href="mailto:contact@adheltantao.dev">contact@adheltantao.dev</a>
+        </div>
+        <div>
+          <span class="rh-contact-label">Website</span>
+          <a href="https://adheltantao.dev" target="_blank">adheltantao.dev</a>
+        </div>
+        <div>
+          <span class="rh-contact-label">LinkedIn</span>
+          <a href="https://linkedin.com/in/adhel-tantao" target="_blank">linkedin.com/in/adhel-tantao</a>
+        </div>
+        <div>
+          <span class="rh-contact-label">Location</span>
+          <span>Iligan City, Philippines (PHT, UTC+8)</span>
+        </div>
+        <div>
+          <span class="rh-contact-label">Availability</span>
+          <span style="color:#3ddc84">Open to new projects</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section">
+      <div class="section-head"><span class="section-title">Experience</span></div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">WordPress Developer &amp; Elementor Specialist</div>
+          <div class="exp-period">Mar 2020 &ndash; Dec 2025</div>
+        </div>
+        <div class="exp-company">UrbanityMedia &nbsp;<span>/ Los Angeles, California &mdash; Remote</span></div>
+        <ul class="exp-bullets">
+          <li>Built and maintained hundreds of Elementor landing pages and sales funnels for paid media campaigns across insurance, crypto, and e-commerce verticals</li>
+          <li>Implemented end-to-end tracking infrastructure including UTM parameters, Meta Pixel, custom conversion events, and Voluum/Redtrack campaign tracking</li>
+          <li>Managed secure multi-account ad environments using Multilogin and AdsPower proxy configurations</li>
+          <li>Produced ad creatives (static and short-form video) and supported campaign setup, monitoring, and optimization</li>
+          <li>Extended Elementor builds with custom HTML/CSS for effects and layouts beyond the builder's native capability</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">SEO Content Optimizer &amp; WordPress Editor</div>
+          <div class="exp-period">Mar 2022 &ndash; Oct 2025</div>
+        </div>
+        <div class="exp-company">Search District &nbsp;<span>/ Brisbane, Australia &mdash; Remote</span></div>
+        <ul class="exp-bullets">
+          <li>Led content optimization and WordPress operations across multiple affiliate sites, with primary focus on CryptoHead.io</li>
+          <li>Directed full site overhaul following the Google Helpful Content Update (HCU) - including Screaming Frog crawl audits, internal link restructuring, and metadata cleanup at scale</li>
+          <li>Optimized articles using ClearScope and SurferSEO to improve keyword alignment and search visibility</li>
+          <li>Managed WordPress content publishing workflows, heading hierarchy corrections, and on-page SEO implementation</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">Freelance WordPress Builder &amp; SEO Executor</div>
+          <div class="exp-period">2024 &ndash; Present</div>
+        </div>
+        <div class="exp-company">Project-Based &nbsp;<span>/ Remote</span></div>
+        <ul class="exp-bullets">
+          <li>Built primary site architecture and deployed across 10 country-specific WordPress instances for a dual citizenship legal services client</li>
+          <li>Delivered full SEO page structure, service page buildout, blog architecture, and WordPress configuration across all 10 sites</li>
+          <li>Managed project-based delivery with clear scope, async communication, and Loom-documented handoffs</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">Freelance Content Writer &amp; Copywriter</div>
+          <div class="exp-period">2015 &ndash; 2022</div>
+        </div>
+        <div class="exp-company">Upwork / OnlineJobs.ph &nbsp;<span>/ Remote</span></div>
+        <ul class="exp-bullets">
+          <li>Produced SEO-optimized blog posts, product reviews, and affiliate content across Amazon, crypto, and lifestyle niches</li>
+          <li>Ghostwrote eBooks, how-to guides, and long-form articles for various US and AU clients</li>
+          <li>Built early WordPress experience through content publishing, formatting, and on-page optimization</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section">
+      <div class="section-head"><span class="section-title">Skills</span></div>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <div class="skill-group-label">Primary</div>
+          <div class="skill-tags">
+            <span class="stag key">WordPress</span>
+            <span class="stag key">Elementor</span>
+            <span class="stag key">Custom CSS</span>
+            <span class="stag key">HTML</span>
+            <span class="stag key">Landing Pages</span>
+            <span class="stag key">On-Page SEO</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Also Capable</div>
+          <div class="skill-tags">
+            <span class="stag">Divi</span>
+            <span class="stag">WPBakery</span>
+            <span class="stag">Gutenberg</span>
+            <span class="stag">ACF</span>
+            <span class="stag">LanderLab</span>
+            <span class="stag">Shopify</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">SEO &amp; Content</div>
+          <div class="skill-tags">
+            <span class="stag">Screaming Frog</span>
+            <span class="stag">Ahrefs</span>
+            <span class="stag">ClearScope</span>
+            <span class="stag">SurferSEO</span>
+            <span class="stag">Content Strategy</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Paid Media Ops</div>
+          <div class="skill-tags">
+            <span class="stag">Facebook Ads</span>
+            <span class="stag">TikTok Ads</span>
+            <span class="stag">Tracking Setup</span>
+            <span class="stag">Multilogin</span>
+            <span class="stag">Voluum</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOOLS -->
+    <div class="section">
+      <div class="section-head"><span class="section-title">Tools</span></div>
+      <div class="tools-row">
+        <span class="tool">Elementor</span><span class="tool">WordPress</span><span class="tool">Screaming Frog</span>
+        <span class="tool">Ahrefs</span><span class="tool">SurferSEO</span><span class="tool">ClearScope</span>
+        <span class="tool">Facebook Ads Manager</span><span class="tool">Voluum</span><span class="tool">Redtrack</span>
+        <span class="tool">Multilogin</span><span class="tool">AdsPower</span><span class="tool">Google Analytics</span>
+        <span class="tool">Microsoft Clarity</span><span class="tool">Meta Pixel</span><span class="tool">FileZilla</span>
+        <span class="tool">Notion</span><span class="tool">Airtable</span><span class="tool">Slack</span>
+        <span class="tool">Asana</span><span class="tool">Canva</span><span class="tool">Loom</span>
+        <span class="tool">Namecheap</span><span class="tool">Siteground</span><span class="tool">Dreamhost</span>
+      </div>
+    </div>
+
+    <!-- EDUCATION + REFERENCES -->
+    <div class="section">
+      <div class="section-head"><span class="section-title">Education &amp; References</span></div>
+      <div class="two-col">
+        <div>
+          <div class="edu-item">
+            <div class="edu-degree">Bachelor of Science in Engineering Technology Management</div>
+            <div class="edu-school">Mindanao State University - Iligan Institute of Technology</div>
+            <div class="edu-period">2017 &ndash; 2018</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-degree">Diploma in Automotive Engineering Technology</div>
+            <div class="edu-school">Mindanao State University - Iligan Institute of Technology</div>
+            <div class="edu-period">2013 &ndash; 2016</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="ref-item">
+            <div class="ref-name">Adam Morris</div>
+            <div class="ref-role">Founder @ LandSale (AU)</div>
+            <div class="ref-contact">Available upon request</div>
+          </div>
+          <div class="ref-item">
+            <div class="ref-name">Tom De Spiegelaere</div>
+            <div class="ref-role">Co-Founder @ Search District (AU)</div>
+            <div class="ref-contact">Available upon request</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DOWNLOAD CTA -->
+    <div class="dl-cta">
+      <p>Prefer a PDF copy? Download the resume file or view the full portfolio.</p>
+      <a href="https://drive.google.com/file/d/1btZ0gckMhFrR_YlOooExJgsLgcoFpXHq/view" class="btn-y" target="_blank">Download PDF Resume</a>
+      <a href="index.html" class="btn-o">View Portfolio</a>
+    </div>
+
+  </div>
+
+  <footer><p>&copy; 2026 Adhel Tantao &mdash; adheltantao.dev</p></footer>
+
+</body>
+</html>
