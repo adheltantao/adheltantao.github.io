@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timesheet — Adhel Tantao</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #060606;
+      --surface: #0e0e0e;
+      --border: #1a1a1a;
+      --border2: #252525;
+      --yellow: #f5e642;
+      --white: #ffffff;
+      --text: #f0f0f0;
+      --mid: #ffffff;
+      --muted: #cccccc;
+      --dim: #aaaaaa;
+      --faint: #888888;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    /* PROGRESS BAR */
+    .progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      background: var(--yellow);
+      width: 0%;
+      z-index: 999;
+      transition: width .08s linear;
+    }
+
+    /* WRAP */
+    .ts-wrap {
+      max-width: 740px;
+      margin: 0 auto;
+      border: 1px solid var(--border2);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* HEADER */
+    .ts-top {
+      padding: 2rem 2.25rem;
+      border-bottom: 1px solid var(--border2);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      background: var(--bg);
+    }
+    .ts-name { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--white); }
+    .ts-name span { color: var(--yellow); }
+    .ts-meta { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--dim); margin-top: 5px; }
+
+    .ts-badge {
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-radius: 4px;
+      padding: 10px 18px;
+      text-align: right;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .ts-badge::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--yellow), transparent);
+    }
+    .ts-badge-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--dim); }
+    .ts-badge-val { font-size: 24px; font-weight: 800; color: var(--yellow); letter-spacing: -1px; margin-top: 2px; }
+
+    /* SECTIONS */
+    .ts-section { padding: 1.75rem 2.25rem; background: var(--bg); }
+    .ts-section + .ts-section { border-top: 1px solid var(--border2); }
+
+    .ts-section-label {
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 3px; color: var(--dim);
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 1.25rem;
+    }
+    .ts-section-label::before {
+      content: ''; display: inline-block;
+      width: 18px; height: 1px; background: var(--yellow);
+    }
+
+    /* TASK ROWS */
+    .task {
+      border-bottom: 1px solid var(--border);
+      padding: 13px 10px;
+      transition: background .18s;
+      border-radius: 4px;
+    }
+    .task:last-child { border-bottom: none; }
+    .task:hover { background: var(--surface); }
+
+    .task-header { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: start; }
+    .task-name-row { display: flex; align-items: flex-start; }
+    .task-dot {
+      display: inline-block; width: 5px; height: 5px;
+      background: var(--yellow); border-radius: 50%;
+      margin-right: 9px; flex-shrink: 0; margin-top: 6px;
+    }
+    .task-name { font-size: 16px; font-weight: 600; color: var(--white); line-height: 1.4; }
+    .task-desc { font-size: 13px; color: var(--muted); margin-top: 4px; margin-left: 14px; line-height: 1.65; }
+    .task-time { font-size: 15px; font-weight: 700; color: var(--yellow); white-space: nowrap; padding-top: 2px; }
+
+    /* SUB ROWS */
+    .sub { margin-top: 10px; margin-left: 14px; }
+    .sub-row {
+      display: flex; justify-content: space-between;
+      font-size: 13px; color: #777;
+      padding: 4px 0 4px 10px;
+      border-left: 1.5px solid var(--border2);
+    }
+    .sub-row span:last-child { color: var(--dim); white-space: nowrap; margin-left: 12px; }
+
+    /* TOTAL BAR */
+    .total-bar {
+      background: var(--surface);
+      border-top: 1px solid var(--border2);
+      padding: 1.25rem 2.25rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .total-label { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--dim); }
+    .total-val { font-size: 22px; font-weight: 800; color: var(--yellow); letter-spacing: -1px; }
+
+    /* PAYMENT */
+    .pay-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .pay-block-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--dim); margin-bottom: 10px; }
+    .pay-row { display: flex; flex-direction: column; gap: 7px; }
+    .pay-item { display: flex; gap: 10px; align-items: flex-start; }
+    .pay-key { font-size: 13px; color: var(--dim); white-space: nowrap; min-width: 84px; padding-top: 1px; }
+    .pay-val { font-size: 14px; font-weight: 600; color: var(--mid); line-height: 1.5; }
+    .pay-highlight { color: var(--yellow); }
+
+    .wise-note {
+      margin-top: 1.25rem;
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-left: 2px solid var(--yellow);
+      border-radius: 0 4px 4px 0;
+      padding: 12px 16px;
+      font-size: 13px; color: var(--muted); line-height: 1.65;
+    }
+    .wise-note strong { color: var(--mid); font-weight: 600; }
+
+    /* FOOTER */
+    .ts-footer {
+      padding: .875rem 2.25rem;
+      font-size: 12px; color: var(--faint);
+      font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; text-align: right;
+      border-top: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 560px) {
+      body { padding: 1.5rem .75rem 3rem; }
+      .ts-top { flex-direction: column; gap: 1rem; }
+      .ts-badge { align-self: flex-start; }
+      .pay-grid { grid-template-columns: 1fr; }
+      .ts-section, .ts-top, .total-bar, .ts-footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="progress-bar" id="progressBar"></div>
+
+  <div class="ts-wrap">
+
+    <div class="ts-top">
+      <div>
+        <div class="ts-name">Adhel <span>Tantao</span></div>
+        <div class="ts-meta">Trial Run · Dead Center Digital</div>
+      </div>
+      <div class="ts-badge">
+        <div class="ts-badge-label">Total hours</div>
+        <div class="ts-badge-val" id="totalCount">0 hrs</div>
+      </div>
+    </div>
+
+    <div class="ts-section">
+      <div class="ts-section-label">Work log</div>
+
+      <div class="task">
+        <div class="task-header">
+          <div>
+            <div class="task-name-row"><span class="task-dot"></span><span class="task-name">Forensic page redesign</span></div>
+            <div class="task-desc">2 versions — conservative SEO-focused layout + full Elementor rebuild from scratch, with detailed breakdown report</div>
+          </div>
+          <div class="task-time">4 hrs</div>
+        </div>
+      </div>
+
+      <div class="task">
+        <div class="task-header">
+          <div>
+            <div class="task-name-row"><span class="task-dot"></span><span class="task-name">Dr. Brunner live site fixes</span></div>
+            <div class="task-desc">Nav cleanup, heading &amp; formatting fixes across 2 pages, clickable boxes, TOC with jump links. Proactively fixed a 3rd page with the same issues.</div>
+          </div>
+          <div class="task-time">30 min</div>
+        </div>
+      </div>
+
+      <div class="task">
+        <div class="task-header">
+          <div>
+            <div class="task-name-row"><span class="task-dot"></span><span class="task-name">Schema analysis — Acadia Women's Health</span></div>
+            <div class="task-desc">22 schemas reviewed · identified SurgicalProcedure upgrades</div>
+          </div>
+          <div class="task-time">1 hr</div>
+        </div>
+      </div>
+
+      <div class="task">
+        <div class="task-header">
+          <div>
+            <div class="task-name-row"><span class="task-dot"></span><span class="task-name">Schema analysis — 5 cosmetic sites</span></div>
+            <div class="task-desc">275 schemas reviewed · 153 flagged for SurgicalProcedure upgrade</div>
+          </div>
+          <div class="task-time">8 hrs</div>
+        </div>
+        <div class="sub">
+          <div class="sub-row"><span>Dr. Yee</span><span>62 reviewed · 24 upgraded</span></div>
+          <div class="sub-row"><span>Palm Beach</span><span>18 reviewed · 15 upgraded</span></div>
+          <div class="sub-row"><span>Artisan</span><span>46 reviewed · 15 upgraded</span></div>
+          <div class="sub-row"><span>Meadows</span><span>30 reviewed · 18 upgraded</span></div>
+          <div class="sub-row"><span>CSA</span><span>119 reviewed · 81 upgraded</span></div>
+        </div>
+      </div>
+
+      <div class="task">
+        <div class="task-header">
+          <div>
+            <div class="task-name-row"><span class="task-dot"></span><span class="task-name">Internal linking — 4 sites</span></div>
+            <div class="task-desc">32 anchor texts · 535+ internal link selections</div>
+          </div>
+          <div class="task-time">7 hrs</div>
+        </div>
+        <div class="sub">
+          <div class="sub-row"><span>Palm Beach</span><span>8 anchor texts · 75 selections</span></div>
+          <div class="sub-row"><span>Meadows</span><span>8 anchor texts · 200+ selections</span></div>
+          <div class="sub-row"><span>Dr. Yee</span><span>8 anchor texts · 150+ selections</span></div>
+          <div class="sub-row"><span>CSA</span><span>8 anchor texts · 110 selections</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="total-bar">
+      <div class="total-label">Total time logged</div>
+      <div class="total-val">20.5 hrs</div>
+    </div>
+
+    <div class="ts-section">
+      <div class="ts-section-label">Payment information</div>
+      <div class="pay-grid">
+        <div>
+          <div class="pay-block-label">Personal details</div>
+          <div class="pay-row">
+            <div class="pay-item"><span class="pay-key">Name</span><span class="pay-val">Adhel M Tantao</span></div>
+            <div class="pay-item"><span class="pay-key">Email</span><span class="pay-val pay-highlight">adheltantao@gmail.com</span></div>
+            <div class="pay-item"><span class="pay-key">Phone</span><span class="pay-val">+63 936 236 8314</span></div>
+            <div class="pay-item"><span class="pay-key">Address</span><span class="pay-val">Purok 2, Tambacan, Iligan City, Lanao Del Norte, 9200, Philippines</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="pay-block-label">Bank details (PNB)</div>
+          <div class="pay-row">
+            <div class="pay-item"><span class="pay-key">Bank name</span><span class="pay-val">Philippine National Bank</span></div>
+            <div class="pay-item"><span class="pay-key">Bank code</span><span class="pay-val">010080010</span></div>
+            <div class="pay-item"><span class="pay-key">Account no.</span><span class="pay-val pay-highlight">410610298096</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="wise-note">
+        <strong>Preferred payment method:</strong> Wise (international transfer to my bank account directly — not Wise-to-Wise). Please use the bank details above when sending via Wise.
+      </div>
+    </div>
+
+    <div class="ts-footer">Adhel Tantao · May 30, 2026</div>
+
+  </div>
+
+  <script>
+    function countUp(el, target, dur) {
+      const start = performance.now();
+      (function step(now) {
+        const p = Math.min((now - start) / dur, 1);
+        const ease = 1 - Math.pow(1 - p, 3);
+        el.textContent = (ease * target).toFixed(1) + ' hrs';
+        if (p < 1) requestAnimationFrame(step);
+        else el.textContent = target.toFixed(1) + ' hrs';
+      })(performance.now());
+    }
+
+    countUp(document.getElementById('totalCount'), 20.5, 1800);
+
+    window.addEventListener('scroll', () => {
+      const el = document.documentElement;
+      const scrolled = el.scrollTop || document.body.scrollTop;
+      const total = el.scrollHeight - el.clientHeight;
+      document.getElementById('progressBar').style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+    });
+  </script>
+
+</body>
+</html>
