@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProLift Adjustable Desk | ErgoHaus</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    .pnotes{font-family:'Montserrat',sans-serif;font-size:13px;border-bottom:2px solid #2e2e4e;position:sticky;top:0;z-index:9999;background:#12122a}
+    .pnotes-toggle{display:flex;align-items:center;justify-content:space-between;padding:11px 20px;cursor:pointer;user-select:none;color:#a0a0c0;gap:12px}
+    .pnotes-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(124,106,255,.15);border:1px solid rgba(124,106,255,.4);color:#b0a0ff;padding:4px 12px;border-radius:50px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;animation:notePulse 2.5s ease-in-out infinite;flex-shrink:0}
+    .pnotes-badge-dot{width:6px;height:6px;background:#7c6aff;border-radius:50%;animation:dotBlink 2.5s ease-in-out infinite}
+    @keyframes notePulse{0%,100%{box-shadow:0 0 0 0 rgba(124,106,255,0)}50%{box-shadow:0 0 0 6px rgba(124,106,255,0)}}
+    @keyframes dotBlink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+    .pnotes-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#7c6aff;flex:1}
+    .pnotes-hint{font-size:11px;color:#555577;font-style:italic}
+    .pnotes-body{display:none;padding:16px 20px 20px;border-top:1px solid #2e2e4e;background:#0d0d20}
+    .pnotes-body.open{display:block}
+    .note-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+    .note-item{background:#0a0a18;border:1px solid #2e2e4e;border-radius:6px;padding:14px;transition:border-color .2s}
+    .note-item:hover{border-color:#4a4a8a}
+    .note-item h4{margin:0 0 6px;color:#7c6aff;font-size:11px;text-transform:uppercase;letter-spacing:1px;display:flex;align-items:center;gap:6px}
+    .note-item h4::before{content:'';display:inline-block;width:3px;height:10px;background:#7c6aff;border-radius:2px}
+    .note-item p{margin:0;font-size:12px;color:#8888aa;line-height:1.65}
+    .back-link{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:transparent;border:1px solid #2e2e4e;color:#7c6aff;border-radius:4px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;text-decoration:none;transition:all .2s;flex-shrink:0}
+    .back-link:hover{background:#7c6aff;color:#fff}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#f9f9f9;--white:#ffffff;--text:#111;--mid:#555;--light:#f2f2f2;--border:#e0e0e0;--green:#16a34a;--red:#dc2626}
+    body{font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+    .nav{background:#fff;border-bottom:1px solid var(--border);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;position:sticky;top:0;z-index:100}
+    .nav-logo{font-size:1.1rem;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+    .nav-right{display:flex;align-items:center;gap:2rem;font-size:.78rem;font-weight:600;color:var(--mid)}
+    .nav-right a{color:var(--mid);text-decoration:none;transition:color .2s}
+    .nav-right a:hover{color:var(--text)}
+    .cart-btn{display:flex;align-items:center;gap:6px;padding:8px 16px;background:var(--text);color:#fff;border-radius:3px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;text-decoration:none;transition:opacity .2s}
+    .cart-btn:hover{opacity:.85;color:#fff}
+    .product-wrap{max-width:1100px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+    @media(max-width:760px){.product-wrap{grid-template-columns:1fr;gap:2rem}}
+    .product-image-main{background:var(--light);border-radius:8px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;margin-bottom:12px;position:relative;overflow:hidden}
+    .product-image-main::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#f8f8f8 0%,#e8e8e8 100%)}
+    .desk-svg{width:280px;height:200px;position:relative;z-index:1}
+    .product-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+    .thumb{background:var(--light);border-radius:4px;aspect-ratio:1;border:2px solid transparent;cursor:pointer;transition:border-color .2s;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:600;color:var(--mid);text-transform:uppercase;letter-spacing:1px}
+    .thumb.active,.thumb:hover{border-color:var(--text)}
+    .product-brand{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--mid);margin-bottom:.5rem}
+    .product-name{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:.75rem}
+    .product-rating{display:flex;align-items:center;gap:8px;margin-bottom:1.25rem}
+    .stars{color:#f59e0b;font-size:.9rem;letter-spacing:1px}
+    .rating-count{font-size:.78rem;color:var(--mid);font-weight:500}
+    .product-price{display:flex;align-items:baseline;gap:12px;margin-bottom:1.5rem}
+    .price-current{font-size:2rem;font-weight:900;letter-spacing:-1px}
+    .price-original{font-size:1rem;color:var(--mid);text-decoration:line-through;font-weight:400}
+    .price-badge{font-size:.7rem;font-weight:700;background:#fee2e2;color:var(--red);padding:3px 8px;border-radius:2px;text-transform:uppercase;letter-spacing:.5px}
+    .product-short-desc{font-size:.9rem;color:var(--mid);line-height:1.75;margin-bottom:1.75rem;padding-bottom:1.75rem;border-bottom:1px solid var(--border)}
+    .option-group{margin-bottom:1.5rem}
+    .option-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--text);margin-bottom:.6rem;display:block}
+    .color-options{display:flex;gap:8px}
+    .color-swatch{width:32px;height:32px;border-radius:50%;border:3px solid transparent;cursor:pointer;transition:all .2s}
+    .color-swatch.active,.color-swatch:hover{border-color:var(--text);transform:scale(1.1)}
+    .size-options{display:flex;gap:8px;flex-wrap:wrap}
+    .size-btn{padding:8px 16px;border:1.5px solid var(--border);border-radius:3px;font-size:.78rem;font-weight:600;cursor:pointer;background:transparent;font-family:'Montserrat',sans-serif;transition:all .2s}
+    .size-btn.active,.size-btn:hover{border-color:var(--text);background:var(--text);color:#fff}
+    .qty-row{display:flex;align-items:center;gap:12px;margin-bottom:1rem}
+    .qty-control{display:flex;align-items:center;border:1.5px solid var(--border);border-radius:3px;overflow:hidden}
+    .qty-btn{width:38px;height:42px;background:transparent;border:none;font-size:1.1rem;cursor:pointer;font-family:'Montserrat',sans-serif;transition:background .2s;display:flex;align-items:center;justify-content:center}
+    .qty-btn:hover{background:var(--light)}
+    .qty-input{width:48px;height:42px;border:none;border-left:1.5px solid var(--border);border-right:1.5px solid var(--border);text-align:center;font-size:.9rem;font-weight:600;font-family:'Montserrat',sans-serif;outline:none}
+    .add-to-cart{flex:1;padding:13px;background:var(--text);color:#fff;border:none;border-radius:3px;font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;cursor:pointer;transition:opacity .2s}
+    .add-to-cart:hover{opacity:.85}
+    .buy-now{width:100%;padding:13px;background:transparent;color:var(--text);border:1.5px solid var(--text);border-radius:3px;font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;cursor:pointer;transition:all .2s;margin-top:10px}
+    .buy-now:hover{background:var(--text);color:#fff}
+    .trust-badges{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border)}
+    .tbadge{display:flex;align-items:center;gap:6px;font-size:.72rem;font-weight:600;color:var(--mid)}
+    .tbadge-icon{color:var(--green);font-size:.9rem}
+    .features-section{background:#fff;padding:5rem 2rem;border-top:1px solid var(--border)}
+    .features-inner{max-width:900px;margin:0 auto}
+    .feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-top:3rem}
+    .feat{text-align:center;padding:1.5rem}
+    .feat-icon{font-size:2rem;margin-bottom:1rem}
+    .feat-title{font-size:.88rem;font-weight:700;margin-bottom:.4rem}
+    .feat-desc{font-size:.8rem;color:var(--mid);line-height:1.6}
+    .specs-section{padding:5rem 2rem}
+    .specs-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+    @media(max-width:700px){.specs-inner{grid-template-columns:1fr}}
+    .specs-title{font-size:1.3rem;font-weight:800;letter-spacing:-1px;margin-bottom:1.5rem}
+    .spec-row{display:flex;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid var(--border);font-size:.85rem}
+    .spec-key{font-weight:600;color:var(--mid)}
+    .spec-val{font-weight:500}
+    .reviews-section{background:#fff;padding:5rem 2rem;border-top:1px solid var(--border)}
+    .reviews-inner{max-width:900px;margin:0 auto}
+    .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:2rem}
+    @media(max-width:760px){.review-grid{grid-template-columns:1fr}}
+    .review-card{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:1.5rem}
+    .review-stars{color:#f59e0b;font-size:.85rem;margin-bottom:.5rem}
+    .review-title{font-size:.85rem;font-weight:700;margin-bottom:.4rem}
+    .review-text{font-size:.82rem;color:var(--mid);line-height:1.65;margin-bottom:.75rem}
+    .review-author{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+    .section-title{font-size:1.6rem;font-weight:800;letter-spacing:-1px;margin-bottom:.5rem}
+    .section-sub{font-size:.9rem;color:var(--mid)}
+    footer{background:var(--text);padding:1.5rem 2rem;text-align:center;font-size:.72rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px}
+  </style>
+</head>
+<body>
+  <div class="pnotes">
+    <div class="pnotes-toggle">
+      <a href="../index.html" class="back-link">&larr; Portfolio</a>
+      <span class="pnotes-label">Portfolio Page 04 &mdash; Shopify-Style eCommerce Product Page</span>
+      <span class="pnotes-badge"><span class="pnotes-badge-dot"></span>Page Notes</span>
+      <span class="pnotes-hint">Click to expand</span>
+    </div>
+    <div class="pnotes-body">
+      <div class="note-grid">
+        <div class="note-item"><h4>Shopify-style layout</h4><p>Replicates the standard Shopify product page: image gallery + product panel, variant selectors, qty control, ATC + Buy Now buttons, trust badges. Matches what agencies build for eComm clients.</p></div>
+        <div class="note-item"><h4>Working interactions</h4><p>Color swatches, size buttons, quantity controls, and thumbnails all have real hover/active states. ATC button has click feedback animation. No fake interactivity.</p></div>
+        <div class="note-item"><h4>Mobile-first thinking</h4><p>Product layout stacks to single column on mobile. All tap targets properly sized. Mirrors how a real WooCommerce or Shopify page reflows on small screens.</p></div>
+        <div class="note-item"><h4>Full page depth</h4><p>Features grid, specs table, and reviews section below the fold - mirrors real eComm page depth that supports SEO and handles the research-mode buyer who scrolls past the ATC.</p></div>
+      </div>
+    </div>
+  </div>
+  <nav class="nav">
+    <div class="nav-logo">ErgoHaus</div>
+    <div class="nav-right">
+      <a href="#">Shop</a><a href="#">About</a><a href="#">Reviews</a>
+      <a href="#" class="cart-btn">&#128722; Cart (0)</a>
+    </div>
+  </nav>
+  <div class="product-wrap">
+    <div>
+      <div class="product-image-main">
+        <svg class="desk-svg" viewBox="0 0 280 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="80" width="240" height="12" rx="4" fill="#333"/>
+          <rect x="30" y="92" width="8" height="90" rx="3" fill="#444"/>
+          <rect x="242" y="92" width="8" height="90" rx="3" fill="#444"/>
+          <rect x="28" y="170" width="40" height="8" rx="2" fill="#333"/>
+          <rect x="212" y="170" width="40" height="8" rx="2" fill="#333"/>
+          <rect x="80" y="30" width="120" height="55" rx="4" fill="#222"/>
+          <rect x="84" y="34" width="112" height="47" rx="3" fill="#1a1a2e"/>
+          <rect x="130" y="81" width="20" height="6" rx="1" fill="#333"/>
+          <circle cx="200" cy="58" r="3" fill="#f5e642"/>
+        </svg>
+      </div>
+      <div class="product-thumbs">
+        <div class="thumb active">Front</div><div class="thumb">Side</div>
+        <div class="thumb">Detail</div><div class="thumb">Setup</div>
+      </div>
+    </div>
+    <div>
+      <div class="product-brand">ErgoHaus</div>
+      <h1 class="product-name">ProLift Adjustable Standing Desk</h1>
+      <div class="product-rating">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="rating-count">4.9 &mdash; 847 Reviews</span>
+      </div>
+      <div class="product-price">
+        <span class="price-current">$649</span>
+        <span class="price-original">$849</span>
+        <span class="price-badge">Save $200</span>
+      </div>
+      <p class="product-short-desc">Height-adjustable from 28" to 48" with whisper-quiet dual motors, 4 memory presets, and integrated cable management. Built for 8+ hour workdays. 10-year warranty included.</p>
+      <div class="option-group">
+        <span class="option-label">Color &mdash; Matte Black</span>
+        <div class="color-options">
+          <div class="color-swatch active" style="background:#1a1a1a" title="Matte Black"></div>
+          <div class="color-swatch" style="background:#f5f0e8" title="Natural Oak"></div>
+          <div class="color-swatch" style="background:#4a5568" title="Slate Grey"></div>
+          <div class="color-swatch" style="background:#7c3aed" title="Violet"></div>
+        </div>
+      </div>
+      <div class="option-group">
+        <span class="option-label">Desktop Size</span>
+        <div class="size-options">
+          <button class="size-btn">48" x 24"</button>
+          <button class="size-btn active">55" x 28"</button>
+          <button class="size-btn">63" x 30"</button>
+        </div>
+      </div>
+      <div class="qty-row">
+        <div class="qty-control">
+          <button class="qty-btn" onclick="const i=this.nextElementSibling;if(+i.value>1)i.value=+i.value-1">&#8722;</button>
+          <input class="qty-input" type="number" value="1" min="1" max="10">
+          <button class="qty-btn" onclick="const i=this.previousElementSibling;if(+i.value<10)i.value=+i.value+1">&#43;</button>
+        </div>
+        <button class="add-to-cart" onclick="this.textContent='Added ✓';setTimeout(()=>this.textContent='Add to Cart',2000)">Add to Cart</button>
+      </div>
+      <button class="buy-now">Buy Now &mdash; Free Shipping</button>
+      <div class="trust-badges">
+        <div class="tbadge"><span class="tbadge-icon">&#10003;</span> Free 2-Day Shipping</div>
+        <div class="tbadge"><span class="tbadge-icon">&#10003;</span> 30-Day Returns</div>
+        <div class="tbadge"><span class="tbadge-icon">&#10003;</span> 10-Year Warranty</div>
+      </div>
+    </div>
+  </div>
+  <div class="features-section"><div class="features-inner">
+    <div style="text-align:center"><h2 class="section-title">Built Different</h2><p class="section-sub">Every component engineered for the person who sits at a desk for a living.</p></div>
+    <div class="feat-grid">
+      <div class="feat"><div class="feat-icon">&#9889;</div><div class="feat-title">Dual Motor Lift</div><div class="feat-desc">Whisper-quiet motors lift up to 355 lbs at 1.5"/sec. Zero wobble at full height.</div></div>
+      <div class="feat"><div class="feat-icon">&#128196;</div><div class="feat-title">4 Memory Presets</div><div class="feat-desc">Save your perfect sitting and standing heights. One button to switch positions.</div></div>
+      <div class="feat"><div class="feat-icon">&#128268;</div><div class="feat-title">Cable Management</div><div class="feat-desc">Built-in cable tray and spine keep your setup clean from every angle.</div></div>
+      <div class="feat"><div class="feat-icon">&#128737;</div><div class="feat-title">10-Year Warranty</div><div class="feat-desc">Covers frame, motors, and electronics. We stand behind every desk we ship.</div></div>
+    </div>
+  </div></div>
+  <div class="specs-section"><div class="specs-inner">
+    <div>
+      <h2 class="specs-title">Specifications</h2>
+      <div class="spec-row"><span class="spec-key">Height Range</span><span class="spec-val">28" - 48" (71-122cm)</span></div>
+      <div class="spec-row"><span class="spec-key">Desktop Size</span><span class="spec-val">55" x 28" (selected)</span></div>
+      <div class="spec-row"><span class="spec-key">Weight Capacity</span><span class="spec-val">355 lbs (161 kg)</span></div>
+      <div class="spec-row"><span class="spec-key">Lift Speed</span><span class="spec-val">1.5 inches per second</span></div>
+      <div class="spec-row"><span class="spec-key">Motors</span><span class="spec-val">Dual motor, whisper quiet</span></div>
+      <div class="spec-row"><span class="spec-key">Frame Warranty</span><span class="spec-val">10 years</span></div>
+    </div>
+    <div>
+      <h2 class="specs-title">In the Box</h2>
+      <div class="spec-row"><span class="spec-key">Desktop surface</span><span class="spec-val">&#10003;</span></div>
+      <div class="spec-row"><span class="spec-key">Adjustable frame</span><span class="spec-val">&#10003;</span></div>
+      <div class="spec-row"><span class="spec-key">Control panel</span><span class="spec-val">&#10003;</span></div>
+      <div class="spec-row"><span class="spec-key">Cable management tray</span><span class="spec-val">&#10003;</span></div>
+      <div class="spec-row"><span class="spec-key">All hardware &amp; tools</span><span class="spec-val">&#10003;</span></div>
+      <div class="spec-row"><span class="spec-key">Assembly guide</span><span class="spec-val">&#10003;</span></div>
+    </div>
+  </div></div>
+  <div class="reviews-section"><div class="reviews-inner">
+    <h2 class="section-title">Customer Reviews</h2>
+    <p class="section-sub">4.9 out of 5 &mdash; 847 verified reviews</p>
+    <div class="review-grid">
+      <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-title">Best desk I've ever owned</div><p class="review-text">"Incredibly smooth, dead silent, and the cable management tray is a game changer. Setup took 45 minutes solo. Worth every dollar."</p><div class="review-author">James K. &mdash; Verified Buyer</div></div>
+      <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-title">My back thanks me daily</div><p class="review-text">"Been using it for 6 months. The memory presets mean I actually switch positions throughout the day. Back pain is gone."</p><div class="review-author">Sarah M. &mdash; Verified Buyer</div></div>
+      <div class="review-card"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-title">Sturdy at full height</div><p class="review-text">"Skeptical about wobble with a 3-monitor setup. Zero movement at maximum height. Frame quality is noticeably better than competitors."</p><div class="review-author">David R. &mdash; Verified Buyer</div></div>
+    </div>
+  </div></div>
+  <footer><p>ErgoHaus &mdash; Portfolio demo by <a href="../index.html" style="color:#f59e0b;text-decoration:none">Adhel Tantao</a>. Not a real business.</p></footer>
+  <script>
+    document.querySelectorAll('.color-swatch').forEach(s=>{s.addEventListener('click',()=>{document.querySelectorAll('.color-swatch').forEach(x=>x.classList.remove('active'));s.classList.add('active');});});
+    document.querySelectorAll('.size-btn').forEach(b=>{b.addEventListener('click',()=>{document.querySelectorAll('.size-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');});});
+    document.querySelectorAll('.thumb').forEach(t=>{t.addEventListener('click',()=>{document.querySelectorAll('.thumb').forEach(x=>x.classList.remove('active'));t.classList.add('active');});});
+  </script>
+  <script>
+    const pt = document.querySelector('.pnotes-toggle');
+    if(pt) pt.addEventListener('click', function(){
+      const b = this.nextElementSibling;
+      const h = this.querySelector('.pnotes-hint');
+      b.classList.toggle('open');
+      h.textContent = b.classList.contains('open') ? 'Click to collapse' : 'Click to expand';
+    });
+  </script>
+</body></html>

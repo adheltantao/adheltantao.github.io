@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScaleFlow Media | Facebook & Meta Ads Agency</title>
+  <meta name="description" content="We build and manage Facebook and Meta ad campaigns that scale. No retainer lock-ins, no vanity metrics - just profitable campaigns backed by data.">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    /* PAGE NOTES */
+    .pnotes{font-family:'Montserrat',sans-serif;font-size:13px;border-bottom:2px solid #2e2e4e;position:sticky;top:0;z-index:9999;background:#12122a}
+    .pnotes-toggle{display:flex;align-items:center;justify-content:space-between;padding:11px 20px;cursor:pointer;user-select:none;color:#a0a0c0;gap:12px}
+    .pnotes-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(124,106,255,.15);border:1px solid rgba(124,106,255,.4);color:#b0a0ff;padding:4px 12px;border-radius:50px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;animation:notePulse 2.5s ease-in-out infinite;flex-shrink:0}
+    .pnotes-badge-dot{width:6px;height:6px;background:#7c6aff;border-radius:50%;animation:dotBlink 2.5s ease-in-out infinite}
+    @keyframes notePulse{0%,100%{box-shadow:0 0 0 0 rgba(124,106,255,0)}50%{box-shadow:0 0 0 6px rgba(124,106,255,0)}}
+    @keyframes dotBlink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+    .pnotes-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#7c6aff;flex:1}
+    .pnotes-hint{font-size:11px;color:#555577;font-style:italic}
+    .pnotes-body{display:none;padding:16px 20px 20px;border-top:1px solid #2e2e4e;background:#0d0d20}
+    .pnotes-body.open{display:block}
+    .note-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+    .note-item{background:#0a0a18;border:1px solid #2e2e4e;border-radius:6px;padding:14px;transition:border-color .2s}
+    .note-item:hover{border-color:#4a4a8a}
+    .note-item h4{margin:0 0 6px;color:#7c6aff;font-size:11px;text-transform:uppercase;letter-spacing:1px;display:flex;align-items:center;gap:6px}
+    .note-item h4::before{content:'';display:inline-block;width:3px;height:10px;background:#7c6aff;border-radius:2px}
+    .note-item p{margin:0;font-size:12px;color:#8888aa;line-height:1.65}
+    .back-link{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:transparent;border:1px solid #2e2e4e;color:#7c6aff;border-radius:4px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;text-decoration:none;transition:all .2s;flex-shrink:0}
+    .back-link:hover{background:#7c6aff;color:#fff}
+    /* SITE */
+    :root{--bg:#08080f;--surface:#0e0e1a;--surface2:#131320;--blue:#4361ee;--blue2:#738eef;--orange:#ff6b35;--orange2:#ff8c5a;--white:#f0f0ff;--mid:#8888aa;--dim:#444466;--border:#161625;--border2:#222235;--green:#10b981;--red:#ef4444}
+    body{font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--white);line-height:1.7;overflow-x:hidden}
+    /* NAV */
+    .nav{height:68px;background:rgba(8,8,15,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border2);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;position:sticky;top:0;z-index:100}
+    .nav-logo{font-size:.95rem;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:var(--white)}
+    .nav-logo span{color:var(--orange)}
+    .nav-right{display:flex;align-items:center;gap:2rem}
+    .nav-link{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--mid);text-decoration:none;transition:color .2s}
+    .nav-link:hover{color:var(--white)}
+    .nav-cta{padding:9px 20px;background:var(--orange);color:var(--white);border-radius:3px;text-decoration:none;font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:1px;transition:all .2s}
+    .nav-cta:hover{background:var(--orange2);transform:translateY(-1px);box-shadow:0 6px 20px rgba(255,107,53,.3)}
+    /* HERO */
+    .hero{padding:6rem 2rem 5rem;position:relative;overflow:hidden}
+    .hero-glow{position:absolute;top:-50px;right:-100px;width:600px;height:600px;background:radial-gradient(ellipse,rgba(67,97,238,.08) 0%,transparent 65%);pointer-events:none}
+    .hero-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+    @media(max-width:780px){.hero-inner{grid-template-columns:1fr}}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--orange);margin-bottom:1.5rem}
+    .hero-eyebrow::before{content:'';width:20px;height:2px;background:var(--orange)}
+    .hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.1;letter-spacing:-2px;margin-bottom:1.25rem}
+    .hero h1 em{font-style:normal;color:var(--orange)}
+    .hero-desc{font-size:.95rem;color:var(--mid);line-height:1.8;font-weight:300;margin-bottom:2rem;max-width:480px}
+    .hero-desc strong{color:var(--white);font-weight:500}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:2rem}
+    .btn-orange{display:inline-block;padding:13px 28px;background:var(--orange);color:var(--white);border-radius:3px;text-decoration:none;font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:1.5px;transition:all .2s;box-shadow:0 0 24px rgba(255,107,53,.2)}
+    .btn-orange:hover{background:var(--orange2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(255,107,53,.35)}
+    .btn-ghost{display:inline-block;padding:13px 28px;border:1px solid var(--border2);color:var(--mid);border-radius:3px;text-decoration:none;font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:1.5px;transition:all .2s}
+    .btn-ghost:hover{border-color:var(--orange);color:var(--orange)}
+    .hero-note{font-size:.72rem;color:var(--dim)}
+    /* RESULTS CARD */
+    .results-card{background:var(--surface);border:1px solid var(--border2);border-radius:8px;padding:2rem;position:relative;overflow:hidden}
+    .results-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--orange),var(--blue2))}
+    .rc-label{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--dim);margin-bottom:1.5rem}
+    .rc-metrics{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-bottom:1.5rem}
+    .rc-metric{background:var(--surface2);padding:1.25rem;text-align:center}
+    .rc-n{font-size:1.6rem;font-weight:900;letter-spacing:-1px}
+    .rc-n.up{color:var(--green)}
+    .rc-n.dn{color:var(--red)}
+    .rc-l{font-size:.62rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--mid);margin-top:4px;font-weight:600}
+    .rc-client{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1rem}
+    .rc-client-name{font-size:.78rem;font-weight:700;color:var(--white);margin-bottom:2px}
+    .rc-client-niche{font-size:.68rem;color:var(--orange);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:.5rem}
+    .rc-client-quote{font-size:.8rem;color:var(--mid);font-style:italic;line-height:1.6;font-weight:300}
+    /* SECTIONS */
+    .section{padding:5rem 2rem;position:relative;z-index:1}
+    .container{max-width:1000px;margin:0 auto}
+    .sec-kicker{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--orange);display:flex;align-items:center;gap:10px;margin-bottom:.75rem}
+    .sec-kicker::before{content:'';width:20px;height:1px;background:var(--orange)}
+    .sec-title{font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:900;letter-spacing:-1px;line-height:1.15;margin-bottom:.75rem}
+    .sec-sub{font-size:.9rem;color:var(--mid);font-weight:300;line-height:1.75;margin-bottom:2.5rem;max-width:500px}
+    .bg-alt{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    /* STATS BAR */
+    .stats-bar{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .stats-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+    .stat{padding:2rem;text-align:center;border-right:1px solid var(--border)}
+    .stat:last-child{border-right:none}
+    .stat-n{font-size:2rem;font-weight:900;letter-spacing:-1px;color:var(--orange)}
+    .stat-l{font-size:.62rem;text-transform:uppercase;letter-spacing:2px;color:var(--mid);margin-top:5px;font-weight:600}
+    /* SERVICES */
+    .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:6px;overflow:hidden}
+    @media(max-width:760px){.svc-grid{grid-template-columns:1fr}}
+    .svc{background:var(--surface);padding:2rem;transition:background .2s}
+    .svc:hover{background:var(--surface2)}
+    .svc-icon{font-size:1.5rem;margin-bottom:1rem}
+    .svc-name{font-size:.9rem;font-weight:700;margin-bottom:.5rem}
+    .svc-desc{font-size:.83rem;color:var(--mid);line-height:1.65;font-weight:300;margin-bottom:1.25rem}
+    .svc-tags{display:flex;flex-wrap:wrap;gap:6px}
+    .svc-tag{font-size:.65rem;font-weight:600;padding:3px 8px;border:1px solid var(--border2);color:var(--dim);border-radius:2px}
+    /* PROCESS */
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:6px;overflow:hidden}
+    @media(max-width:700px){.process-grid{grid-template-columns:repeat(2,1fr)}}
+    .pstep{background:var(--surface);padding:2rem;transition:background .2s}
+    .pstep:hover{background:var(--surface2)}
+    .pnum{font-size:3rem;font-weight:900;color:rgba(255,107,53,.12);line-height:1;margin-bottom:.75rem;letter-spacing:-2px}
+    .ptitle{font-size:.88rem;font-weight:700;margin-bottom:.4rem}
+    .pdesc{font-size:.8rem;color:var(--mid);line-height:1.65;font-weight:300}
+    /* CASE STUDIES */
+    .case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    @media(max-width:700px){.case-grid{grid-template-columns:1fr}}
+    .case-card{background:var(--surface);border:1px solid var(--border2);border-radius:6px;overflow:hidden;transition:border-color .2s}
+    .case-card:hover{border-color:rgba(255,107,53,.3)}
+    .case-header{background:var(--surface2);padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border)}
+    .case-niche{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--orange)}
+    .case-period{font-size:.65rem;color:var(--dim)}
+    .case-body{padding:1.5rem}
+    .case-title{font-size:.92rem;font-weight:700;margin-bottom:.5rem}
+    .case-desc{font-size:.82rem;color:var(--mid);line-height:1.65;font-weight:300;margin-bottom:1.25rem}
+    .case-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden}
+    .cm{background:var(--surface2);padding:.75rem;text-align:center}
+    .cm-n{font-size:1rem;font-weight:800;color:var(--green)}
+    .cm-l{font-size:.6rem;text-transform:uppercase;letter-spacing:1px;color:var(--dim);margin-top:2px}
+    /* TESTIMONIALS */
+    .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    @media(max-width:760px){.testi-grid{grid-template-columns:1fr}}
+    .tcard{background:var(--surface);border:1px solid var(--border2);border-radius:6px;padding:1.75rem;transition:border-color .25s,transform .25s}
+    .tcard:hover{border-color:rgba(255,107,53,.25);transform:translateY(-2px)}
+    .tcard-stars{color:var(--orange);font-size:.75rem;letter-spacing:2px;margin-bottom:.75rem}
+    .tcard-quote{font-size:.85rem;color:var(--mid);font-style:italic;line-height:1.8;margin-bottom:1.25rem;font-weight:300}
+    .tcard-name{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--white)}
+    .tcard-role{font-size:.7rem;color:var(--dim);margin-top:2px}
+    /* CTA */
+    .cta-sec{background:linear-gradient(135deg,#0e0e20 0%,#08080f 100%);border-top:1px solid var(--border2);padding:5rem 2rem;text-align:center}
+    .cta-sec h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;letter-spacing:-1.5px;margin-bottom:.75rem;line-height:1.1}
+    .cta-sec h2 em{font-style:normal;color:var(--orange)}
+    .cta-sec p{color:var(--mid);font-size:.92rem;margin-bottom:2.5rem;max-width:460px;margin-left:auto;margin-right:auto;font-weight:300}
+    .cta-note{display:block;font-size:.72rem;color:var(--dim);margin-top:1rem}
+    footer{background:var(--surface);border-top:1px solid var(--border);padding:1.5rem 2rem;text-align:center;font-size:.68rem;color:var(--dim);text-transform:uppercase;letter-spacing:1.5px}
+    @media(max-width:640px){.stats-inner{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:none}.nav-right .nav-link{display:none}}
+  </style>
+</head>
+<body>
+  <div class="pnotes">
+    <div class="pnotes-toggle">
+      <a href="../index.html" class="back-link">&larr; Portfolio</a>
+      <span class="pnotes-label">Portfolio Page 07 &mdash; Facebook Ads Agency Landing Page</span>
+      <span class="pnotes-badge"><span class="pnotes-badge-dot"></span>Page Notes</span>
+      <span class="pnotes-hint">Click to expand</span>
+    </div>
+    <div class="pnotes-body">
+      <div class="note-grid">
+        <div class="note-item"><h4>Real niche experience</h4><p>Based on actual paid media ops work - campaign infrastructure, tracking setup, landing page builds, and account management across insurance, eComm, and crypto verticals. The "what we handle" items are drawn from real operational checklists.</p></div>
+        <div class="note-item"><h4>Split hero layout</h4><p>Left side is the pitch, right side shows a live results card with metrics. This is a proven pattern for performance marketing agencies - showing numbers immediately reduces the most common objection ("does it actually work?").</p></div>
+        <div class="note-item"><h4>Case study architecture</h4><p>Two case studies with header (niche + period), description, and a 3-metric bar. This structure lets you add real client results later without redesigning the layout - it's built to scale.</p></div>
+        <div class="note-item"><h4>Orange accent choice</h4><p>Deliberately different from the main portfolio yellow and the crypto page blue. Shows ability to execute niche-appropriate color palettes - performance marketing agencies typically use bold, high-energy accent colors.</p></div>
+      </div>
+    </div>
+  </div>
+  <nav class="nav">
+    <div class="nav-logo">Scale<span>Flow</span></div>
+    <div class="nav-right">
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#results" class="nav-link">Results</a>
+      <a href="#process" class="nav-link">Process</a>
+      <a href="#contact" class="nav-cta">Get Free Audit</a>
+    </div>
+  </nav>
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">Meta &amp; Facebook Ads Specialists</div>
+        <h1>Ads That Scale.<br>Not Just <em>Spend.</em></h1>
+        <p class="hero-desc">We build and manage <strong>Meta ad campaigns</strong> for e-commerce, lead gen, and info product brands. No vanity metrics. No retainer lock-ins. Just profitable campaigns backed by real data.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-orange">Get Free Ad Audit &rarr;</a>
+          <a href="#results" class="btn-ghost">See Results</a>
+        </div>
+        <p class="hero-note">Free audit includes: account health check, audience analysis, creative review, and a scaling roadmap.</p>
+      </div>
+      <div class="results-card">
+        <div class="rc-label">Live Client Dashboard &mdash; eComm Brand</div>
+        <div class="rc-metrics">
+          <div class="rc-metric"><div class="rc-n up">4.8x</div><div class="rc-l">Return on Ad Spend</div></div>
+          <div class="rc-metric"><div class="rc-n up">-62%</div><div class="rc-l">Cost Per Purchase</div></div>
+          <div class="rc-metric"><div class="rc-n up">$184k</div><div class="rc-l">Revenue This Month</div></div>
+          <div class="rc-metric"><div class="rc-n up">+218%</div><div class="rc-l">MoM Growth</div></div>
+        </div>
+        <div class="rc-client">
+          <div class="rc-client-name">Outdoor Gear Brand</div>
+          <div class="rc-client-niche">eCommerce &mdash; 90 Day Result</div>
+          <div class="rc-client-quote">"From $22k/month to $184k in 90 days. The account restructure alone cut our CPA in half before we even touched the creatives."</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat"><div class="stat-n">$12M+</div><div class="stat-l">Ad Spend Managed</div></div>
+      <div class="stat"><div class="stat-n">140+</div><div class="stat-l">Campaigns Launched</div></div>
+      <div class="stat"><div class="stat-n">4.2x</div><div class="stat-l">Avg. Client ROAS</div></div>
+      <div class="stat"><div class="stat-n">98%</div><div class="stat-l">Client Retention</div></div>
+    </div>
+  </div>
+  <section class="section" id="services">
+    <div class="container">
+      <div class="sec-kicker">What We Do</div>
+      <h2 class="sec-title">Full-Service Meta Ads Management</h2>
+      <p class="sec-sub">From account setup to creative production to daily optimization - we handle the entire paid media operation so you can focus on fulfillment.</p>
+      <div class="svc-grid">
+        <div class="svc">
+          <div class="svc-icon">&#9881;</div>
+          <div class="svc-name">Campaign Architecture</div>
+          <div class="svc-desc">Account structure, pixel setup, custom conversions, catalog configuration, and tracking infrastructure built to capture every data point that matters.</div>
+          <div class="svc-tags"><span class="svc-tag">Pixel Setup</span><span class="svc-tag">Custom Events</span><span class="svc-tag">UTM Framework</span><span class="svc-tag">CAPI</span></div>
+        </div>
+        <div class="svc">
+          <div class="svc-icon">&#127775;</div>
+          <div class="svc-name">Creative Strategy &amp; Production</div>
+          <div class="svc-desc">Ad concept, copy, and creative direction across static, video, and carousel formats. We test angles systematically, not randomly.</div>
+          <div class="svc-tags"><span class="svc-tag">Copywriting</span><span class="svc-tag">Static Ads</span><span class="svc-tag">Video Editing</span><span class="svc-tag">A/B Testing</span></div>
+        </div>
+        <div class="svc">
+          <div class="svc-icon">&#128200;</div>
+          <div class="svc-name">Scaling &amp; Optimization</div>
+          <div class="svc-desc">Daily bid management, audience expansion, retargeting sequences, and budget scaling protocols that maintain ROAS as you grow spend.</div>
+          <div class="svc-tags"><span class="svc-tag">Budget Scaling</span><span class="svc-tag">Retargeting</span><span class="svc-tag">LLA Audiences</span><span class="svc-tag">CBO/ABO</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section bg-alt" id="results">
+    <div class="container">
+      <div class="sec-kicker">Case Studies</div>
+      <h2 class="sec-title">Real Results, Real Clients</h2>
+      <p class="sec-sub">No cherry-picked screenshots. Full campaign context with what we did and what changed.</p>
+      <div class="case-grid">
+        <div class="case-card">
+          <div class="case-header"><span class="case-niche">eCommerce &mdash; Apparel</span><span class="case-period">90 Days</span></div>
+          <div class="case-body">
+            <div class="case-title">From $18k to $210k Monthly Revenue</div>
+            <div class="case-desc">Inherited a disorganized account with 47 active ad sets and no clear testing structure. Rebuilt architecture from scratch, consolidated audiences, launched a 3-phase creative testing system, and scaled winning angles via CBO campaigns.</div>
+            <div class="case-metrics">
+              <div class="cm"><div class="cm-n">5.2x</div><div class="cm-l">ROAS</div></div>
+              <div class="cm"><div class="cm-n">-71%</div><div class="cm-l">CPA Drop</div></div>
+              <div class="cm"><div class="cm-n">11x</div><div class="cm-l">Revenue</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="case-card">
+          <div class="case-header"><span class="case-niche">Lead Gen &mdash; Insurance</span><span class="case-period">60 Days</span></div>
+          <div class="case-body">
+            <div class="case-title">Cost Per Lead Dropped from $84 to $19</div>
+            <div class="case-desc">Insurance lead gen account was buying expensive, unqualified leads through broad audiences. Rebuilt targeting using lookalikes from closed-won customer data, rebuilt landing pages for form conversion, and tightened the pixel event chain for accurate optimization signals.</div>
+            <div class="case-metrics">
+              <div class="cm"><div class="cm-n">$19</div><div class="cm-l">Cost/Lead</div></div>
+              <div class="cm"><div class="cm-n">4.4x</div><div class="cm-l">More Leads</div></div>
+              <div class="cm"><div class="cm-n">-77%</div><div class="cm-l">CPL Drop</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="process">
+    <div class="container">
+      <div class="sec-kicker">How We Work</div>
+      <h2 class="sec-title">No Fluff. Just Execution.</h2>
+      <p class="sec-sub">Four steps from onboarding to scaling. We move fast because we've done this before.</p>
+      <div class="process-grid">
+        <div class="pstep"><div class="pnum">01</div><div class="ptitle">Free Audit</div><div class="pdesc">We review your current account, identify waste, and show you exactly where the opportunity is. No charge, no obligation.</div></div>
+        <div class="pstep"><div class="pnum">02</div><div class="ptitle">Account Setup</div><div class="pdesc">Pixel, CAPI, custom conversions, UTMs, and full tracking infrastructure. The foundation that everything else runs on.</div></div>
+        <div class="pstep"><div class="pnum">03</div><div class="ptitle">Launch &amp; Test</div><div class="pdesc">First campaigns live within 7 days. Systematic creative and audience testing to find winning combinations fast.</div></div>
+        <div class="pstep"><div class="pnum">04</div><div class="ptitle">Scale</div><div class="pdesc">Once we have winners, we scale budgets with proven protocols that maintain efficiency as spend increases.</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="sec-kicker">Client Feedback</div>
+      <h2 class="sec-title">What Our Clients Say</h2>
+      <div class="testi-grid">
+        <div class="tcard"><div class="tcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="tcard-quote">"We'd burned through two other agencies before finding ScaleFlow. The difference was immediate - they actually understood our funnel, not just the ad platform."</p><div class="tcard-name">Marcus T.</div><div class="tcard-role">Founder, DTC Supplement Brand</div></div>
+        <div class="tcard"><div class="tcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="tcard-quote">"Insurance leads for $19 vs $84 before. I genuinely didn't think that was possible with Meta after iOS 14. The tracking rebuild changed everything."</p><div class="tcard-name">Rachel K.</div><div class="tcard-role">VP Marketing, Insurance Brokerage</div></div>
+        <div class="tcard"><div class="tcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="tcard-quote">"Month one they cut our wasted spend in half without reducing results. Month three we'd 4x'd revenue. Best ROI decision we made last year."</p><div class="tcard-name">James W.</div><div class="tcard-role">CEO, eCommerce Brand</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="cta-sec" id="contact">
+    <h2>Ready to Stop <em>Guessing</em>?</h2>
+    <p>Get a free Meta Ads audit. We'll review your account, find the waste, and show you exactly what to fix first.</p>
+    <a href="#" class="btn-orange">Get My Free Audit &rarr;</a>
+    <span class="cta-note">Takes 48 hours &bull; No strings attached &bull; Includes written recommendations</span>
+  </section>
+  <footer><p>ScaleFlow Media &mdash; This is a portfolio demo built by <a href="../index.html" style="color:#ff6b35;text-decoration:none">Adhel Tantao</a>. Not a real business.</p></footer>
+  <script>
+    document.querySelector('.pnotes-toggle').addEventListener('click',function(){
+      const b=this.nextElementSibling,h=this.querySelector('.pnotes-hint');
+      b.classList.toggle('open');h.textContent=b.classList.contains('open')?'Click to collapse':'Click to expand';
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}});});
+  </script>
+</body>
+</html>

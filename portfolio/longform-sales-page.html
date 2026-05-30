@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ThermoLean X | The 8-Second Morning Ritual That Forces Stubborn Fat to Melt</title>
+  <meta name="description" content="Discover the unusual 8-second morning ritual that's helping thousands of men and women over 40 finally lose stubborn belly fat - without dieting or exercise.">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    /* PAGE NOTES */
+    .pnotes{font-family:'Montserrat',sans-serif;font-size:13px;border-bottom:2px solid #2e2e4e;position:sticky;top:0;z-index:9999;background:#12122a}
+    .pnotes-toggle{display:flex;align-items:center;justify-content:space-between;padding:11px 20px;cursor:pointer;user-select:none;color:#a0a0c0;gap:12px}
+    .pnotes-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(124,106,255,.15);border:1px solid rgba(124,106,255,.4);color:#b0a0ff;padding:4px 12px;border-radius:50px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;animation:notePulse 2.5s ease-in-out infinite;flex-shrink:0}
+    .pnotes-badge-dot{width:6px;height:6px;background:#7c6aff;border-radius:50%;animation:dotBlink 2.5s ease-in-out infinite}
+    @keyframes notePulse{0%,100%{box-shadow:0 0 0 0 rgba(124,106,255,0)}50%{box-shadow:0 0 0 6px rgba(124,106,255,0)}}
+    @keyframes dotBlink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+    .pnotes-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#7c6aff;flex:1}
+    .pnotes-hint{font-size:11px;color:#555577;font-style:italic}
+    .pnotes-body{display:none;padding:16px 20px 20px;border-top:1px solid #2e2e4e;background:#0d0d20}
+    .pnotes-body.open{display:block}
+    .note-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+    .note-item{background:#0a0a18;border:1px solid #2e2e4e;border-radius:6px;padding:14px;transition:border-color .2s}
+    .note-item:hover{border-color:#4a4a8a}
+    .note-item h4{margin:0 0 6px;color:#7c6aff;font-size:11px;text-transform:uppercase;letter-spacing:1px;display:flex;align-items:center;gap:6px}
+    .note-item h4::before{content:'';display:inline-block;width:3px;height:10px;background:#7c6aff;border-radius:2px}
+    .note-item p{margin:0;font-size:12px;color:#8888aa;line-height:1.65}
+    .back-link{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:transparent;border:1px solid #2e2e4e;color:#7c6aff;border-radius:4px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;text-decoration:none;transition:all .2s;flex-shrink:0}
+    .back-link:hover{background:#7c6aff;color:#fff}
+    /* SITE */
+    :root{--bg:#fafafa;--white:#ffffff;--text:#111111;--mid:#444444;--light:#f5f5f5;--border:#e0e0e0;--red:#cc1a1a;--red2:#e02020;--green:#1a7a2a;--green2:#22a832;--orange:#e06010;--yellow:#f5c000;--dark:#111111}
+    body{font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;max-width:100%;overflow-x:hidden}
+    /* TOP ALERT BAR */
+    .alert-bar{background:var(--red);padding:.6rem 1rem;text-align:center;font-size:.78rem;font-weight:700;color:#fff;letter-spacing:.5px}
+    .alert-bar span{background:var(--yellow);color:var(--dark);padding:2px 8px;border-radius:2px;margin:0 4px;font-weight:800}
+    /* HEADLINE SECTION */
+    .headline-section{background:var(--dark);padding:3rem 1.5rem 2.5rem;text-align:center}
+    .hl-kicker{display:inline-block;background:var(--red);color:#fff;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:5px 16px;border-radius:2px;margin-bottom:1.5rem}
+    .hl-main{font-family:'Oswald',sans-serif;font-size:clamp(1.8rem,5vw,3.2rem);font-weight:700;color:#fff;line-height:1.15;margin-bottom:1rem;max-width:820px;margin-left:auto;margin-right:auto}
+    .hl-main .hl-yellow{color:var(--yellow)}
+    .hl-main .hl-red{color:#ff6b6b}
+    .hl-sub{font-size:1.05rem;color:rgba(255,255,255,.75);max-width:620px;margin:0 auto 2rem;font-weight:300;line-height:1.8}
+    /* HERO VIDEO PLACEHOLDER */
+    .video-wrap{max-width:680px;margin:0 auto 2rem;position:relative}
+    .video-placeholder{background:linear-gradient(135deg,#1a1a2e,#0d0d1a);border:3px solid var(--yellow);border-radius:8px;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;position:relative;overflow:hidden}
+    .video-placeholder::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(245,192,0,.06) 0%,transparent 70%)}
+    .play-btn{width:80px;height:80px;background:var(--yellow);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;transition:transform .2s;z-index:1}
+    .play-btn:hover{transform:scale(1.1)}
+    .play-triangle{width:0;height:0;border-style:solid;border-width:18px 0 18px 32px;border-color:transparent transparent transparent var(--dark);margin-left:6px}
+    .video-label{color:rgba(255,255,255,.6);font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;z-index:1}
+    .video-label strong{color:var(--yellow);display:block;font-size:1rem;margin-top:4px;letter-spacing:0}
+    /* MAIN CONTENT */
+    .content{max-width:780px;margin:0 auto;padding:3rem 1.5rem}
+    .content p{font-size:.98rem;color:var(--mid);line-height:1.9;margin-bottom:1.4rem}
+    .content p.big{font-size:1.1rem;color:var(--text);font-weight:500;line-height:1.8}
+    .content strong{color:var(--text);font-weight:700}
+    .content em{font-style:italic;color:var(--text)}
+    /* STORY SECTIONS */
+    .story-break{text-align:center;margin:2.5rem 0;color:var(--mid);font-size:.9rem;display:flex;align-items:center;gap:1rem}
+    .story-break::before,.story-break::after{content:'';flex:1;height:1px;background:var(--border)}
+    .callout-box{background:var(--light);border-left:4px solid var(--red);border-radius:0 6px 6px 0;padding:1.5rem 1.75rem;margin:2rem 0}
+    .callout-box p{margin:0;font-size:.95rem;font-style:italic;color:var(--text)}
+    .highlight{background:linear-gradient(180deg,transparent 60%,rgba(245,192,0,.4) 60%);display:inline}
+    /* HEADLINE BREAKS */
+    .section-headline{font-family:'Oswald',sans-serif;font-size:clamp(1.4rem,3.5vw,2rem);font-weight:700;color:var(--dark);text-align:center;line-height:1.2;margin:3rem 0 1.5rem;padding:0 1rem}
+    .section-headline .red{color:var(--red)}
+    .section-headline .yellow-bg{background:var(--yellow);padding:0 6px;color:var(--dark)}
+    /* INGREDIENTS */
+    .ingredient-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:2rem 0}
+    .ingredient-card{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1.5rem;text-align:center;transition:all .2s}
+    .ingredient-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.08);border-color:var(--yellow)}
+    .ingredient-icon{font-size:2rem;margin-bottom:.75rem}
+    .ingredient-name{font-size:.85rem;font-weight:800;color:var(--dark);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.5px}
+    .ingredient-amount{font-size:.72rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:1px;margin-bottom:.6rem}
+    .ingredient-desc{font-size:.8rem;color:var(--mid);line-height:1.6}
+    /* TESTIMONIALS */
+    .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:2rem 0}
+    @media(max-width:720px){.testi-grid{grid-template-columns:1fr}}
+    .testi-card{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1.5rem;text-align:center}
+    .testi-avatar{width:70px;height:70px;border-radius:50%;background:linear-gradient(135deg,#e0e0e0,#c0c0c0);margin:0 auto .75rem;display:flex;align-items:center;justify-content:center;font-size:1.5rem;border:3px solid var(--yellow)}
+    .testi-result{font-family:'Oswald',sans-serif;font-size:1.3rem;font-weight:700;color:var(--green);margin-bottom:.25rem}
+    .testi-name{font-size:.78rem;font-weight:700;color:var(--dark);margin-bottom:.5rem}
+    .testi-text{font-size:.82rem;color:var(--mid);font-style:italic;line-height:1.65}
+    .testi-stars{color:var(--yellow);font-size:.85rem;margin-bottom:.5rem;letter-spacing:2px}
+    /* ORDER SECTION */
+    .order-section{background:linear-gradient(135deg,#1a1a1a,#0a0a0a);padding:4rem 1.5rem;text-align:center}
+    .order-headline{font-family:'Oswald',sans-serif;font-size:clamp(1.5rem,4vw,2.5rem);font-weight:700;color:#fff;margin-bottom:.75rem;line-height:1.15}
+    .order-headline span{color:var(--yellow)}
+    .order-sub{font-size:.95rem;color:rgba(255,255,255,.65);margin-bottom:2.5rem;font-weight:300;line-height:1.75}
+    .package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:860px;margin:0 auto 2.5rem}
+    @media(max-width:720px){.package-grid{grid-template-columns:1fr;max-width:360px}}
+    .package{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:2rem;text-align:center;transition:all .2s;cursor:pointer;position:relative}
+    .package:hover,.package.best{border-color:var(--yellow);background:rgba(245,192,0,.08)}
+    .package.best::before{content:'MOST POPULAR';position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--yellow);color:var(--dark);font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;padding:4px 14px;border-radius:0 0 4px 4px}
+    .pkg-bottles{font-size:2.5rem;margin-bottom:.75rem}
+    .pkg-name{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.5);margin-bottom:.25rem}
+    .pkg-count{font-size:1rem;font-weight:800;color:#fff;margin-bottom:.5rem}
+    .pkg-price{font-size:2rem;font-weight:900;color:var(--yellow);letter-spacing:-1px;line-height:1}
+    .pkg-per{font-size:.72rem;color:rgba(255,255,255,.4);margin-bottom:.25rem}
+    .pkg-save{font-size:.72rem;font-weight:700;color:var(--green2);margin-bottom:1rem}
+    .pkg-original{font-size:.82rem;color:rgba(255,255,255,.3);text-decoration:line-through}
+    .order-btn{display:block;width:100%;max-width:500px;margin:0 auto;padding:18px;background:var(--yellow);color:var(--dark);border:none;border-radius:4px;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;cursor:pointer;transition:all .2s;text-decoration:none;animation:btnPulse 2s ease-in-out infinite}
+    .order-btn:hover{background:#fff;transform:translateY(-2px);box-shadow:0 12px 32px rgba(245,192,0,.4)}
+    @keyframes btnPulse{0%,100%{box-shadow:0 0 0 0 rgba(245,192,0,.4)}50%{box-shadow:0 0 0 12px rgba(245,192,0,0)}}
+    .order-note{font-size:.72rem;color:rgba(255,255,255,.4);margin-top:1rem}
+    /* GUARANTEE */
+    .guarantee-box{background:var(--white);border:3px solid var(--green);border-radius:8px;padding:2.5rem;text-align:center;max-width:600px;margin:3rem auto}
+    .guarantee-badge{width:90px;height:90px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:2rem}
+    .guarantee-title{font-family:'Oswald',sans-serif;font-size:1.4rem;font-weight:700;color:var(--green);margin-bottom:.75rem}
+    .guarantee-text{font-size:.88rem;color:var(--mid);line-height:1.75}
+    /* URGENCY */
+    .urgency-bar{background:var(--red);padding:1rem 1.5rem;text-align:center;font-size:.88rem;font-weight:700;color:#fff}
+    .urgency-bar span{background:#fff;color:var(--red);padding:2px 8px;border-radius:2px;font-weight:800;margin:0 4px}
+    /* CLOSING */
+    .closing{background:var(--dark);padding:5rem 1.5rem;text-align:center}
+    .closing-headline{font-family:'Oswald',sans-serif;font-size:clamp(1.4rem,4vw,2.2rem);font-weight:700;color:#fff;margin-bottom:1rem;line-height:1.2}
+    .closing-headline span{color:var(--yellow)}
+    .closing-sub{font-size:.92rem;color:rgba(255,255,255,.6);max-width:560px;margin:0 auto 2.5rem;font-weight:300;line-height:1.8}
+    /* DISCLAIMER */
+    .disclaimer{background:var(--light);padding:2rem 1.5rem;border-top:1px solid var(--border)}
+    .disclaimer-inner{max-width:780px;margin:0 auto;font-size:.72rem;color:#999;line-height:1.65}
+    .disclaimer-inner strong{color:#777}
+    footer{background:var(--dark);padding:1.5rem 2rem;text-align:center;font-size:.68rem;color:rgba(255,255,255,.25);text-transform:uppercase;letter-spacing:1px}
+    @media(max-width:600px){.content{padding:2rem 1rem}}
+  </style>
+</head>
+<body>
+
+  <div class="pnotes">
+    <div class="pnotes-toggle">
+      <a href="../index.html" class="back-link">&larr; Portfolio</a>
+      <span class="pnotes-label">Portfolio Page 09 &mdash; Long-Form VSL Sales Page (Weight Loss)</span>
+      <span class="pnotes-badge"><span class="pnotes-badge-dot"></span>Page Notes</span>
+      <span class="pnotes-hint">Click to expand</span>
+    </div>
+    <div class="pnotes-body">
+      <div class="note-grid">
+        <div class="note-item"><h4>Classic long-form structure</h4><p>Follows the proven VSL/sales letter flow: alert bar urgency &rarr; pattern-interrupt headline &rarr; video placeholder &rarr; problem agitation &rarr; story &rarr; mechanism &rarr; ingredients &rarr; social proof &rarr; offer stack &rarr; guarantee &rarr; close. Every section has a specific psychological job.</p></div>
+        <div class="note-item"><h4>Oswald + Montserrat pairing</h4><p>Oswald for all headlines and section breaks - its condensed, bold style is the standard in direct response. Montserrat for body copy. This typographic pairing is specifically chosen for the direct response/supplement niche, not generic.</p></div>
+        <div class="note-item"><h4>Conversion elements</h4><p>Pulsing CTA button, animated alert bars, urgency strip, package selection with "Most Popular" highlight, 60-day guarantee badge, yellow highlight text - every element serves a specific conversion purpose, not just aesthetics.</p></div>
+        <div class="note-item"><h4>No nav, no distractions</h4><p>Intentionally zero navigation. Long-form sales pages have one job: get the visitor to the order form. Every navigation link is a leak. This is a deliberate structural choice, not an oversight - it shows understanding of direct response principles.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALERT BAR -->
+  <div class="alert-bar">
+    &#9888; WARNING: Due to overwhelming demand, we cannot guarantee inventory. <span>Only 47 bottles left</span> at this price.
+  </div>
+
+  <!-- HEADLINE -->
+  <div class="headline-section">
+    <div class="hl-kicker">&#128680; Urgent Message for Anyone Over 35</div>
+    <h1 class="hl-main">
+      Doctors Are <span class="hl-red">Stunned</span> By This
+      <span class="hl-yellow">8-Second Morning Ritual</span>
+      That Forces Stubborn Belly Fat to
+      <span class="hl-red">Melt Away</span> While You Sleep
+    </h1>
+    <p class="hl-sub">The weird trick discovered by a retired firefighter from Ohio that's helping thousands of men and women over 35 finally lose the belly fat they've been stuck with for years — without starving yourself or spending a single minute at the gym.</p>
+    <div class="video-wrap">
+      <div class="video-placeholder">
+        <div class="play-btn"><div class="play-triangle"></div></div>
+        <div class="video-label">Watch This Short Video<strong>Discover The 8-Second Ritual &rarr;</strong></div>
+      </div>
+    </div>
+    <p style="color:rgba(255,255,255,.4);font-size:.72rem;font-weight:400">&#9679; Sound On &nbsp;|&nbsp; Watch Until The End &nbsp;|&nbsp; Results May Vary</p>
+  </div>
+
+  <!-- STORY / CONTENT -->
+  <div class="content">
+    <p class="big">If you've been struggling to lose stubborn belly fat no matter what you try... if you've done the diets, the workouts, maybe even the pills... and nothing seems to work anymore...</p>
+    <p>Then what I'm about to share with you will feel like someone finally turned the lights on.</p>
+    <p>My name is <strong>Dave Kowalski</strong>. I'm a 52-year-old retired firefighter from Columbus, Ohio. And two years ago, I weighed <strong>268 pounds.</strong></p>
+    <p>I'd tried everything. Low-carb. Keto. Intermittent fasting. I even paid $4,000 for a 12-week personal training program. The trainer was great. The results? <em>Barely noticeable.</em></p>
+
+    <div class="callout-box">
+      <p>"My doctor looked me dead in the eye and said: 'Dave, if you don't lose 60 pounds in the next year, we're talking about serious intervention.' That scared me more than any burning building I'd ever walked into."</p>
+    </div>
+
+    <p>What Dave didn't know — what <em>almost nobody knows</em> — is that after 35, your body undergoes a specific hormonal shift that <span class="highlight">makes it nearly impossible to burn fat the old-fashioned way.</span></p>
+    <p>It's not your fault. It's not your willpower. It's not your discipline. It's biology.</p>
+    <p>But here's the thing a Harvard-trained metabolic researcher discovered in 2019 — and that the diet industry absolutely does NOT want you to know...</p>
+
+    <div class="section-headline">There Is ONE Root Cause of <span class="red">Stubborn Belly Fat</span> After 35<br>And It Has Nothing to Do With <span class="yellow-bg">Calories</span></div>
+
+    <p>Deep in your cells, there's a tiny structure called the <strong>mitochondria</strong> — your body's fat-burning furnace. When you're young, it runs hot. Fat burns fast. You can eat a slice of pizza and not think twice.</p>
+    <p>But after 35, something happens. A specific enzyme called <strong>CPT-1</strong> starts declining at a rate of roughly <em>3% per year.</em> And when CPT-1 drops, your mitochondria run cold. Fat stops burning. It starts storing.</p>
+    <p>This is why people over 35 gain weight just <em>looking</em> at carbs. It's not imagination. It's a measurable, documented biological process.</p>
+    <p>The good news? <strong>A team of researchers at a top European university discovered that a specific combination of 6 natural compounds can reignite CPT-1 production within 72 hours.</strong></p>
+    <p>They combined these 6 compounds into a single, easy-to-take capsule. And the results from the clinical trial were... jaw-dropping.</p>
+
+    <div class="section-headline">Introducing <span class="red">ThermoLean X</span><br>The World's First <span class="yellow-bg">CPT-1 Reactivation Formula</span></div>
+
+    <p>ThermoLean X is the only supplement in the world formulated specifically around CPT-1 reactivation — the root cause of why people over 35 can't seem to lose weight no matter what they try.</p>
+  </div>
+
+  <!-- INGREDIENTS -->
+  <div style="background:var(--light);padding:3rem 1.5rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div style="max-width:780px;margin:0 auto">
+      <h2 class="section-headline" style="margin-top:0">The 6 Clinically-Studied <span class="red">Power Ingredients</span></h2>
+      <div class="ingredient-grid">
+        <div class="ingredient-card"><div class="ingredient-icon">&#127807;</div><div class="ingredient-name">Berberine HCL</div><div class="ingredient-amount">500mg</div><div class="ingredient-desc">Activates AMPK enzyme — the "metabolic master switch" — and shown in 12 clinical trials to significantly reduce visceral fat.</div></div>
+        <div class="ingredient-card"><div class="ingredient-icon">&#129372;</div><div class="ingredient-name">African Mango Extract</div><div class="ingredient-amount">150mg</div><div class="ingredient-desc">Targets the adiponectin hormone directly, shown to reduce waist circumference by an average of 4.2 inches in 10 weeks.</div></div>
+        <div class="ingredient-card"><div class="ingredient-icon">&#127758;</div><div class="ingredient-name">Green Tea EGCG</div><div class="ingredient-amount">300mg</div><div class="ingredient-desc">The most potent form of green tea catechins. Proven to increase metabolic rate by up to 11% and fat oxidation by 17%.</div></div>
+        <div class="ingredient-card"><div class="ingredient-icon">&#127798;</div><div class="ingredient-name">Chromium Picolinate</div><div class="ingredient-amount">200mcg</div><div class="ingredient-desc">Regulates blood sugar and insulin sensitivity — eliminating the energy crashes and sugar cravings that cause late-night eating.</div></div>
+        <div class="ingredient-card"><div class="ingredient-icon">&#127811;</div><div class="ingredient-name">Cayenne Pepper 40K HU</div><div class="ingredient-amount">100mg</div><div class="ingredient-desc">Triggers thermogenesis — literally raising core body temperature to force the body to burn more calories at rest.</div></div>
+        <div class="ingredient-card"><div class="ingredient-icon">&#128138;</div><div class="ingredient-name">BioPerine® Black Pepper</div><div class="ingredient-amount">10mg</div><div class="ingredient-desc">Clinically proven to increase absorption of all other ingredients by up to 2,000%. Without it, most supplements pass right through.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="content">
+    <div class="section-headline">Real People. <span class="red">Real Results.</span><br>No Photoshop. No Actors.</div>
+    <div class="testi-grid">
+      <div class="testi-card"><div class="testi-avatar">&#128105;</div><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="testi-result">Lost 34 lbs</div><div class="testi-name">Sandra M., 47 &mdash; Phoenix, AZ</div><p class="testi-text">"I tried everything for 6 years. ThermoLean X was the first thing that actually worked. I lost 34 pounds in 4 months and my doctor took me off my blood pressure medication."</p></div>
+      <div class="testi-card"><div class="testi-avatar">&#128104;</div><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="testi-result">Lost 52 lbs</div><div class="testi-name">Mike T., 54 &mdash; Dallas, TX</div><p class="testi-text">"Down 52 pounds in 6 months. I'm wearing clothes I haven't worn since my 30s. My wife keeps saying she fell in love with me all over again. This stuff is the real deal."</p></div>
+      <div class="testi-card"><div class="testi-avatar">&#128105;</div><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="testi-result">Lost 28 lbs</div><div class="testi-name">Carol R., 51 &mdash; Chicago, IL</div><p class="testi-text">"Skeptical doesn't begin to describe it. My daughter bought it for me as a last resort. 28 pounds gone in 3 months. I cried when I saw my before and after photos side by side."</p></div>
+    </div>
+  </div>
+
+  <!-- URGENCY BAR -->
+  <div class="urgency-bar">
+    &#9203; TODAY ONLY: Buy 3 bottles, get <span>2 FREE</span> + Free Shipping. This offer expires when the timer hits zero.
+  </div>
+
+  <!-- ORDER SECTION -->
+  <div class="order-section">
+    <h2 class="order-headline">Choose Your Package &amp;<br><span>Save Up to 57% Today</span></h2>
+    <p class="order-sub">The longer your supply, the bigger your discount. Most people see the best results with a 90-180 day supply.</p>
+    <div class="package-grid">
+      <div class="package" onclick="this.classList.toggle('best')">
+        <div class="pkg-bottles">&#128138;</div>
+        <div class="pkg-name">Starter Pack</div>
+        <div class="pkg-count">1 Bottle — 30 Day Supply</div>
+        <div class="pkg-original">$99 / bottle</div>
+        <div class="pkg-price">$69</div>
+        <div class="pkg-per">per bottle</div>
+        <div class="pkg-save">You save $30</div>
+      </div>
+      <div class="package best">
+        <div class="pkg-bottles">&#128138;&#128138;&#128138;</div>
+        <div class="pkg-name">Best Value</div>
+        <div class="pkg-count">3 Bottles + 2 FREE = 150 Days</div>
+        <div class="pkg-original">$495 total</div>
+        <div class="pkg-price">$39</div>
+        <div class="pkg-per">per bottle &mdash; Total: $195</div>
+        <div class="pkg-save">&#9733; You save $300 + FREE Shipping</div>
+      </div>
+      <div class="package" onclick="this.classList.toggle('best')">
+        <div class="pkg-bottles">&#128138;&#128138;</div>
+        <div class="pkg-name">Popular Pack</div>
+        <div class="pkg-count">2 Bottles + 1 FREE = 90 Days</div>
+        <div class="pkg-original">$297 total</div>
+        <div class="pkg-price">$49</div>
+        <div class="pkg-per">per bottle &mdash; Total: $147</div>
+        <div class="pkg-save">You save $150 + FREE Shipping</div>
+      </div>
+    </div>
+    <a href="#" class="order-btn">&#128274; Yes! I Want to Lose Weight &mdash; Add to Cart &rarr;</a>
+    <p class="order-note">&#9203; Secure 256-bit Encrypted Checkout &nbsp;|&nbsp; Free Shipping on 2+ Bottles &nbsp;|&nbsp; Made in USA &nbsp;|&nbsp; FDA Registered Facility</p>
+  </div>
+
+  <!-- GUARANTEE -->
+  <div class="content">
+    <div class="guarantee-box">
+      <div class="guarantee-badge">&#9989;</div>
+      <div class="guarantee-title">60-Day Money Back Guarantee</div>
+      <p class="guarantee-text">Try ThermoLean X for a full 60 days. If you don't lose weight, if you're not completely satisfied for any reason whatsoever, simply contact us and we'll refund every penny. No questions. No hassle. No runaround. You have absolutely nothing to lose — except the weight.</p>
+    </div>
+
+    <div class="section-headline" style="margin-top:2rem">This Is Your <span class="red">Last Chance</span><br>To Make a Decision That <span class="yellow-bg">Changes Everything</span></div>
+
+    <p class="big">You have two choices right now.</p>
+    <p>Choice one: close this page and go back to the same struggle. The same scale. The same reflection in the mirror. The same frustration of trying everything and seeing nothing change.</p>
+    <p>Choice two: take 8 seconds this morning, take your ThermoLean X, and start the process of becoming the version of yourself you've been trying to get back to.</p>
+    <p>Dave lost 68 pounds. Sandra lost 34. Mike lost 52. Carol lost 28. They weren't special. They didn't have more willpower. <strong>They just discovered this first.</strong></p>
+    <p>Now you have. <em>What are you going to do with it?</em></p>
+  </div>
+
+  <!-- CLOSING CTA -->
+  <div class="closing">
+    <h2 class="closing-headline">The <span>8-Second Ritual</span> That Changes Everything<br>Starts Right Now</h2>
+    <p class="closing-sub">Thousands of people over 35 are using ThermoLean X right now. Every day you wait is another day you don't have to wait. Click the button below before inventory runs out.</p>
+    <a href="#" class="order-btn" style="max-width:520px;display:block;margin:0 auto">&#128274; Claim My Discounted Supply &rarr;</a>
+    <p style="color:rgba(255,255,255,.3);font-size:.72rem;margin-top:1.5rem">&#9873; 60-Day Guarantee &nbsp;&#9873;&nbsp; Free Shipping Available &nbsp;&#9873;&nbsp; Made in USA</p>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    <div class="disclaimer-inner">
+      <strong>DISCLAIMER:</strong> This website and the product described herein have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Results mentioned are not typical. Individual results will vary based on diet, exercise, metabolism, and other factors. The stories and testimonials shown are illustrative examples. Always consult with a qualified healthcare professional before beginning any new supplement program.<br><br>
+      <strong>FTC DISCLOSURE:</strong> This page contains affiliate links. The operator of this website may receive compensation if you purchase the product described. This does not affect our editorial integrity or the accuracy of the information presented.
+    </div>
+  </div>
+
+  <footer>
+    <p>ThermoLean X &mdash; This is a portfolio demo page built by <a href="../index.html" style="color:#f5c000;text-decoration:none">Adhel Tantao</a>. Not a real product. Results not typical.</p>
+  </footer>
+
+  <script>
+    document.querySelector('.pnotes-toggle').addEventListener('click',function(){
+      const b=this.nextElementSibling,h=this.querySelector('.pnotes-hint');
+      b.classList.toggle('open');h.textContent=b.classList.contains('open')?'Click to collapse':'Click to expand';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ship Your Car Anywhere in the US | ConvoyAuto</title>
+  <meta name="description" content="Get an instant quote to ship your car door-to-door anywhere in the US. Licensed, insured, and trusted by 50,000+ customers.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- PAGE NOTES TOGGLE STYLES -->
+  <style>
+    .page-notes-bar {
+      background: #1a1a2e;
+      color: #a0a0c0;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      padding: 0;
+      border-bottom: 1px solid #2e2e4e;
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+    }
+    .page-notes-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .page-notes-toggle span { color: #7c6aff; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; }
+    .page-notes-toggle em { font-style: normal; font-size: 12px; }
+    .page-notes-body {
+      display: none;
+      padding: 16px 20px 20px;
+      border-top: 1px solid #2e2e4e;
+      line-height: 1.7;
+    }
+    .page-notes-body.open { display: block; }
+    .note-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 12px; }
+    .note-item { background: #0f0f1e; border: 1px solid #2e2e4e; border-radius: 6px; padding: 14px; }
+    .note-item h4 { margin: 0 0 6px; color: #7c6aff; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+    .note-item p { margin: 0; font-size: 12px; color: #8080a0; line-height: 1.6; }
+    .back-link { display: inline-block; padding: 6px 14px; background: transparent; border: 1px solid #2e2e4e; color: #7c6aff; border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; transition: all 0.2s; }
+    .back-link:hover { background: #7c6aff; color: #fff; }
+    .pnotes{font-family:'Montserrat',sans-serif;font-size:13px;border-bottom:2px solid #2e2e4e;position:sticky;top:0;z-index:9999;background:#12122a}
+    .pnotes-toggle{display:flex;align-items:center;justify-content:space-between;padding:11px 20px;cursor:pointer;user-select:none;color:#a0a0c0;gap:12px}
+    .pnotes-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(124,106,255,.15);border:1px solid rgba(124,106,255,.4);color:#b0a0ff;padding:4px 12px;border-radius:50px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;animation:notePulse 2.5s ease-in-out infinite;flex-shrink:0}
+    .pnotes-badge-dot{width:6px;height:6px;background:#7c6aff;border-radius:50%;animation:dotBlink 2.5s ease-in-out infinite}
+    @keyframes notePulse{0%,100%{box-shadow:0 0 0 0 rgba(124,106,255,0)}50%{box-shadow:0 0 0 6px rgba(124,106,255,0)}}
+    @keyframes dotBlink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+    .pnotes-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#7c6aff;flex:1}
+    .pnotes-hint{font-size:11px;color:#555577;font-style:italic}
+    .pnotes-body{display:none;padding:16px 20px 20px;border-top:1px solid #2e2e4e;background:#0d0d20}
+    .pnotes-body.open{display:block}
+    .note-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+    .note-item{background:#0a0a18;border:1px solid #2e2e4e;border-radius:6px;padding:14px;transition:border-color .2s}
+    .note-item:hover{border-color:#4a4a8a}
+    .note-item h4{margin:0 0 6px;color:#7c6aff;font-size:11px;text-transform:uppercase;letter-spacing:1px;display:flex;align-items:center;gap:6px}
+    .note-item h4::before{content:'';display:inline-block;width:3px;height:10px;background:#7c6aff;border-radius:2px}
+    .note-item p{margin:0;font-size:12px;color:#8888aa;line-height:1.65}
+    .back-link{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:transparent;border:1px solid #2e2e4e;color:#7c6aff;border-radius:4px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;text-decoration:none;transition:all .2s;flex-shrink:0}
+    .back-link:hover{background:#7c6aff;color:#fff}
+  </style>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0a1628;
+      --navy-mid: #0f1e38;
+      --blue: #1a4fc4;
+      --blue-light: #2563eb;
+      --orange: #f97316;
+      --orange-dark: #ea6c0a;
+      --white: #ffffff;
+      --off-white: #f8fafc;
+      --gray: #64748b;
+      --gray-light: #94a3b8;
+      --border: #e2e8f0;
+      --text: #1e293b;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--off-white);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    .nav {
+      background: var(--navy);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.5px;
+    }
+
+    .nav-logo span { color: var(--orange); }
+
+    .nav-phone {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-phone span { color: var(--orange); }
+
+    .nav-cta {
+      background: var(--orange);
+      color: var(--white);
+      padding: 9px 20px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+
+    .nav-cta:hover { background: var(--orange-dark); transform: translateY(-1px); }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #0d2248 100%);
+      padding: 5rem 1.5rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 60px;
+      background: var(--off-white);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(249,115,22,0.15);
+      border: 1px solid rgba(249,115,22,0.3);
+      color: #fdba74;
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1.5rem;
+      animation: fadeDown 0.6s ease both;
+    }
+
+    .hero-badge::before { content: '★'; color: var(--orange); }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+      letter-spacing: -1px;
+      animation: fadeDown 0.6s 0.1s ease both;
+    }
+
+    .hero h1 span { color: var(--orange); }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: #94a3b8;
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      animation: fadeDown 0.6s 0.2s ease both;
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* QUOTE FORM */
+    .quote-form-wrap {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 560px;
+      margin: 0 auto;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+      animation: fadeUp 0.6s 0.3s ease both;
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .form-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .form-row.single { grid-template-columns: 1fr; }
+
+    .form-group { display: flex; flex-direction: column; }
+
+    .form-group label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group select {
+      padding: 10px 12px;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      color: var(--text);
+      background: var(--white);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus { border-color: var(--blue-light); }
+
+    .form-submit {
+      width: 100%;
+      padding: 14px;
+      background: var(--orange);
+      color: var(--white);
+      border: none;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      margin-top: 12px;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+
+    .form-submit:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(249,115,22,0.35);
+    }
+
+    .form-note {
+      text-align: center;
+      font-size: 0.72rem;
+      color: var(--gray-light);
+      margin-top: 10px;
+    }
+
+    .form-note span { color: #22c55e; font-weight: 700; }
+
+    /* TRUST BAR */
+    .trust-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+    }
+
+    .trust-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gray);
+    }
+
+    .trust-icon {
+      width: 28px; height: 28px;
+      background: #eff6ff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+    }
+
+    /* SECTION */
+    .section { padding: 4rem 1.5rem; }
+    .section-center { text-align: center; }
+    .container { max-width: 900px; margin: 0 auto; }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--blue-light);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 900;
+      color: var(--text);
+      margin-bottom: 1rem;
+      letter-spacing: -0.5px;
+    }
+
+    .section-sub {
+      font-size: 0.95rem;
+      color: var(--gray);
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+    }
+
+    /* HOW IT WORKS */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+      position: relative;
+    }
+
+    .step-card {
+      text-align: center;
+      padding: 1.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .step-card.visible { opacity: 1; transform: translateY(0); }
+
+    .step-num {
+      width: 52px; height: 52px;
+      background: var(--blue-light);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 900;
+      margin: 0 auto 1rem;
+    }
+
+    .step-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-desc { font-size: 0.85rem; color: var(--gray); }
+
+    /* WHY US */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin-top: 2rem;
+    }
+
+    .why-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      border-left: 3px solid var(--orange);
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .why-card.visible { opacity: 1; transform: translateX(0); }
+
+    .why-card h3 {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+
+    .why-card p { font-size: 0.83rem; color: var(--gray); }
+
+    /* REVIEWS */
+    .reviews-section { background: var(--navy); padding: 4rem 1.5rem; }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      max-width: 900px;
+      margin: 2rem auto 0;
+    }
+
+    .review-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+
+    .stars { color: var(--orange); font-size: 0.9rem; margin-bottom: 0.75rem; }
+
+    .review-text {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      font-style: italic;
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+
+    .reviewer { font-size: 0.8rem; font-weight: 700; color: var(--white); }
+    .reviewer-loc { font-size: 0.72rem; color: #64748b; margin-top: 2px; }
+
+    /* CTA BOTTOM */
+    .cta-bottom {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+
+    .cta-bottom h2 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.5px;
+    }
+
+    .cta-bottom p { color: rgba(255,255,255,0.75); margin-bottom: 2rem; font-size: 0.95rem; }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      padding: 16px 40px;
+      border-radius: 6px;
+      font-weight: 800;
+      font-size: 1rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.2s;
+    }
+
+    .cta-btn:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(249,115,22,0.4);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #475569;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    @media (max-width: 560px) {
+      .form-row { grid-template-columns: 1fr; }
+      .nav-phone { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="pnotes">
+    <div class="pnotes-toggle">
+      <a href="../index.html" class="back-link">&larr; Portfolio</a>
+      <span class="pnotes-label">Portfolio Page 01 &mdash; Car Shipping Conversion Lander</span>
+      <span class="pnotes-badge"><span class="pnotes-badge-dot"></span>Page Notes</span>
+      <span class="pnotes-hint">Click to expand</span>
+    </div>
+    <div class="pnotes-body">
+      <div class="note-grid">
+        <div class="note-item"><h4>Scroll animations</h4><p>Step cards and why-us cards use IntersectionObserver to animate on scroll - no JS libraries, pure CSS transitions triggered by vanilla JS.</p></div>
+        <div class="note-item"><h4>Staggered hero entrance</h4><p>Hero elements use staggered fadeDown keyframes. Quote form animates in after the headline - a deliberate sequence drawing the eye toward the CTA.</p></div>
+        <div class="note-item"><h4>Conversion structure</h4><p>Quote form above the fold. Trust bar immediately below. How It Works > Why Us > Reviews > Bottom CTA follows a proven direct response funnel flow.</p></div>
+        <div class="note-item"><h4>Mobile responsive</h4><p>Form grid collapses to single column under 560px. Nav phone hides on mobile. All sections use fluid clamp() typography and CSS auto-fit grids.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE NOTES BAR -->
+  <div class="page-notes-bar">
+    <div class="page-notes-toggle">
+      <span>Portfolio Page 01 - Conversion Landing Page</span>
+      <em>View page notes</em>
+    </div>
+    <div class="page-notes-body">
+      <a href="../index.html" class="back-link">&larr; Back to Portfolio</a>
+      <div class="note-grid" style="margin-top: 14px;">
+        <div class="note-item">
+          <h4>Above-the-fold hierarchy</h4>
+          <p>Hero leads with the primary benefit, not the company name. Badge, headline, subtext, and form are all visible before scrolling - reducing friction for the visitor.</p>
+        </div>
+        <div class="note-item">
+          <h4>CSS animations</h4>
+          <p>Hero elements use staggered fadeDown keyframes. Step cards and why-us cards use IntersectionObserver to animate on scroll - no JavaScript libraries, pure CSS + vanilla JS.</p>
+        </div>
+        <div class="note-item">
+          <h4>Conversion structure</h4>
+          <p>Quote form is the primary CTA above the fold. Trust bar immediately below reduces objection. How It Works > Why Us > Social Proof > Bottom CTA follows a proven funnel flow.</p>
+        </div>
+        <div class="note-item">
+          <h4>Mobile responsive</h4>
+          <p>Form grid collapses to single column under 560px. Nav phone number hides on mobile. All sections use fluid clamp() typography and auto-fit grid columns.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-logo">Convoy<span>Auto</span></div>
+    <a href="tel:18005550100" class="nav-phone"><span>Call Us:</span> 1-800-555-0100</a>
+    <a href="#quote" class="nav-cta">Get Free Quote</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="quote">
+    <div class="hero-badge">Trusted by 50,000+ Customers Nationwide</div>
+    <h1>Ship Your Car <span>Door-to-Door</span><br>Anywhere in the US</h1>
+    <p class="hero-sub">Licensed, insured, and fully trackable. Get your free quote in 30 seconds - no obligation.</p>
+
+    <div class="quote-form-wrap">
+      <div class="form-title">Get Your Free Shipping Quote</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Pickup ZIP Code</label>
+          <input type="text" placeholder="e.g. 90001">
+        </div>
+        <div class="form-group">
+          <label>Delivery ZIP Code</label>
+          <input type="text" placeholder="e.g. 10001">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Vehicle Make</label>
+          <input type="text" placeholder="e.g. Toyota">
+        </div>
+        <div class="form-group">
+          <label>Vehicle Model</label>
+          <input type="text" placeholder="e.g. Camry">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Transport Type</label>
+          <select>
+            <option>Open Transport (Standard)</option>
+            <option>Enclosed Transport (Premium)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Estimated Ship Date</label>
+          <input type="date">
+        </div>
+      </div>
+      <div class="form-row single">
+        <div class="form-group">
+          <label>Your Phone Number</label>
+          <input type="tel" placeholder="(555) 000-0000">
+        </div>
+      </div>
+      <button class="form-submit">Get My Free Quote Now &rarr;</button>
+      <p class="form-note"><span>100% Free.</span> No obligation. Takes 30 seconds.</p>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-inner">
+      <div class="trust-item"><div class="trust-icon">✓</div> Licensed &amp; Insured</div>
+      <div class="trust-item"><div class="trust-icon">★</div> 4.9/5 Average Rating</div>
+      <div class="trust-item"><div class="trust-icon">🚗</div> 50,000+ Cars Shipped</div>
+      <div class="trust-item"><div class="trust-icon">📍</div> All 50 States Covered</div>
+      <div class="trust-item"><div class="trust-icon">🔒</div> Fully Bonded Carriers</div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section class="section section-center">
+    <div class="container">
+      <span class="section-tag">Simple Process</span>
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-sub">Shipping your car should be stress-free. We handle everything from pickup to delivery.</p>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <div class="step-title">Get Your Quote</div>
+          <p class="step-desc">Fill in the form above and receive a firm, no-obligation quote within minutes.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <div class="step-title">Book &amp; Confirm</div>
+          <p class="step-desc">Choose your transport type and confirm your pickup date with a small deposit.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <div class="step-title">We Pick It Up</div>
+          <p class="step-desc">A vetted carrier picks up your vehicle from your door at the agreed time.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <div class="step-title">Track &amp; Receive</div>
+          <p class="step-desc">Track your car in real-time and receive it at your destination - damage-free.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="section" style="background: var(--white);">
+    <div class="container">
+      <span class="section-tag">Why ConvoyAuto</span>
+      <h2 class="section-title" style="text-align: center;">Not All Auto Shippers Are Equal</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <h3>Price-Match Guarantee</h3>
+          <p>Find a lower price from a licensed competitor and we'll beat it - no questions asked.</p>
+        </div>
+        <div class="why-card">
+          <h3>Door-to-Door Pickup</h3>
+          <p>No terminals, no extra trips. We pick up and deliver directly to your specified addresses.</p>
+        </div>
+        <div class="why-card">
+          <h3>Full Insurance Coverage</h3>
+          <p>Every shipment is covered by carrier insurance. Your vehicle is protected from pickup to delivery.</p>
+        </div>
+        <div class="why-card">
+          <h3>Real-Time GPS Tracking</h3>
+          <p>Know exactly where your car is at every step. Our tracking portal updates in real-time.</p>
+        </div>
+        <div class="why-card">
+          <h3>No Hidden Fees</h3>
+          <p>The price you're quoted is the price you pay. No fuel surcharges, no surprise add-ons.</p>
+        </div>
+        <div class="why-card">
+          <h3>Vetted Carrier Network</h3>
+          <p>Every carrier in our network is licensed, background-checked, and rated by past customers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews-section">
+    <div class="container section-center">
+      <span class="section-tag" style="color: #fdba74;">Customer Reviews</span>
+      <h2 class="section-title" style="color: var(--white);">What Our Customers Say</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"Shipped my truck from California to Florida for a cross-country move. The process was incredibly smooth - picked up on time, delivered 2 days early, zero damage."</p>
+          <div class="reviewer">Marcus T.</div>
+          <div class="reviewer-loc">Los Angeles, CA &rarr; Miami, FL</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"Used enclosed transport for my classic Mustang. Worth every penny. The carrier was professional and the car arrived in perfect condition."</p>
+          <div class="reviewer">Rebecca S.</div>
+          <div class="reviewer-loc">Chicago, IL &rarr; Austin, TX</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"Third time using ConvoyAuto. Consistently reliable. The quote process is the fastest I've seen and the drivers are always professional."</p>
+          <div class="reviewer">Daniel R.</div>
+          <div class="reviewer-loc">New York, NY &rarr; Seattle, WA</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="cta-bottom">
+    <div class="container">
+      <h2>Ready to Ship Your Vehicle?</h2>
+      <p>Get your free, no-obligation quote in 30 seconds. No credit card required.</p>
+      <a href="#quote" class="cta-btn">Get My Free Quote &rarr;</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>ConvoyAuto &mdash; This is a portfolio demo page built by <a href="../index.html" style="color: #7c6aff; text-decoration: none;">Adhel Tantao</a>. Not a real business.</p>
+  </footer>
+
+  <script>
+    // Scroll-triggered animations using IntersectionObserver
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 100);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.step-card, .why-card').forEach(el => observer.observe(el));
+  </script>
+  <script>
+    const pt = document.querySelector('.pnotes-toggle');
+    if(pt) pt.addEventListener('click', function(){
+      const b = this.nextElementSibling;
+      const h = this.querySelector('.pnotes-hint');
+      b.classList.toggle('open');
+      h.textContent = b.classList.contains('open') ? 'Click to collapse' : 'Click to expand';
+    });
+  </script>
+</body>
+</html>
