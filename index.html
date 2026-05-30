@@ -200,7 +200,19 @@
     .cf-btn:hover{background:var(--white);box-shadow:0 0 24px var(--yglow)}
     footer{text-align:center;padding:2.5rem 1.5rem;border-top:1px solid var(--border);position:relative;z-index:1}
     footer p{font-size:.78rem;color:var(--dim);text-transform:uppercase;letter-spacing:2px}
-    @media(max-width:640px){.section{padding:4rem 1.5rem}.nav-right .nav-link{display:none}}
+    @media(max-width:640px){
+      .section{padding:4rem 1.5rem}
+      .nav-right .nav-link{display:none}
+      .nav-right{gap:.75rem}
+      .hero{grid-template-columns:1fr;text-align:center;padding:5rem 1.5rem 3rem}
+      .hero-right{display:none}
+      .hero-left{align-items:center}
+      .hero-desc{text-align:center}
+      .hero-actions{justify-content:center;flex-direction:column;align-items:center;width:100%}
+      .btn-primary,.btn-ghost{width:100%;max-width:300px;text-align:center}
+      .hero-chips{justify-content:center}
+      .hero-eyebrow{justify-content:center}
+    }
 
     .typed-cursor{color:var(--yellow);animation:blink 1s step-start infinite;font-weight:300;margin-left:2px}
     @keyframes blink{50%{opacity:0}}
@@ -235,7 +247,7 @@
       <a href="#services" class="nav-link">Services</a>
       <a href="#experience" class="nav-link">Experience</a>
       <a href="#contact" class="nav-link">Contact</a>
-      <a href="https://www.linkedin.com/in/adhel-tantao/" target="_blank" class="nav-link" style="display:flex;align-items:center;gap:5px"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="opacity:.7"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>LinkedIn</a>
+      <a href="https://www.linkedin.com/in/adhel-tantao/" target="_blank" class="nav-link" style="display:flex;align-items:center;gap:5px"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="opacity:.7"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg class="linkedin-text">LinkedIn</a>
       <a href="resume.html" class="nav-cta">Resume &nearr;</a>
     </div>
   </nav>
