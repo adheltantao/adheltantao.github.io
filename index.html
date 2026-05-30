@@ -205,7 +205,7 @@
     .typed-cursor{color:var(--yellow);animation:blink 1s step-start infinite;font-weight:300;margin-left:2px}
     @keyframes blink{50%{opacity:0}}
   
-    @media(max-width:900px){.port-grid{grid-template-columns:repeat(2,1fr)!important}}
+    @media(max-width:860px){.port-grid{grid-template-columns:repeat(2,1fr)!important}}
     @media(max-width:500px){.port-grid{grid-template-columns:1fr!important}}
   </style>
 
@@ -318,7 +318,7 @@
   </div></section>
   <section class="section" id="portfolio"><div class="wrap">
     <div class="sec-head reveal"><div class="sec-kicker">Portfolio</div><h2 class="sec-title">Selected Work</h2><p class="sec-sub">HTML/CSS builds showcasing range across niches. Each page includes technical notes on the decisions made.</p></div>
-    <div class="reveal" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:6px;overflow:hidden" class="port-grid">
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:6px;overflow:hidden" class="port-grid">
       <a href="portfolio/conversion-lander.html" style="background:var(--surface);padding:2rem;text-decoration:none;color:inherit;transition:background .2s;display:block" onmouseover="this.style.background='var(--surface2)'" onmouseout="this.style.background='var(--surface)'">
         <div style="font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--yellow);margin-bottom:.75rem">01 &mdash; Conversion Lander</div>
         <div style="font-size:.92rem;font-weight:700;margin-bottom:.4rem">Car Shipping Landing Page</div>
@@ -367,7 +367,7 @@
         <div style="font-size:.8rem;color:var(--mid);line-height:1.6;font-weight:300">Light/dark mixed theme, team section, case studies, services with CSS hover animation.</div>
         <div style="margin-top:1rem;font-size:.72rem;font-weight:700;color:var(--yellow);text-transform:uppercase;letter-spacing:1px">View Page &rarr;</div>
       </a>
-      <a href="portfolio/longform-sales-page.html" style="background:var(--surface);padding:2rem;text-decoration:none;color:inherit;transition:background .2s;display:block;grid-column:span 4" onmouseover="this.style.background='var(--surface2)'" onmouseout="this.style.background='var(--surface)'">
+      <a href="portfolio/longform-sales-page.html" style="background:var(--surface);padding:2rem;text-decoration:none;color:inherit;transition:background .2s;display:block" onmouseover="this.style.background='var(--surface2)'" onmouseout="this.style.background='var(--surface)'">
         <div style="font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--yellow);margin-bottom:.75rem">09 &mdash; Long-Form Sales Page</div>
         <div style="font-size:.92rem;font-weight:700;margin-bottom:.4rem">VSL / ClickBank-Style Sales Letter</div>
         <div style="font-size:.8rem;color:var(--mid);line-height:1.6;font-weight:300">Full direct response structure: story, mechanism reveal, ingredients, social proof, offer stack, guarantee, urgency close.</div>
@@ -528,7 +528,7 @@
       <div class="contact-right">
         <div class="cf-title">Send a Message</div>
         <form action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="0c25d957-af8a-4973-a7dc-69ee078d9f52">
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY_HERE">
           <input type="hidden" name="subject" value="New project inquiry from adheltantao.com">
           <input type="hidden" name="redirect" value="https://adheltantao.github.io?sent=true">
           <div class="cf-row">
