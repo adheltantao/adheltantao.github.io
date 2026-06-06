@@ -162,6 +162,34 @@
     }
     .wise-note strong { color: var(--mid); font-weight: 600; }
 
+    /* BILLING SUMMARY */
+    .billing-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+    .billing-row:last-of-type { border-bottom: none; }
+    .billing-key { color: var(--dim); }
+    .billing-val { font-weight: 600; color: var(--mid); }
+    .billing-total-row {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 1.25rem;
+      padding: 1rem 1.25rem;
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+    }
+    .billing-total-row::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--yellow), transparent);
+    }
+    .billing-total-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--dim); }
+    .billing-total-val { font-size: 26px; font-weight: 800; color: var(--yellow); letter-spacing: -1px; }
+
     /* FOOTER */
     .ts-footer {
       padding: .875rem 2.25rem;
@@ -294,7 +322,7 @@
           <div class="pay-block-label">Personal details</div>
           <div class="pay-row">
             <div class="pay-item"><span class="pay-key">Name</span><span class="pay-val">Adhel M Tantao</span></div>
-            <div class="pay-item"><span class="pay-key">Email</span><span class="pay-val pay-highlight">businessheaded02@yahoo.com</span></div>
+            <div class="pay-item"><span class="pay-key">Email</span><span class="pay-val pay-highlight">businessheaded02@yahoo.com.com</span></div>
             <div class="pay-item"><span class="pay-key">Phone</span><span class="pay-val">+63 936 236 8314</span></div>
             <div class="pay-item"><span class="pay-key">Address</span><span class="pay-val">Purok 2, Tambacan, Iligan City, Lanao Del Norte, 9200, Philippines</span></div>
           </div>
@@ -311,6 +339,13 @@
       <div class="wise-note">
         <strong>Preferred payment method:</strong> Wise (international transfer to my bank account directly — not Wise-to-Wise). Please use the bank details above when sending via Wise.
       </div>
+    </div>
+
+    <div class="ts-section">
+      <div class="ts-section-label">Billing summary</div>
+      <div class="billing-row"><span class="billing-key">Total hours logged</span><span class="billing-val">34.5 hrs</span></div>
+      <div class="billing-row"><span class="billing-key">Hourly rate (agreed)</span><span class="billing-val">$8.00 / hr</span></div>
+      <div class="billing-total-row"><span class="billing-total-label">Amount due</span><span class="billing-total-val">$276.00</span></div>
     </div>
 
     <div class="ts-footer">Adhel Tantao · May 30, 2026</div>
