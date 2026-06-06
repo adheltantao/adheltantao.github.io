@@ -129,8 +129,10 @@
       font-size: 13px; color: #777;
       padding: 4px 0 4px 10px;
       border-left: 1.5px solid var(--border2);
+      gap: 8px;
     }
-    .sub-row span:last-child { color: var(--dim); white-space: nowrap; margin-left: 12px; }
+    .sub-row span:first-child { flex-shrink: 0; }
+    .sub-row span:last-child { color: var(--dim); text-align: right; word-break: break-word; }
 
     /* TOTAL BAR */
     .total-bar {
@@ -207,6 +209,11 @@
       .ts-badge { align-self: flex-start; }
       .pay-grid { grid-template-columns: 1fr; }
       .ts-section, .ts-top, .total-bar, .ts-footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .task-header { grid-template-columns: 1fr auto; gap: 8px; }
+      .task-name { font-size: 14px; }
+      .task-desc { font-size: 12px; }
+      .task-time { font-size: 13px; }
+      .billing-total-val { font-size: 22px; }
     }
   </style>
 </head>
@@ -322,7 +329,7 @@
           <div class="pay-block-label">Personal details</div>
           <div class="pay-row">
             <div class="pay-item"><span class="pay-key">Name</span><span class="pay-val">Adhel M Tantao</span></div>
-            <div class="pay-item"><span class="pay-key">Email</span><span class="pay-val pay-highlight">businessheaded02@yahoo.com.com</span></div>
+            <div class="pay-item"><span class="pay-key">Email</span><span class="pay-val pay-highlight">businessheaded02@yahoo.com</span></div>
             <div class="pay-item"><span class="pay-key">Phone</span><span class="pay-val">+63 936 236 8314</span></div>
             <div class="pay-item"><span class="pay-key">Address</span><span class="pay-val">Purok 2, Tambacan, Iligan City, Lanao Del Norte, 9200, Philippines</span></div>
           </div>
