@@ -4,7 +4,7 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Adhel Tantao | Digital Marketing & Web Specialist</title>
 <link rel="icon" type="image/png" href="favicon.png">
-<meta name="description" content="Adhel Tantao — Filipino digital marketing specialist. WordPress, SEO, content, paid media ops for US and AU clients.">
+<meta name="description" content="Adhel Tantao — flexible digital marketing & ops support for US and AU founders. WordPress, SEO, content, paid media, and VA work — one reliable person for whatever's on your plate.">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -32,9 +32,13 @@ body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);lin
 .hero{max-width:1080px;margin:0 auto;padding:5rem 2.5rem 4rem;display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:center}
 @media(max-width:850px){.hero{grid-template-columns:1fr;padding:3rem 1.25rem}}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;color:var(--sage);margin-bottom:1.5rem;letter-spacing:.5px}
-.hero-eyebrow::before{content:'';width:8px;height:8px;background:var(--sage);border-radius:50%}
+.hero-eyebrow::before{content:'';width:8px;height:8px;background:var(--sage);border-radius:50%;animation:pulse-dot 2s ease-in-out infinite}
+@keyframes pulse-dot{0%{box-shadow:0 0 0 0 rgba(95,115,99,.7)}70%{box-shadow:0 0 0 8px rgba(95,115,99,0)}100%{box-shadow:0 0 0 0 rgba(95,115,99,0)}}
 .hero-title{font-family:'Fraunces',serif;font-size:clamp(2.6rem,5.5vw,4.2rem);font-weight:600;line-height:1.05;letter-spacing:-1px;margin-bottom:1.5rem}
 .hero-title em{font-style:italic;color:var(--terracotta);font-weight:500}
+.type-cursor{display:inline-block;color:var(--terracotta);animation:blink 1s step-end infinite;font-weight:300}
+@keyframes blink{50%{opacity:0}}
+#typed-word{display:inline-block;min-width:9.5ch;text-align:left}
 .hero-desc{font-size:1.05rem;color:var(--ink-soft);max-width:480px;margin-bottom:2rem;font-weight:400}
 .hero-desc strong{color:var(--ink);font-weight:600}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
@@ -83,14 +87,36 @@ body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);lin
 .svc-name{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:600;margin-bottom:.5rem}
 .svc-desc{font-size:.9rem;color:var(--ink-soft);line-height:1.65}
 
+/* SPECIALIST BRIDGE */
+.bridge-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:700px){.bridge-grid{grid-template-columns:1fr}}
+.bridge-card{display:block;background:var(--ink);border-radius:20px;padding:2rem;text-decoration:none;color:var(--paper);transition:all .25s;position:relative;overflow:hidden}
+.bridge-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -16px rgba(38,34,32,.3)}
+.bridge-tag{font-size:.72rem;font-weight:700;color:var(--terracotta);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.7rem}
+.bridge-title{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:600;margin-bottom:.5rem}
+.bridge-desc{font-size:.88rem;color:#cfc8c0;line-height:1.65;margin-bottom:1.25rem}
+.bridge-link{font-size:.82rem;font-weight:700;color:var(--paper);display:inline-flex;align-items:center;gap:4px;transition:gap .2s}
+.bridge-card:hover .bridge-link{gap:9px;color:var(--terracotta)}
+
 /* SKILLS */
-.skill-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.skill-groups{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 @media(max-width:850px){.skill-groups{grid-template-columns:1fr}}
 .skill-group{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:1.75rem}
 .skill-group-title{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;margin-bottom:1rem;display:flex;align-items:center;gap:8px}
 .skill-group-title::before{content:'';width:10px;height:10px;background:var(--terracotta);border-radius:3px;display:inline-block}
 .skill-list{display:flex;flex-wrap:wrap;gap:8px}
 .skill-pill{font-size:.82rem;padding:6px 14px;background:var(--paper2);border-radius:20px;color:var(--ink-soft);font-weight:500}
+.skill-pill.key{background:var(--terracotta);color:var(--white);font-weight:600}
+
+/* PROCESS */
+.process-list{display:flex;flex-direction:column;gap:0}
+.process-item{display:grid;grid-template-columns:64px 1fr;gap:1.5rem;padding:1.75rem 0;border-bottom:1px solid var(--line)}
+.process-item:first-child{padding-top:0}
+.process-item:last-child{border-bottom:none;padding-bottom:0}
+@media(max-width:600px){.process-item{grid-template-columns:1fr;gap:.5rem}}
+.process-num{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:700;color:var(--terracotta);opacity:.4;line-height:1}
+.process-title{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:600;margin-bottom:.4rem}
+.process-desc{font-size:.92rem;color:var(--ink-soft);line-height:1.7;max-width:600px}
 
 /* EXPERIENCE */
 .exp-list{display:flex;flex-direction:column;gap:0}
@@ -161,10 +187,10 @@ footer p{font-size:.8rem;color:var(--ink-soft)}
 <section class="hero">
   <div>
     <div class="hero-eyebrow">Available for work — remote, PH-based</div>
-    <h1 class="hero-title">Digital marketing,<br>handled <em>properly.</em></h1>
-    <p class="hero-desc">I'm <strong>Adhel Tantao</strong> — 6+ years building WordPress sites, running SEO audits, writing content, and managing paid media ops for agencies and founders across the US and AU. Whatever the project needs, I execute it.</p>
+    <h1 class="hero-title">I move across <em><span id="typed-word">WordPress</span></em><span class="type-cursor">|</span><br>and the channels around it.</h1>
+    <p class="hero-desc">I'm <strong>Adhel Tantao</strong> — 6+ years building WordPress sites, running SEO, writing content, and running paid media ops for agencies and founders in the US and AU. Most freelancers specialize narrow; I cover the full stack a small operation actually needs.</p>
     <div class="hero-actions">
-      <a href="portfolio/conversion-lander.html" class="btn-primary">View Portfolio</a>
+      <a href="#services" class="btn-primary">See What I Can Take On</a>
       <a href="#contact" class="btn-ghost">Start a Project</a>
     </div>
   </div>
@@ -214,28 +240,94 @@ footer p{font-size:.8rem;color:var(--ink-soft)}
   </div>
 </section>
 
-<section class="section bg-alt" id="skills">
+<section class="section bg-alt">
+  <div class="wrap">
+    <div class="sec-kicker reveal">Looking For Something Specific?</div>
+    <h2 class="sec-title reveal">I've got dedicated pages for that</h2>
+    <p class="sec-sub reveal">If your need is sharply defined, these go deeper into the work, process, and results for that specialty.</p>
+    <div class="bridge-grid reveal">
+      <a href="index.html" class="bridge-card">
+        <div class="bridge-tag">WordPress &amp; Elementor</div>
+        <div class="bridge-title">High-converting builds, full SEO structure</div>
+        <div class="bridge-desc">Landing pages, funnels, full sites, multi-site deployments — and the audits to back them up.</div>
+        <div class="bridge-link">See the specialist page →</div>
+      </a>
+      <a href="facebook-ads.html" class="bridge-card">
+        <div class="bridge-tag">Paid Media</div>
+        <div class="bridge-title">Facebook &amp; TikTok ads operations</div>
+        <div class="bridge-desc">Lander builds, pixel/tracking setup, campaign monitoring, creative production.</div>
+        <div class="bridge-link">See the specialist page →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="skills">
   <div class="wrap">
     <div class="sec-kicker reveal">Skills</div>
     <h2 class="sec-title reveal">Tools of the trade</h2>
-    <p class="sec-sub reveal">Built up across six years of real client work — not a checklist, things I actually use weekly.</p>
+    <p class="sec-sub reveal">Built up across six years of real client work — not a checklist, things I actually use. Highlighted ones are daily drivers.</p>
     <div class="skill-groups reveal">
       <div class="skill-group">
-        <div class="skill-group-title">Web &amp; Design</div>
+        <div class="skill-group-title">WordPress &amp; Builders</div>
         <div class="skill-list">
-          <span class="skill-pill">WordPress</span><span class="skill-pill">Elementor</span><span class="skill-pill">Divi</span><span class="skill-pill">Shopify</span><span class="skill-pill">Custom CSS</span><span class="skill-pill">HTML</span>
+          <span class="skill-pill key">Elementor</span><span class="skill-pill key">WordPress</span><span class="skill-pill">Divi</span><span class="skill-pill">Thrive Architect</span><span class="skill-pill">WPBakery</span><span class="skill-pill">Beaver Builder</span><span class="skill-pill">Gutenberg</span><span class="skill-pill">ACF</span><span class="skill-pill">LanderLab</span><span class="skill-pill">Shopify</span><span class="skill-pill">WooCommerce</span><span class="skill-pill">Custom CSS &amp; HTML</span>
         </div>
       </div>
       <div class="skill-group">
         <div class="skill-group-title">SEO &amp; Content</div>
         <div class="skill-list">
-          <span class="skill-pill">On-Page SEO</span><span class="skill-pill">Screaming Frog</span><span class="skill-pill">Ahrefs</span><span class="skill-pill">SurferSEO</span><span class="skill-pill">Detailed SEO Extension</span><span class="skill-pill">Blog Writing</span><span class="skill-pill">Copywriting</span>
+          <span class="skill-pill key">Screaming Frog</span><span class="skill-pill key">Ahrefs</span><span class="skill-pill">SurferSEO</span><span class="skill-pill">ClearScope</span><span class="skill-pill">OutRanking</span><span class="skill-pill">Frase.io</span><span class="skill-pill">Detailed SEO Extension</span><span class="skill-pill">Grammarly</span><span class="skill-pill">Quetext</span><span class="skill-pill">Blog Writing</span><span class="skill-pill">Copywriting</span>
         </div>
       </div>
       <div class="skill-group">
-        <div class="skill-group-title">Ads &amp; Ops</div>
+        <div class="skill-group-title">Paid Media &amp; Tracking</div>
         <div class="skill-list">
-          <span class="skill-pill">Facebook Ads</span><span class="skill-pill">TikTok Ads</span><span class="skill-pill">Meta Pixel</span><span class="skill-pill">Voluum</span><span class="skill-pill">Notion</span><span class="skill-pill">Research</span><span class="skill-pill">GetGo TradeShift</span><span class="skill-pill">PayWithExtend</span>
+          <span class="skill-pill key">Facebook Ads Manager</span><span class="skill-pill key">Voluum</span><span class="skill-pill">TikTok Ads</span><span class="skill-pill">Meta Pixel</span><span class="skill-pill">Redtrack</span><span class="skill-pill">Adplexity</span><span class="skill-pill">Adspy</span><span class="skill-pill">Multilogin</span><span class="skill-pill">AdsPower</span><span class="skill-pill">SmartProxy</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Ops &amp; Productivity</div>
+        <div class="skill-list">
+          <span class="skill-pill key">Notion</span><span class="skill-pill">Airtable</span><span class="skill-pill">Slack</span><span class="skill-pill">Asana</span><span class="skill-pill">Trello</span><span class="skill-pill">Canva</span><span class="skill-pill">Loom</span><span class="skill-pill">FileZilla</span><span class="skill-pill">Siteground</span><span class="skill-pill">Namecheap</span><span class="skill-pill">GetGo TradeShift</span><span class="skill-pill">PayWithExtend</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="process">
+  <div class="wrap">
+    <div class="sec-kicker reveal">How I Work</div>
+    <h2 class="sec-title reveal">No hand-holding required</h2>
+    <p class="sec-sub reveal">You won't get a junior figuring things out on your dime. Here's roughly how engagements actually go.</p>
+    <div class="process-list reveal">
+      <div class="process-item">
+        <div class="process-num">01</div>
+        <div>
+          <div class="process-title">Scope it in one conversation</div>
+          <div class="process-desc">Tell me the problem, not the solution. I'll tell you straight if it's a quick fix, a build, or something that needs more clarity before we start — no padding the scope to look busy.</div>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-num">02</div>
+        <div>
+          <div class="process-title">I work async, you stay in the loop</div>
+          <div class="process-desc">PHT timezone, but built around minimal back-and-forth — clear status updates, no chasing me for progress.</div>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-num">03</div>
+        <div>
+          <div class="process-title">Ship, then tighten</div>
+          <div class="process-desc">First pass gets it live and functional. Then we refine based on what's actually performing — copy, layout, tracking, whatever the data points to.</div>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-num">04</div>
+        <div>
+          <div class="process-title">Stay or step back, your call</div>
+          <div class="process-desc">Some projects are one-and-done. Others turn into ongoing retainers once the trust is there. No pressure either way.</div>
         </div>
       </div>
     </div>
@@ -277,7 +369,7 @@ footer p{font-size:.8rem;color:var(--ink-soft)}
       <div class="exp-item">
         <div class="exp-period">2015 — 2022</div>
         <div>
-          <div class="exp-role">Freelance Content Writer &amp; Copywriter</div>
+          <div class="exp-role">Freelance Content Writer &amp; Copywriter (Gig)</div>
           <div class="exp-company">Upwork / OnlineJobs.ph</div>
           <div class="exp-desc">Ghostwriting, SEO blog posts, product reviews, and affiliate content for different clients across the globe — where my WordPress and on-page SEO foundation started.</div>
           <div class="exp-tags"><span class="exp-tag">Copywriting</span><span class="exp-tag">Blog Writing</span></div>
@@ -333,6 +425,27 @@ const obs = new IntersectionObserver(entries=>{
   entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
 },{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+const heroWords=["WordPress","SEO","Content","Paid Ads","Ops"];
+let hwi=0,hci=0,hdeleting=false,hpausing=false;
+const tw=document.getElementById('typed-word');
+if(tw){
+  function typeLoop(){
+    if(hpausing)return;
+    const word=heroWords[hwi];
+    if(!hdeleting){
+      hci++;
+      tw.textContent=word.substring(0,hci);
+      if(hci===word.length){hpausing=true;setTimeout(()=>{hpausing=false;hdeleting=true;typeLoop();},1600);return;}
+    } else {
+      hci--;
+      tw.textContent=word.substring(0,hci);
+      if(hci===0){hdeleting=false;hwi=(hwi+1)%heroWords.length;}
+    }
+    setTimeout(typeLoop,hdeleting?40:85);
+  }
+  setTimeout(typeLoop,900);
+}
 </script>
 </body>
 </html>
