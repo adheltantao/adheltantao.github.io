@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adhel Tantao | Facebook Ads & Media Buying Experience</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="description" content="Adhel Tantao — 6 years of Facebook and TikTok media buying experience. Campaign ops, tracking infrastructure, creative production, and landing pages.">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0b0d10;--surface:#13161a;--surface2:#181c21;--surface3:#1e2329;
+  --green:#39ff88;--green-dim:rgba(57,255,136,.08);--green-border:rgba(57,255,136,.25);
+  --red:#ff5c5c;--red-dim:rgba(255,92,92,.08);
+  --steel:#a8b2bc;--steel-dim:#7b848d;--white:#eef1f3;
+  --border:#1c2027;--border2:#262c34
+}
+html{scroll-behavior:smooth}
+body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--white);line-height:1.7}
+.mono{font-family:'IBM Plex Mono',monospace}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(11,13,16,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:1rem 2.5rem}
+.nav-logo{font-family:'IBM Plex Mono',monospace;font-size:1rem;font-weight:600;color:var(--white);text-decoration:none;letter-spacing:.5px}
+.nav-logo span{color:var(--green)}
+.nav-right{display:flex;align-items:center;gap:2rem}
+.nav-link{font-size:.82rem;font-weight:500;color:var(--steel);text-decoration:none;transition:color .2s}
+.nav-link:hover{color:var(--green)}
+.nav-back{display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--steel-dim);text-decoration:none;transition:color .2s}
+.nav-back:hover{color:var(--green)}
+.nav-cta{padding:8px 18px;background:var(--green);color:#0b0d10;border-radius:4px;text-decoration:none;font-weight:700;font-size:.8rem;transition:all .2s}
+.nav-cta:hover{filter:brightness(1.1);transform:translateY(-1px)}
+@media(max-width:760px){.nav{padding:.9rem 1.25rem}.nav-right .nav-link{display:none}}
+
+/* HERO */
+.hero{max-width:1100px;margin:0 auto;padding:4rem 2.5rem 3rem}
+@media(max-width:760px){.hero{padding:2.5rem 1.25rem 2rem}}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--green);margin-bottom:1.5rem;letter-spacing:1px}
+.hero-eyebrow::before{content:'●';font-size:.6rem}
+.hero-title{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:700;line-height:1.08;letter-spacing:-1px;margin-bottom:1.25rem;max-width:780px}
+.hero-title span{color:var(--green)}
+.hero-desc{font-size:1.02rem;color:var(--steel);max-width:640px;margin-bottom:2rem;font-weight:300}
+.hero-desc strong{color:var(--white);font-weight:600}
+
+/* LEDGER — signature element */
+.ledger{background:var(--surface);border:1px solid var(--border2);border-radius:10px;overflow:hidden;margin-top:2.5rem}
+.ledger-head{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.5rem;border-bottom:1px solid var(--border2);background:var(--surface2)}
+.ledger-title{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--steel);letter-spacing:.5px}
+.ledger-dots{display:flex;gap:6px}
+.ledger-dot{width:8px;height:8px;border-radius:50%;background:var(--border2)}
+.ledger-dot.live{background:var(--green);box-shadow:0 0 8px var(--green)}
+.ledger-table{width:100%;border-collapse:collapse}
+.ledger-table th{font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:var(--steel-dim);text-transform:uppercase;letter-spacing:1px;text-align:left;padding:.75rem 1.5rem;border-bottom:1px solid var(--border2);font-weight:500}
+.ledger-table td{font-family:'IBM Plex Mono',monospace;font-size:.82rem;padding:.7rem 1.5rem;border-bottom:1px solid var(--border);color:var(--steel)}
+.ledger-table tr:last-child td{border-bottom:none}
+.ledger-table .camp{color:var(--white);font-weight:500}
+.ledger-table .pos{color:var(--green);font-weight:600}
+.ledger-table .neg{color:var(--red)}
+.ledger-table tr{transition:background .15s}
+.ledger-table tbody tr:hover{background:var(--surface2)}
+@media(max-width:700px){
+  .ledger-table thead{display:none}
+  .ledger-table tr{display:block;padding:.9rem 1.25rem;border-bottom:1px solid var(--border)}
+  .ledger-table td{display:flex;justify-content:space-between;padding:.25rem 0;border:none;font-size:.78rem}
+  .ledger-table td::before{content:attr(data-label);color:var(--steel-dim);font-size:.68rem;text-transform:uppercase}
+}
+
+/* MARQUEE */
+.marquee-wrap{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:.85rem 0;background:var(--surface)}
+.marquee-inner{display:flex;width:max-content;animation:marquee 26s linear infinite}
+.marquee-inner:hover{animation-play-state:paused}
+.marquee-item{display:flex;align-items:center;gap:.75rem;padding:0 2rem;font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--steel-dim);white-space:nowrap;text-transform:uppercase;letter-spacing:1px}
+.marquee-dot{width:5px;height:5px;background:var(--green);border-radius:50%;flex-shrink:0}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SECTIONS */
+.section{padding:4.5rem 2.5rem}
+.wrap{max-width:1100px;margin:0 auto}
+.bg-alt{background:var(--surface)}
+.sec-kicker{font-family:'IBM Plex Mono',monospace;font-size:.75rem;color:var(--green);letter-spacing:2px;text-transform:uppercase;margin-bottom:.6rem}
+.sec-title{font-size:clamp(1.6rem,3.2vw,2.3rem);font-weight:700;letter-spacing:-.5px;margin-bottom:.75rem}
+.sec-sub{font-size:.95rem;color:var(--steel);max-width:560px;margin-bottom:2.5rem;font-weight:300}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .55s,transform .55s}
+.reveal.visible{opacity:1;transform:none}
+
+/* STAT STRIP */
+.stat-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border2);border:1px solid var(--border2);border-radius:10px;overflow:hidden}
+@media(max-width:700px){.stat-strip{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--bg);padding:1.5rem;text-align:center}
+.stat-n{font-family:'IBM Plex Mono',monospace;font-size:1.7rem;font-weight:700;color:var(--green);letter-spacing:-.5px}
+.stat-l{font-size:.72rem;color:var(--steel-dim);text-transform:uppercase;letter-spacing:1px;margin-top:4px;font-weight:500}
+
+/* CAPABILITY GRID */
+.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border2);border:1px solid var(--border2);border-radius:10px;overflow:hidden}
+@media(max-width:800px){.cap-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.cap-grid{grid-template-columns:1fr}}
+.cap{background:var(--bg);padding:1.75rem;transition:background .2s}
+.cap:hover{background:var(--surface)}
+.cap-icon{font-size:1.3rem;margin-bottom:.75rem}
+.cap-name{font-weight:700;font-size:.95rem;margin-bottom:.5rem}
+.cap-desc{font-size:.82rem;color:var(--steel);line-height:1.65}
+
+/* TOOLS */
+.tool-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:800px){.tool-groups{grid-template-columns:1fr}}
+.tool-group{background:var(--bg);border:1px solid var(--border2);border-radius:10px;padding:1.5rem}
+.tool-group-title{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--green);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:1rem}
+.tool-list{display:flex;flex-direction:column;gap:.6rem}
+.tool-row{display:flex;align-items:center;gap:10px;font-size:.85rem;color:var(--steel)}
+.tool-row::before{content:'▹';color:var(--green);font-size:.7rem}
+
+/* PROOF / SCREENSHOT GALLERY */
+.proof-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:700px){.proof-grid{grid-template-columns:1fr}}
+.proof-card{background:var(--bg);border:1px solid var(--border2);border-radius:10px;overflow:hidden;transition:border-color .2s}
+.proof-card:hover{border-color:var(--green-border)}
+.proof-img-wrap{aspect-ratio:16/10;overflow:hidden;background:var(--surface2);position:relative}
+.proof-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .3s}
+.proof-card:hover .proof-img-wrap img{transform:scale(1.03)}
+.proof-label{position:absolute;top:10px;left:10px;background:rgba(11,13,16,.85);backdrop-filter:blur(4px);color:var(--green);font-family:'IBM Plex Mono',monospace;font-size:.65rem;padding:4px 10px;border-radius:4px;letter-spacing:.5px;border:1px solid var(--green-border)}
+.proof-body{padding:1.1rem 1.25rem}
+.proof-title{font-weight:600;font-size:.88rem;margin-bottom:.35rem}
+.proof-desc{font-size:.78rem;color:var(--steel-dim);line-height:1.6}
+
+/* TIMELINE / Q&A */
+.qa-list{display:flex;flex-direction:column;gap:0}
+.qa-item{padding:1.75rem 0;border-bottom:1px solid var(--border)}
+.qa-item:first-child{padding-top:0}
+.qa-item:last-child{border-bottom:none}
+.qa-q{display:flex;gap:10px;font-size:.92rem;color:var(--steel);margin-bottom:.6rem;font-weight:500}
+.qa-q::before{content:'Q';font-family:'IBM Plex Mono',monospace;color:var(--steel-dim);font-weight:700;flex-shrink:0}
+.qa-a{display:flex;gap:10px;font-size:.92rem;color:var(--white);line-height:1.7}
+.qa-a::before{content:'A';font-family:'IBM Plex Mono',monospace;color:var(--green);font-weight:700;flex-shrink:0}
+
+/* CONTACT */
+.contact-box{background:var(--surface);border:1px solid var(--border2);border-radius:14px;padding:3rem;text-align:center}
+.contact-box h3{font-size:1.6rem;font-weight:700;margin-bottom:.75rem;letter-spacing:-.5px}
+.contact-box h3 span{color:var(--green)}
+.contact-box p{font-size:.92rem;color:var(--steel);margin-bottom:1.75rem;max-width:480px;margin-left:auto;margin-right:auto;font-weight:300}
+.contact-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-primary{display:inline-block;padding:13px 28px;background:var(--green);color:#0b0d10;border-radius:6px;text-decoration:none;font-weight:700;font-size:.85rem;transition:all .2s}
+.btn-primary:hover{filter:brightness(1.1);transform:translateY(-2px)}
+.btn-ghost{display:inline-block;padding:13px 28px;border:1px solid var(--border2);color:var(--steel);border-radius:6px;text-decoration:none;font-weight:600;font-size:.85rem;transition:all .2s}
+.btn-ghost:hover{border-color:var(--green-border);color:var(--green)}
+
+footer{border-top:1px solid var(--border);padding:1.5rem 2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:.85rem}
+.footer-logo span{color:var(--green)}
+footer p{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--steel-dim)}
+
+@media(max-width:640px){
+  .section{padding:3rem 1.25rem}
+  .contact-box{padding:2rem 1.25rem}
+  .contact-actions{flex-direction:column}
+  .btn-primary,.btn-ghost{text-align:center}
+  footer{padding:1.25rem;flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-back">&larr; Back to Portfolio</a>
+  <div class="nav-right">
+    <a href="#capabilities" class="nav-link">Capabilities</a>
+    <a href="#proof" class="nav-link">Proof of Work</a>
+    <a href="#qa" class="nav-link">Q&amp;A</a>
+    <a href="#contact" class="nav-cta">Hire Me</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow">FACEBOOK &amp; TIKTOK MEDIA BUYING</div>
+  <h1 class="hero-title">Nearly six years running paid traffic for <span>one client who kept coming back.</span></h1>
+  <p class="hero-desc">Not theory, not a course certificate — one continuous client relationship from 2020 to 2025, across home services, health insurance, Medicare, and debt verticals. I built the landers, ran the campaigns daily, and reported the numbers every single day. <strong>This page is the receipts.</strong></p>
+
+  <div class="ledger reveal">
+    <div class="ledger-head">
+      <span class="ledger-title">campaign_ledger.log — sample output</span>
+      <div class="ledger-dots"><div class="ledger-dot live"></div><div class="ledger-dot"></div><div class="ledger-dot"></div></div>
+    </div>
+    <table class="ledger-table">
+      <thead><tr><th>Campaign</th><th>Spend</th><th>Revenue</th><th>ROI</th><th>Profit</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Campaign" class="camp">GetMeHealthInsurance — Facebook</td><td data-label="Spend">$13,882.80</td><td data-label="Revenue">$16,010.40</td><td data-label="ROI" class="pos">15.33%</td><td data-label="Profit" class="pos">+$2,127.60</td></tr>
+        <tr><td data-label="Campaign" class="camp">BMT Turbo985 Debt — Facebook</td><td data-label="Spend">$2,372.85</td><td data-label="Revenue">$4,406.40</td><td data-label="ROI" class="pos">85.70%</td><td data-label="Profit" class="pos">+$2,033.55</td></tr>
+        <tr><td data-label="Campaign" class="camp">Simple Bath 2 — Facebook</td><td data-label="Spend">$1,071.27</td><td data-label="Revenue">$4,752.00</td><td data-label="ROI" class="pos">343.59%</td><td data-label="Profit" class="pos">+$3,680.73</td></tr>
+        <tr><td data-label="Campaign" class="camp">BMT JG Debt (Check) — Facebook</td><td data-label="Spend">$214.75</td><td data-label="Revenue">$1,280.00</td><td data-label="ROI" class="pos">496.04%</td><td data-label="Profit" class="pos">+$1,065.25</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <div class="marquee-item"><span class="marquee-dot"></span>Facebook Ads Manager</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>TikTok Ads</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Redtrack</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Voluum</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Multilogin</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>AdsPower</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Pixel Setup</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>UTM Tracking</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Airtable</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>LanderLab</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Facebook Ads Manager</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>TikTok Ads</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Redtrack</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Voluum</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Multilogin</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>AdsPower</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Pixel Setup</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>UTM Tracking</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Airtable</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>LanderLab</div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="wrap">
+    <div class="stat-strip reveal">
+      <div class="stat"><div class="stat-n">5.75</div><div class="stat-l">Years, One Client (2020–2025)</div></div>
+      <div class="stat"><div class="stat-n">$139K</div><div class="stat-l">Profit, Single Reporting Period</div></div>
+      <div class="stat"><div class="stat-n">$2.1K</div><div class="stat-l">Highest Daily Ad Set Budget</div></div>
+      <div class="stat"><div class="stat-n">6</div><div class="stat-l">Verticals: Home Services, Insurance, Medicare, Debt, Health, Auto</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="capabilities">
+  <div class="wrap">
+    <div class="sec-kicker reveal">Capabilities</div>
+    <h2 class="sec-title reveal">What I actually did, daily</h2>
+    <p class="sec-sub reveal">Media buying isn't just "boosting posts." This is the full operational stack I worked inside.</p>
+    <div class="cap-grid reveal">
+      <div class="cap"><div class="cap-icon">&#128202;</div><div class="cap-name">Campaign Setup &amp; Optimization</div><div class="cap-desc">Built and optimized conversion campaigns based on live KPI data — CTR, CPC, ROAS, EPC — not gut feeling.</div></div>
+      <div class="cap"><div class="cap-icon">&#128272;</div><div class="cap-name">Ad Account Warming</div><div class="cap-desc">Set up and warmed ad accounts on Multilogin to keep campaigns stable and reduce ban risk on cold accounts.</div></div>
+      <div class="cap"><div class="cap-icon">&#127919;</div><div class="cap-name">Pixel &amp; Tracking Setup</div><div class="cap-desc">Meta Pixel installation, custom conversion events, UTM frameworks, and full Redtrack/Voluum integration.</div></div>
+      <div class="cap"><div class="cap-icon">&#127968;</div><div class="cap-name">Landing Page Builds</div><div class="cap-desc">Built rapid-test landers in WordPress, Elementor, and LanderLab — including interactive chatbot-style funnels.</div></div>
+      <div class="cap"><div class="cap-icon">&#128202;</div><div class="cap-name">Reporting &amp; Dashboards</div><div class="cap-desc">Worked daily inside Shinez and Redtrack dashboards tracking revenue, spend, profit, and ROAS by domain and campaign.</div></div>
+      <div class="cap"><div class="cap-icon">&#128172;</div><div class="cap-name">Creative &amp; Funnel Production</div><div class="cap-desc">Produced static and short-form video creative, A/B split tested ad variations, and built out full funnel flows.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="proof">
+  <div class="wrap">
+    <div class="sec-kicker reveal">Proof of Work</div>
+    <h2 class="sec-title reveal">Real dashboards, real campaigns</h2>
+    <p class="sec-sub reveal">Six years of Redtrack reporting from one long-term client relationship — home services, health insurance, and debt verticals. Domains and account details blurred for confidentiality, every number is real.</p>
+    <div class="proof-grid reveal">
+      <div class="proof-card">
+        <div class="proof-img-wrap"><span class="proof-label">REDTRACK</span><img src="proof-bigprofit.png" alt="Redtrack report showing $884K spend generating $1,023K revenue and $139K profit"></div>
+        <div class="proof-body"><div class="proof-title">$139K Profit in a Single Reporting Window</div><div class="proof-desc">$884,484.93 in spend generated $1,023,577.13 in revenue across active campaigns — a 15.73% blended ROI, with individual campaigns hitting 85%+ and 496%.</div></div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-img-wrap"><span class="proof-label">REDTRACK</span><img src="proof-bath-roofing.png" alt="Redtrack campaign report showing bath and roofing campaign ROI"></div>
+        <div class="proof-body"><div class="proof-title">Home Services — Campaign-Level ROI</div><div class="proof-desc">Bath remodel campaign hit 343.59% ROI on a $1,071 spend. Also shows the honest side — a roofing test that lost money, which gets cut fast.</div></div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-img-wrap"><span class="proof-label">REDTRACK</span><img src="proof-multi-campaign.png" alt="Redtrack table showing multiple active campaigns across verticals"></div>
+        <div class="proof-body"><div class="proof-title">Multi-Vertical Campaign Management</div><div class="proof-desc">Running health, bath remodel, and flooring campaigns simultaneously across Facebook and TikTok — over $36K in tracked spend in this view alone.</div></div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-img-wrap"><span class="proof-label">REDTRACK</span><img src="proof-cpa-breakdown.png" alt="Redtrack CPA breakdown by ad creative and audience segment"></div>
+        <div class="proof-body"><div class="proof-title">Creative-Level CPA Testing</div><div class="proof-desc">Breaking down cost-per-acquisition by specific video creative and audience segment to identify which combinations actually convert.</div></div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-img-wrap"><span class="proof-label">REDTRACK</span><img src="proof-ad-level.png" alt="Redtrack ad-level profit breakdown for health insurance campaign"></div>
+        <div class="proof-body"><div class="proof-title">Ad-Level Profit Tracking</div><div class="proof-desc">$8,023 profit at 18.14% ROI for a single campaign, broken down to individual ad-level performance for ongoing optimization.</div></div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-img-wrap"><span class="proof-label">REDTRACK</span><img src="proof-windows-report.png" alt="Redtrack report showing window replacement campaign by publisher placement"></div>
+        <div class="proof-body"><div class="proof-title">Publisher-Level Performance Analysis</div><div class="proof-desc">Breaking campaign results down by native ad placement and publisher to identify which sources convert — over $1,400 in revenue tracked in this single day.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-kicker reveal">Long-Term Reliability</div>
+    <h2 class="sec-title reveal">Nearly six years, one client, no gaps</h2>
+    <p class="sec-sub reveal">Started in March 2020 at an entry-level hourly rate. Stayed on through verticals shifting from home services to insurance to Medicare to debt — because the work kept getting done.</p>
+    <div class="ledger reveal" style="margin-top:0">
+      <div class="ledger-head">
+        <span class="ledger-title">final_message.log — December 26, 2025</span>
+        <div class="ledger-dots"><div class="ledger-dot live"></div><div class="ledger-dot"></div><div class="ledger-dot"></div></div>
+      </div>
+      <div style="padding:1.5rem;font-family:'IBM Plex Mono',monospace;font-size:.85rem;line-height:2;color:var(--steel)">
+        <div style="margin-bottom:1rem"><span style="color:var(--green)">&gt;</span> I'm sorry if this is so sudden, but I'll be moving to the UK soon, so unfortunately I won't be able to help you anymore. Thank you so much for everything.</div>
+        <div style="color:var(--white)"><span style="color:var(--green)">&gt;</span> "Adhel! No worries. It's been good to have you along. Best of luck in the future endeavors."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt">
+  <div class="wrap">
+    <div class="sec-kicker reveal">Stack</div>
+    <h2 class="sec-title reveal">Tools I've worked inside</h2>
+    <p class="sec-sub reveal">Not a skills list copied from a job board — these are tools I have hands-on hours in.</p>
+    <div class="tool-groups reveal">
+      <div class="tool-group">
+        <div class="tool-group-title">Ad Platforms</div>
+        <div class="tool-list">
+          <div class="tool-row">Facebook Ads Manager</div>
+          <div class="tool-row">TikTok Ads Manager</div>
+          <div class="tool-row">Business Manager / Ad Accounts</div>
+        </div>
+      </div>
+      <div class="tool-group">
+        <div class="tool-group-title">Tracking &amp; Attribution</div>
+        <div class="tool-list">
+          <div class="tool-row">Redtrack</div>
+          <div class="tool-row">Voluum</div>
+          <div class="tool-row">Meta Pixel / Custom Events</div>
+          <div class="tool-row">UTM Parameter Frameworks</div>
+        </div>
+      </div>
+      <div class="tool-group">
+        <div class="tool-group-title">Ops &amp; Account Mgmt</div>
+        <div class="tool-list">
+          <div class="tool-row">Multilogin</div>
+          <div class="tool-row">AdsPower</div>
+          <div class="tool-row">Cards4Ads</div>
+          <div class="tool-row">Airtable</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="qa">
+  <div class="wrap">
+    <div class="sec-kicker reveal">Straight Answers</div>
+    <h2 class="sec-title reveal">Common questions from past clients</h2>
+    <p class="sec-sub reveal">Pulled directly from real screening conversations — kept as they were answered.</p>
+    <div class="qa-list reveal">
+      <div class="qa-item">
+        <div class="qa-q">How many years of Facebook Ads experience do you have?</div>
+        <div class="qa-a">Nearly 6 years on one long-term account — home services (roofing, windows, bath remodels), health insurance, Medicare, and debt relief campaigns, running daily across Facebook, TikTok, and Snapchat.</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-q">Have you worked with e-commerce brands before?</div>
+        <div class="qa-a">Yes — I ran my own dropshipping store (both standalone and on Shopify) before moving into agency-side media buying, which gave me both the buyer and seller perspective on what actually converts.</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-q">What's the highest daily budget you've handled?</div>
+        <div class="qa-a">Individual ad sets ran up to $2,100/day, with budgets adjusted up or down by 15-50% based on daily ROI — always tied to actual performance, never a flat increase.</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-q">What is a Facebook Pixel, in your own words?</div>
+        <div class="qa-a">A small piece of code placed on the website that tracks user behavior — page visits, add-to-carts — to measure ad performance, optimize targeting, and power retargeting to people who already visited the site.</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-q">How have you used AI tools like Claude in real campaign work?</div>
+        <div class="qa-a">Used Claude to help build interactive landers for ad campaigns — the most effective was a chatbot-style lander. Also used it to help test and optimize campaigns through a funnel-based approach.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-alt" id="contact">
+  <div class="wrap">
+    <div class="contact-box reveal">
+      <h3>Need someone who's <span>actually run the numbers?</span></h3>
+      <p>Open to media buying support, tracking setup, lander builds, and full campaign operations. US and AU clients welcome.</p>
+      <div class="contact-actions">
+        <a href="mailto:contact@adheltantao.dev" class="btn-primary">Email Me</a>
+        <a href="index.html" class="btn-ghost">View Full Portfolio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Adhel <span>Tantao</span></div>
+  <p>// adheltantao.dev/facebook-ads</p>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
