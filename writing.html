@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adhel Tantao | Content Writer & SEO Copywriter</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="description" content="Adhel Tantao — Filipino content writer with 7+ years writing SEO blog posts, product reviews, and affiliate content for US and AU clients.">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#1a1714;--ink2:#3d3a37;--soft:#6b6560;--line:#e8e2da;--paper:#faf7f3;--paper2:#f3ede4;--terra:#c25b3a;--terra2:#e07050;--sage:#5a7055}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(250,247,243,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:1rem 2.5rem}
+.nav-logo{font-family:'Lora',serif;font-size:1.1rem;font-weight:600;color:var(--ink)}
+.nav-logo span{color:var(--terra)}
+.nav-right{display:flex;align-items:center;gap:2rem}
+.nav-link{font-size:.82rem;font-weight:500;color:var(--soft);transition:color .2s}
+.nav-link:hover{color:var(--terra)}
+.nav-cta{padding:8px 20px;background:var(--ink);color:var(--paper);border-radius:30px;font-size:.82rem;font-weight:600;transition:background .2s}
+.nav-cta:hover{background:var(--terra)}
+@media(max-width:640px){.nav{padding:.9rem 1.25rem}.nav-right .nav-link{display:none}}
+
+/* HERO */
+.hero{max-width:820px;margin:0 auto;padding:5rem 2.5rem 3.5rem}
+@media(max-width:640px){.hero{padding:3rem 1.25rem 2.5rem}}
+.hero-kicker{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--sage);margin-bottom:1rem;display:flex;align-items:center;gap:8px}
+.hero-kicker::before{content:'';width:24px;height:1px;background:var(--sage)}
+.hero-title{font-family:'Lora',serif;font-size:clamp(2.2rem,5vw,3.4rem);font-weight:600;line-height:1.15;letter-spacing:-.5px;margin-bottom:1.25rem}
+.hero-title em{font-style:italic;color:var(--terra)}
+.hero-desc{font-size:1.05rem;color:var(--ink2);max-width:600px;margin-bottom:2rem;font-weight:300;line-height:1.85}
+.hero-desc strong{color:var(--ink);font-weight:500}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-dark{display:inline-block;padding:12px 26px;background:var(--ink);color:var(--paper);border-radius:30px;font-weight:600;font-size:.88rem;transition:all .2s}
+.btn-dark:hover{background:var(--terra);transform:translateY(-2px)}
+.btn-outline{display:inline-block;padding:12px 26px;border:1.5px solid var(--line);color:var(--soft);border-radius:30px;font-weight:500;font-size:.88rem;transition:all .2s}
+.btn-outline:hover{border-color:var(--ink);color:var(--ink)}
+@media(max-width:500px){.hero-actions{flex-direction:column}.btn-dark,.btn-outline{text-align:center}}
+
+/* DIVIDER */
+.divider{border:none;border-top:1px solid var(--line);max-width:820px;margin:0 auto}
+
+/* SECTIONS */
+.section{padding:4rem 2.5rem}
+.wrap{max-width:820px;margin:0 auto}
+.sec-kicker{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--terra);margin-bottom:.6rem}
+.sec-title{font-family:'Lora',serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:600;letter-spacing:-.3px;margin-bottom:.75rem}
+.sec-sub{font-size:.95rem;color:var(--soft);margin-bottom:2.5rem;font-weight:300;line-height:1.75}
+.bg-alt{background:var(--paper2)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s,transform .55s}
+.reveal.visible{opacity:1;transform:none}
+
+/* STAT STRIP */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:3rem}
+@media(max-width:600px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--paper);padding:1.5rem;text-align:center}
+.stat-n{font-family:'Lora',serif;font-size:1.8rem;font-weight:600;color:var(--terra);letter-spacing:-.5px;line-height:1}
+.stat-l{font-size:.72rem;color:var(--soft);text-transform:uppercase;letter-spacing:1px;margin-top:5px;font-weight:500}
+
+/* TYPES GRID */
+.type-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:560px){.type-grid{grid-template-columns:1fr}}
+.type-card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:1.5rem;transition:border-color .2s}
+.type-card:hover{border-color:var(--terra2)}
+.type-icon{font-size:1.3rem;margin-bottom:.6rem}
+.type-name{font-family:'Lora',serif;font-weight:600;font-size:.98rem;margin-bottom:.35rem}
+.type-desc{font-size:.82rem;color:var(--soft);line-height:1.65}
+
+/* NICHES */
+.niche-list{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:2.5rem}
+.niche{font-size:.82rem;padding:6px 14px;background:var(--paper);border:1px solid var(--line);border-radius:20px;color:var(--ink2);font-weight:500;transition:all .2s}
+.niche:hover{border-color:var(--terra);color:var(--terra)}
+
+/* SITES */
+.site-list{display:flex;flex-direction:column;gap:0}
+.site-item{padding:1.25rem 0;border-bottom:1px solid var(--line);display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.site-item:last-child{border-bottom:none}
+.site-name{font-weight:600;font-size:.92rem;color:var(--ink)}
+.site-desc{font-size:.82rem;color:var(--soft)}
+.site-tag{font-size:.7rem;font-weight:600;padding:3px 10px;background:var(--paper2);border-radius:10px;color:var(--soft);white-space:nowrap}
+
+/* TOOLS */
+.tool-row{display:flex;flex-wrap:wrap;gap:8px}
+.tool{font-size:.8rem;padding:5px 12px;background:var(--paper);border:1px solid var(--line);border-radius:6px;color:var(--ink2);font-weight:500}
+
+/* PROCESS */
+.process-list{display:flex;flex-direction:column;gap:1rem}
+.process-item{display:flex;gap:1rem;align-items:flex-start}
+.process-num{font-family:'Lora',serif;font-size:1.1rem;font-weight:600;color:var(--terra);flex-shrink:0;width:28px;line-height:1.4}
+.process-body{}
+.process-title{font-weight:600;font-size:.92rem;margin-bottom:.25rem}
+.process-desc{font-size:.85rem;color:var(--soft);line-height:1.65}
+
+/* QUOTE */
+.quote-box{background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--terra);border-radius:0 12px 12px 0;padding:1.5rem 1.75rem;margin:2rem 0}
+.quote-text{font-family:'Lora',serif;font-size:1.05rem;font-style:italic;color:var(--ink2);line-height:1.75;margin-bottom:.75rem}
+.quote-source{font-size:.78rem;color:var(--soft);font-weight:500;text-transform:uppercase;letter-spacing:1px}
+
+/* CONTACT */
+.contact-box{background:var(--ink);border-radius:20px;padding:3rem;text-align:center}
+.contact-box h3{font-family:'Lora',serif;color:var(--paper);font-size:1.8rem;font-weight:600;margin-bottom:.75rem;line-height:1.2}
+.contact-box h3 em{font-style:italic;color:var(--terra2)}
+.contact-box p{color:#c8c0b8;font-size:.92rem;margin-bottom:1.75rem;font-weight:300;max-width:420px;margin-left:auto;margin-right:auto}
+.contact-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.contact-email{display:inline-block;padding:12px 26px;background:var(--paper);color:var(--ink);border-radius:30px;font-weight:600;font-size:.88rem;transition:all .2s}
+.contact-email:hover{background:var(--terra2);color:var(--paper)}
+.contact-port{display:inline-block;padding:12px 26px;border:1px solid rgba(255,255,255,.2);color:#c8c0b8;border-radius:30px;font-size:.88rem;font-weight:500;transition:all .2s}
+.contact-port:hover{border-color:var(--paper);color:var(--paper)}
+
+footer{border-top:1px solid var(--line);padding:1.5rem 2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'Lora',serif;font-weight:600;font-size:.95rem}
+.footer-logo span{color:var(--terra)}
+footer p{font-size:.75rem;color:var(--soft)}
+@media(max-width:640px){.section{padding:3rem 1.25rem}footer{padding:1.25rem;flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Adhel <span>Tantao</span></a>
+  <div class="nav-right">
+    <a href="#writing" class="nav-link">Writing</a>
+    <a href="#niches" class="nav-link">Niches</a>
+    <a href="#process" class="nav-link">Process</a>
+    <a href="#contact" class="nav-cta">Hire Me</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-kicker">Content Writer & SEO Copywriter</div>
+  <h1 class="hero-title">Words that <em>rank,</em><br>read well, and convert.</h1>
+  <p class="hero-desc">I started as a freelance writer in 2015 — long before I learned WordPress, SEO, or paid media. <strong>Seven years of writing for US and AU clients</strong> across affiliate, editorial, and commercial formats is where everything else I do today was built.</p>
+  <div class="hero-actions">
+    <a href="#contact" class="btn-dark">Get in Touch</a>
+    <a href="work-with-me.html" class="btn-outline">Full Portfolio →</a>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="section" id="writing">
+  <div class="wrap">
+    <div class="stats reveal">
+      <div class="stat"><div class="stat-n">7+</div><div class="stat-l">Years Writing</div></div>
+      <div class="stat"><div class="stat-n">10+</div><div class="stat-l">Affiliate Sites</div></div>
+      <div class="stat"><div class="stat-n">US/AU</div><div class="stat-l">Primary Clients</div></div>
+      <div class="stat"><div class="stat-n">SEO</div><div class="stat-l">Always Included</div></div>
+    </div>
+
+    <div class="sec-kicker reveal">What I Write</div>
+    <h2 class="sec-title reveal">Types of writing</h2>
+    <p class="sec-sub reveal">From long-form affiliate content to short ad copy — I've written across formats for real clients, not just as exercises.</p>
+    <div class="type-grid reveal">
+      <div class="type-card">
+        <div class="type-icon">📝</div>
+        <div class="type-name">Blog Posts & Articles</div>
+        <div class="type-desc">Long-form, research-backed articles from 1,000 to 4,000+ words. Skyscraper content, how-to guides, informational and commercial intent. Table of contents, proper heading structure, natural keyword integration.</div>
+      </div>
+      <div class="type-card">
+        <div class="type-icon">⭐</div>
+        <div class="type-name">Product Reviews & Affiliate Content</div>
+        <div class="type-desc">Amazon affiliate product reviews, comparison articles, and best-of roundups across consumer niches. Wrote hundreds of pieces for affiliate sites over several years.</div>
+      </div>
+      <div class="type-card">
+        <div class="type-icon">🛒</div>
+        <div class="type-name">Product Descriptions & eCommerce Copy</div>
+        <div class="type-desc">Short, punchy product copy that highlights what actually matters to buyers. Clean formatting, consistent tone, ready to publish.</div>
+      </div>
+      <div class="type-card">
+        <div class="type-icon">📱</div>
+        <div class="type-name">Ad Copy & Social Captions</div>
+        <div class="type-desc">Short-form copy for Facebook and TikTok ad campaigns. Hooks, body, CTA. Also social media captions across Facebook, Instagram, and LinkedIn formats.</div>
+      </div>
+      <div class="type-card">
+        <div class="type-icon">📚</div>
+        <div class="type-name">Ghostwritten Content</div>
+        <div class="type-desc">Long-form eBooks, how-to guides, and articles published under client names. Comfortable writing in someone else's voice from a brief.</div>
+      </div>
+      <div class="type-card">
+        <div class="type-icon">🔍</div>
+        <div class="type-name">SEO-Optimized Content</div>
+        <div class="type-desc">Content built around target keywords with proper search intent matching, heading hierarchy, internal linking, and optimization using ClearScope, SurferSEO, or Frase AI.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="section bg-alt" id="niches">
+  <div class="wrap">
+    <div class="sec-kicker reveal">Experience</div>
+    <h2 class="sec-title reveal">Niches I've written in</h2>
+    <p class="sec-sub reveal">Built up across 7 years of client work — not picked from a list.</p>
+    <div class="niche-list reveal">
+      <span class="niche">Hiking & Outdoors</span>
+      <span class="niche">Gardening & Plants</span>
+      <span class="niche">Home & Kitchen</span>
+      <span class="niche">Tools & Hardware</span>
+      <span class="niche">Tech & Software</span>
+      <span class="niche">Crypto & Finance</span>
+      <span class="niche">Health & Wellness</span>
+      <span class="niche">Yoga & Lifestyle</span>
+      <span class="niche">Web Hosting</span>
+      <span class="niche">Plumbing & Home Services</span>
+      <span class="niche">Car Shipping & Auto</span>
+      <span class="niche">Legal Services</span>
+      <span class="niche">Coloring & Education</span>
+      <span class="niche">Recipes & Food</span>
+    </div>
+
+    <div class="sec-kicker reveal">Sites Written For</div>
+    <h2 class="sec-title reveal">Published work</h2>
+    <p class="sec-sub reveal">A selection of real sites where my writing appeared. Most are still live — some didn't survive the HCU update.</p>
+    <div class="site-list reveal">
+      <div class="site-item"><div><div class="site-name">HikersHQ.com</div><div class="site-desc">Long-form hiking gear reviews and guides — my favorite work from those years</div></div><span class="site-tag">Affiliate · Outdoors</span></div>
+      <div class="site-item"><div><div class="site-name">CryptoHead.io</div><div class="site-desc">Content optimization and SEO publishing for a major crypto authority site at Search District (AU)</div></div><span class="site-tag">Editorial · Crypto</span></div>
+      <div class="site-item"><div><div class="site-name">MicroVeggy.com</div><div class="site-desc">Long-form gardening articles including 3,000+ word comprehensive guides</div></div><span class="site-tag">Affiliate · Gardening</span></div>
+      <div class="site-item"><div><div class="site-name">ConvoyCarShipping.com</div><div class="site-desc">Content and SEO optimization for a car shipping service site</div></div><span class="site-tag">Service · Auto</span></div>
+      <div class="site-item"><div><div class="site-name">YardThyme.com</div><div class="site-desc">Outdoor and garden product reviews</div></div><span class="site-tag">Affiliate · Garden</span></div>
+      <div class="site-item"><div><div class="site-name">HowToCook.Recipes</div><div class="site-desc">Recipe and cooking content</div></div><span class="site-tag">Editorial · Food</span></div>
+      <div class="site-item"><div><div class="site-name">FreeColoringPages.net</div><div class="site-desc">Educational content and page descriptions</div></div><span class="site-tag">Editorial · Education</span></div>
+      <div class="site-item"><div><div class="site-name">DrillsAndDrivers.com · Top5Reviewed.com · MacBookProSlow.com · LEDLightsNation.com · TechyJi.com · BootStrapious.com</div><div class="site-desc">Amazon affiliate content across tech and home improvement niches</div></div><span class="site-tag">Affiliate · Various</span></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="section" id="process">
+  <div class="wrap">
+    <div class="sec-kicker reveal">How I Work</div>
+    <h2 class="sec-title reveal">My writing process</h2>
+    <p class="sec-sub reveal">Developed across hundreds of articles for real clients with real deadlines.</p>
+    <div class="process-list reveal">
+      <div class="process-item">
+        <div class="process-num">1</div>
+        <div class="process-body">
+          <div class="process-title">Understand the brief and keywords</div>
+          <div class="process-desc">I work from whatever you provide — target keywords, angle, word count, audience. If you want me to handle keyword research using Ahrefs or SurferSEO, I can do that too.</div>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-num">2</div>
+        <div class="process-body">
+          <div class="process-title">Research the topic properly</div>
+          <div class="process-desc">I check the top-ranking pages, pull relevant data, and build a clear outline before writing a single word. For specialist niches, I ask questions rather than guess.</div>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-num">3</div>
+        <div class="process-body">
+          <div class="process-title">Write with SEO baked in</div>
+          <div class="process-desc">Proper heading hierarchy, natural keyword use, internal linking suggestions, and optimized meta where applicable. Not stuffed — structured correctly.</div>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-num">4</div>
+        <div class="process-body">
+          <div class="process-title">Edit and optimize</div>
+          <div class="process-desc">Grammarly pass, readability check, and if we're using ClearScope or SurferSEO, I'll optimize against the target score before submitting.</div>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-num">5</div>
+        <div class="process-body">
+          <div class="process-title">Deliver on time, publish if needed</div>
+          <div class="process-desc">Average turnaround for a 2,000–3,000 word article is 1–2 days. I can also publish directly in WordPress if you'd prefer to hand off the whole thing.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-kicker reveal" style="margin-top:2.5rem">Tools</div>
+    <h2 class="sec-title reveal">What I use</h2>
+    <div class="tool-row reveal">
+      <span class="tool">ClearScope</span>
+      <span class="tool">SurferSEO</span>
+      <span class="tool">Frase AI</span>
+      <span class="tool">Ahrefs</span>
+      <span class="tool">Google Search Console</span>
+      <span class="tool">Screaming Frog</span>
+      <span class="tool">Grammarly</span>
+      <span class="tool">WordPress</span>
+      <span class="tool">Claude</span>
+      <span class="tool">ChatGPT</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="contact-box reveal">
+      <h3>Need content that <em>actually ranks?</em></h3>
+      <p>Blog posts, product reviews, affiliate content, or SEO copy — happy to discuss what you need and whether I'm the right fit.</p>
+      <div class="contact-links">
+        <a href="mailto:contact@adheltantao.dev" class="contact-email">contact@adheltantao.dev</a>
+        <a href="work-with-me.html" class="contact-port">Full Portfolio →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Adhel <span>Tantao</span></div>
+  <p>© 2026 — adheltantao.dev/writing</p>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
