@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Facial Aesthetics - Park Avenue Dental Care</title>
+<style>
+:root{
+  --primary-color:#0075ff;
+  --dark-color:#051229;
+  --secondary-color:#364052;
+  --grey-color:#ECF5FC;
+  --white-color:#FFFFFF;
+  --border-radius:15px;
+  --big-border-radius:900px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Nunito",sans-serif;color:var(--secondary-color);line-height:1.8;background:var(--white-color);}
+.container{max-width:1140px;margin:0 auto;padding:0 20px;}
+a{text-decoration:none;}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg, var(--dark-color) 0%, #0a1f4d 100%);
+  color:var(--white-color);
+  padding:100px 0;
+  text-align:center;
+}
+.hero h1{font-size:42px;font-weight:600;margin-bottom:20px;}
+.hero p{font-size:18px;max-width:600px;margin:0 auto 30px;opacity:.9;}
+.btn{
+  display:inline-block;
+  background:var(--primary-color);
+  color:var(--white-color);
+  padding:14px 34px;
+  border-radius:var(--big-border-radius);
+  font-weight:600;
+  transition:all .3s ease-in-out;
+}
+.btn:hover{background:var(--dark-color);}
+.btn-outline{border:2px solid var(--white-color);background:transparent;}
+
+/* IMG PLACEHOLDER */
+.img-placeholder{
+  background:repeating-linear-gradient(45deg,var(--grey-color),var(--grey-color) 10px,#dfeefc 10px,#dfeefc 20px);
+  border:2px dashed var(--primary-color);
+  border-radius:var(--border-radius);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--primary-color);font-weight:600;text-align:center;padding:20px;
+}
+
+/* SECTION */
+section{padding:70px 0;}
+.section-title{text-align:center;margin-bottom:50px;}
+.section-title h2{font-size:32px;color:var(--dark-color);margin-bottom:10px;}
+.section-title p{color:var(--secondary-color);opacity:.8;}
+
+/* TREATMENTS */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+.card{
+  background:var(--white-color);
+  border-radius:var(--border-radius);
+  box-shadow:0 6px 20px rgba(5,18,41,0.08);
+  overflow:hidden;
+  transition:all .3s ease-in-out;
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(5,18,41,0.15);}
+.card .img-placeholder{height:180px;border-radius:0;border:none;}
+.card-body{padding:24px;}
+.card-body h3{color:var(--dark-color);font-size:20px;margin-bottom:10px;}
+.card-body p{font-size:15px;opacity:.85;}
+
+/* WHY CHOOSE US */
+.why{background:var(--grey-color);}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;}
+.why-item{padding:20px;}
+.why-icon{
+  width:70px;height:70px;border-radius:50%;
+  background:var(--primary-color);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 16px;font-size:26px;font-weight:700;
+}
+.why-item h4{color:var(--dark-color);margin-bottom:8px;font-size:17px;}
+.why-item p{font-size:14px;opacity:.8;}
+
+/* CTA */
+.cta{
+  background:var(--dark-color);
+  color:#fff;text-align:center;
+  border-radius:var(--border-radius);
+  padding:60px 40px;
+  margin:0 20px 80px;
+}
+.cta h2{font-size:30px;margin-bottom:15px;}
+.cta p{opacity:.85;margin-bottom:25px;}
+
+@media(max-width:768px){
+  .grid-3,.grid-4{grid-template-columns:1fr;}
+  .hero h1{font-size:30px;}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1>Facial Aesthetics</h1>
+    <p>Enhance your natural beauty with safe, expertly delivered treatments from our trusted dental & aesthetics team.</p>
+    <a href="#book" class="btn">Book a Consultation</a>
+  </div>
+</section>
+
+<!-- TREATMENTS -->
+<section>
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Treatments</h2>
+      <p>Placeholder copy — refine with final service descriptions.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <img src="images/anti-wrinkle-injection-treatment-closeup.jpg" style="height:180px;width:100%;object-fit:cover;border-radius:15px 15px 0 0;">
+        <div class="card-body">
+          <h3>Anti-Wrinkle Injections</h3>
+          <p>Smooth fine lines and wrinkles for a naturally refreshed appearance. Placeholder text.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/dermal-filler-lips-cheek-treatment.jpg" style="height:180px;width:100%;object-fit:cover;border-radius:15px 15px 0 0;">
+        <div class="card-body">
+          <h3>Dermal Fillers</h3>
+          <p>Restore volume and enhance facial contours with premium dermal fillers. Placeholder text.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/skin-booster-glowing-skin-closeup.jpg" style="height:180px;width:100%;object-fit:cover;border-radius:15px 15px 0 0;">
+        <div class="card-body">
+          <h3>Skin Boosters</h3>
+          <p>Deeply hydrate and rejuvenate your skin for a healthy, radiant glow. Placeholder text.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why">
+  <div class="container">
+    <div class="section-title">
+      <h2>Why Choose Us</h2>
+      <p>Trusted, qualified, and patient-focused care.</p>
+    </div>
+    <div class="grid-4">
+      <div class="why-item">
+        <div class="why-icon">✓</div>
+        <h4>Qualified Practitioners</h4>
+        <p>Fully trained dental professionals delivering aesthetic treatments.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">★</div>
+        <h4>Trusted Reputation</h4>
+        <p>Established local practice with years of patient trust.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🛡</div>
+        <h4>Safe & Hygienic</h4>
+        <p>Clinical-standard hygiene and safety protocols throughout.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">💬</div>
+        <h4>Personalised Plans</h4>
+        <p>Treatments tailored to your goals during a full consultation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="book">
+  <div class="cta">
+    <h2>Ready to Refresh Your Look?</h2>
+    <p>Book your free consultation with our facial aesthetics team today.</p>
+    <a href="#" class="btn">Book Your Consultation</a>
+  </div>
+</section>
+
+</body>
+</html>
